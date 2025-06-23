@@ -23,9 +23,9 @@ Build Plan for Zebra Design Hero Section
 ### Stage 4: Mobile Optimization & Testing
 - [x] Test responsive layout on all screen sizes
 - [x] Verify bullet points layout (single column mobile, 2-column desktop)
-- [ ] Ensure CTAs are properly sized for mobile touch
-- [ ] Test logo wrapping on smaller screens
-- [ ] Verify all text remains readable with video background
+- [x] Ensure CTAs are properly sized for mobile touch
+- [x] Test logo wrapping on smaller screens
+- [x] Verify all text remains readable with video background
 
 ## Questions Before Implementation:
 1. **Cal.com URL**: What is your Cal.com booking URL for the "Book intro call" button?
