@@ -1,6 +1,3 @@
-## Project Documentation
-For a comprehensive status report and implementation learnings, see [status.md](./status.md)
-
 ## Background & Motivation
 Building the Zebra Design one-page portfolio site using the Lume Studio Next.js template. Zebra Design helps founders and teams launch digital products—designed and coded—faster than thought possible. The site will showcase the Design-as-a-Service model with a single-page layout and separate Pricing page. The goal is to efficiently create a high-quality front-end by reusing template components and minimizing bugs.
 
@@ -305,64 +302,30 @@ Currently reviewing step2-hero.md plan and preparing for implementation:
 
 **Next Steps**: Awaiting user input on questions before proceeding with Stage 1 implementation.
 
-### Phase 5: Post-Hero "Credo & Key Benefits" Section ✅
-Successfully implemented the Post-Hero section with Credo and Quick Wins components:
+### Phase 5: Post-Hero "Credo & Key Benefits" Section (Planning)
+Currently reviewing step4-content.md plan and preparing for implementation:
 
-1. **Step 4.1: Setup Prerequisites** ✅:
-   - Installed Shadcn Tooltip component via npx
-   - Installed Vanta.js and Three.js dependencies
-   - Created reusable VantaTrunk component wrapper
-   - Verified all Lucide icons (Zap, Target, Euro, Brush, Monitor, Scissors)
+1. **Plan Review**: Comprehensive build plan includes two sub-sections:
+   - Credo Section: Paul Graham quote with founder's philosophy
+   - Quick Wins Section: 6 key benefits with icons and tooltips
 
-2. **Step 4.2: Implement Credo Section** ✅:
-   - Created `<CredoSection>` component with Paul Graham quote
-   - Added founder's philosophy and solo practice messaging
-   - Styled with Tailwind (centered, italic quote, proper typography)
-   - Added to homepage after Hero, before Recent Builds
+2. **Implementation Steps Created**: Split into 4 manageable steps in step4-content.md:
+   - Step 4.1: Setup Prerequisites (Tooltip component, Vanta.js, icons)
+   - Step 4.2: Implement Credo Section
+   - Step 4.3: Implement Quick Wins Section  
+   - Step 4.4: Polish and Integration
 
-3. **Step 4.3: Implement Quick Wins Section** ✅:
-   - Created `<QuickWinsSection>` component with 6 benefits grid
-   - Implemented icon + label layout with Lucide icons
-   - Added Tooltip functionality for desktop hover
-   - Implemented mobile-friendly solution (always visible descriptions on mobile)
-   - Added to homepage after Credo section
+3. **Content Decisions Integrated** ✅:
+   - Quality Design description: "Quality design in every iteration -- no shortcuts."
+   - Label consistency: Using "Flat Price" throughout
+   - Vanta.js integration confirmed (will be installed in Step 4.1)
+   - Tooltip component confirmed (will be installed in Step 4.1)
+   - Component reuse strategy confirmed (adapt testimonials.tsx for blockquote)
 
-4. **Step 4.4: Polish and Integration** ✅:
-   - Integrated Vanta Trunk animation into Credo section (desktop only)
-   - Two-column layout on desktop, single column on mobile
-   - Performance optimized: trunk only shows on desktop with good hardware
-   - Enhanced mobile experience: benefits show descriptions without tooltips
-   - Added hover effects and smooth transitions
+4. **Technical Findings**:
+   - `testimonials.tsx` has blockquote structure that could be adapted
+   - `services-2.tsx` is too complex for Quick Wins - better to create new component
+   - No existing Vanta integration in codebase
+   - Tooltip component not yet installed from Shadcn UI
 
-**Files Created/Modified**:
-- src/components/vanta-trunk.tsx (new - reusable Vanta wrapper)
-- src/components/sections/home/credo-section.tsx (new)
-- src/components/sections/home/quick-wins-section.tsx (new)
-- src/app/page.tsx (added both new sections)
-
-**Design Decisions**:
-- Vanta Trunk animation only renders on desktop with 4+ CPU cores for performance
-- Mobile users see benefit descriptions always visible in card format
-- Desktop users get clean icon grid with tooltips on hover
-- Used dynamic imports for Vanta to avoid SSR issues
-
-**Development Status**: Running on http://localhost:3002 (or appropriate port)
-
-### Vanta.js Error Fix ✅
-Resolved initialization and cleanup errors by replacing Vanta with CSS solution:
-
-1. **Issue**: "TypeError: l is not a constructor" - Vanta couldn't find Three.js globally
-2. **Issue**: "removeChild" errors persisted even with improved cleanup
-
-**Final Solution Implemented**:
-- Created pure CSS/SVG tree pattern component (`css-tree-pattern.tsx`)
-- No external dependencies or cleanup issues
-- Better performance without Three.js overhead
-- Set CSS pattern as default in `credo-section.tsx` with `USE_CSS_PATTERN = true`
-- Vanta code remains but is disabled (can switch back by changing flag)
-
-**Commits**: 
-- 4c6613a - "fix: resolve Vanta.js initialization and cleanup errors"
-- ecad5df - "feat: add CSS tree pattern as stable alternative to Vanta"
-
-The CSS pattern provides similar visual interest while being completely stable and performant.
+**Next Steps**: Ready to proceed with Step 4.1 (prerequisites installation) when user confirms.
