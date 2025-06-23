@@ -1,3 +1,6 @@
+## Project Documentation
+For a comprehensive status report and implementation learnings, see [status.md](./status.md)
+
 ## Background & Motivation
 Building the Zebra Design one-page portfolio site using the Lume Studio Next.js template. Zebra Design helps founders and teams launch digital products—designed and coded—faster than thought possible. The site will showcase the Design-as-a-Service model with a single-page layout and separate Pricing page. The goal is to efficiently create a high-quality front-end by reusing template components and minimizing bugs.
 
