@@ -54,56 +54,33 @@ Implementation Steps
 - Added staggered ScrollView animations
 - Added to homepage after Credo section
 
-### Step 4.4: Integrate Vanta Trunk Animation & Responsive Polish
+### Step 4.4: Integrate Vanta Trunk Animation & Responsive Polish ✅
 
--   **Build the `VantaTrunk` component:** Create a React functional component that renders a `<div>` and invokes the Vanta Trunk effect on it. Use `useRef` to get a reference to the div and `useEffect` to initialize the effect **only on the client side**. For example:
+-   **Build the `VantaTrunk` component:** Create a React functional component that renders a `<div>` and invokes the Vanta Trunk effect on it. Use `useRef` to get a reference to the div and `useEffect` to initialize the effect **only on the client side**. ✅ (Already completed in Step 4.1)
 
-    ```
-    import { useEffect, useRef } from 'react'
-    import TRUNK from 'vanta/dist/vanta.trunk.min'
-    import * as p5 from 'p5'  // p5 is required for Trunk
+-   **Embed Vanta in the Credo section:** Now use this `VantaTrunk` component in our `<CredoSection>`. Replace the placeholder `<div>` (from Step 4.2) with `<VantaTrunk>` and set its props for this context. ✅
 
-    function VantaTrunk({ chaos = 0.5, spacing = 10, color = 0x000000, backgroundColor = 0xffffff, width = '100%', height = '100%' }) {
-      const vantaRef = useRef(null)
-      useEffect(() => {
-        // Initialize Vanta Trunk effect on mount
-        const vantaEffect = TRUNK({
-          el: vantaRef.current,
-          p5: p5,                      // provide p5 library
-          mouseControls: true,         // allow mouse interaction (optional)
-          touchControls: true,         // allow touch interaction (optional)
-          gyroControls: false,         // no gyro control
-          minHeight: 200.0,            // minimum dimensions
-          minWidth: 200.0,
-          chaos: chaos,                // chaos level (branching randomness)
-          spacing: spacing,            // spacing between branch lines
-          color: color,                // branch line color (hexadecimal)
-          backgroundColor: backgroundColor // background color behind the branches
-        })
-        return () => {
-          // Cleanup on unmount to prevent memory leaks
-          vantaEffect.destroy()
-        }
-      }, [chaos, spacing, color, backgroundColor])
+-   **Responsive behavior & fallbacks:** It's important that the Vanta effect enhances the design without hurting performance or usability on small devices. ✅
 
-      // The returned div will be filled by the Vanta effect
-      return <div ref={vantaRef} style={{ width, height }} />
-    }
-    export default VantaTrunk
+-   **Performance considerations:** **Do not run too many Vanta instances at once.** ✅
 
-    ```
+-   **Styling integration:** Ensure the Vanta canvas doesn't interfere with other elements. ✅
 
-    This component allows us to easily drop a customizable Trunk animation anywhere in our JSX. The props `chaos`, `spacing`, `color`, etc., control the appearance, and we default them to sensible values. We ensure to call `vantaEffect.destroy()` in the cleanup function of `useEffect` so that we don't leave any running animations or GPU contexts hanging around when the component unmounts (preventing memory leaks). The `p5` library is passed in as required by Vanta for the Trunk effect.
+-   **Finalize and polish:** Double-check the section ordering in the homepage. ✅
 
--   **Embed Vanta in the Credo section:** Now use this `VantaTrunk` component in our `<CredoSection>`. Replace the placeholder `<div>` (from Step 4.2) with `<VantaTrunk>` and set its props for this context. For the Credo section, we want a **moderate** visual that complements the philosophy message without overwhelming it. For example, we might use `chaos={1.0}` (moderate chaos) if the hero uses a higher value, and a medium `spacing` (around the default 10). Set the `color` to match the site's theme -- possibly a neutral or subtle accent (e.g. if the text is dark on light background, a dark gray or brand color for the branches could work). The `backgroundColor` should usually match the section background (likely a light neutral) so that the animation blends in as an accent. Also, give the component a fixed size appropriate for the design: e.g. `<VantaTrunk width={300} height={300} chaos={1.0} spacing={10} color={0x111111} />` to render a ~300px square animated canvas. This fixed-size container ensures the layout remains predictable and the animation doesn't unexpectedly expand beyond its box. You can center it within its grid cell using Tailwind classes (`mx-auto`) on the container. On larger screens, the Credo layout will show text in one column and this animated canvas in the other, side by side. On smaller screens (where the layout stacks to one column), consider either centering the Vanta element below the quote or hiding it on very small devices. We want to maintain a good reading experience on mobile.
-
--   **Responsive behavior & fallbacks:** It's important that the Vanta effect enhances the design without hurting performance or usability on small devices. We will fine-tune the responsive behavior: for example, we might **disable or remove the Trunk animation on mobile** phones and low-performance devices. This could be done via CSS (hiding the canvas for `max-width` breakpoints) or via a runtime check (e.g. the component could detect `window.innerWidth` or `prefers-reduced-motion` and skip initializing Vanta if conditions aren't met). In our plan, we'll at least hide it on very narrow screens to save space and CPU -- possibly by adding a utility class like `hidden sm:block` to the component or by not rendering it at all below a certain breakpoint. Additionally, provide a graceful fallback (even if just a static image or a plain colored div) so the section still looks complete without the animation.
-
--   **Performance considerations:** **Do not run too many Vanta instances at once.** Vanta.js can be heavy, so we'll limit the number of active animations on the page to **at most two** at any time. For example, if we plan to use Trunk in the hero and in the Credo section (which are both visible on page load on a large screen), that's two instances -- likely okay on modern desktops, but we should avoid adding more (like another in the footer) until one of these is out of view. If the hero has a Vanta background and the Credo also has one, monitor performance; if it's janky, we might decide to only use one at a time (e.g. disable the Credo one if the hero is already running, or destroy the hero's instance once out of view). Vanta provides a `.resize()` and the `.destroy()` method -- we will use `.destroy()` during unmount or when removing an effect. If implementing dynamic mounting (e.g. only start the Credo Vanta when the section scrolls into view), ensure to destroy it when navigating away. Our reusable component handles its own cleanup on unmount, which covers page transitions or section removal.
-
--   **Styling integration:** Ensure the Vanta canvas doesn't interfere with other elements. It's positioned inside its div, so standard Tailwind margins/padding apply. Add some margin beneath the Credo section so that when the page flows into the Quick Wins section, there's adequate space -- particularly if the trunk animation is visible on mobile above the next section. We want to avoid the canvas overlapping or colliding with content that comes after. In practice, adding a bottom padding to the Credo section or top margin to Quick Wins will suffice (e.g. `pb-16` on Credo).
-
--   **Finalize and polish:** Double-check the section ordering in the homepage (`<HeroSection />` then `<CredoSection />` then `<QuickWinsSection />` before other sections like Portfolio). Add an anchor id if needed (e.g. `<section id="credo">`) if we plan to link to it. Make sure all text content from the copy is included and styled correctly (quote, attribution, founder note, all six benefits and their tooltips). Keep tone consistent (first-person where appropriate, etc.).
+**Final Implementation Notes:**
+- Enhanced Credo section with three responsive breakpoints:
+  - Mobile (< sm): Text only, centered, no Vanta
+  - Tablet (sm-lg): Smaller Vanta (250px) below text with reduced opacity
+  - Desktop (lg+): Full-size Vanta (350-400px) in right column
+- Improved Quick Wins section mobile experience:
+  - Mobile: Always show descriptions below icons (no tooltips needed)
+  - Desktop/Tablet: Hover tooltips with visual feedback
+  - Added icon backgrounds and hover effects for better UX
+- Added section divider between Quick Wins and Recent Builds for visual flow
+- All text uses proper color hierarchy (muted-foreground for secondary text)
+- Performance optimized: Vanta only mounts after component is ready
+- Smooth transitions and animations throughout
 
 ### Step 4.5: Usage Across Multiple Sections & Emotional Tuning
 

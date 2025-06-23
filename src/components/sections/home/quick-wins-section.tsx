@@ -14,6 +14,7 @@ import {
   Monitor, 
   Scissors 
 } from "lucide-react";
+import { useEffect, useState } from "react";
 
 const benefits = [
   {
@@ -49,28 +50,61 @@ const benefits = [
 ];
 
 export default function QuickWinsSection() {
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 640); // sm breakpoint
+    };
+    
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   return (
-    <section className="py-16" id="quick-wins">
+    <section className="py-16 md:py-24" id="quick-wins">
       <div className="mx-auto max-w-5xl px-6">
         <ScrollView stagger delay={0.1}>
-          <div className="grid grid-cols-2 gap-4 sm:grid-cols-3 md:grid-cols-6 md:gap-6">
+          <div className="grid grid-cols-2 gap-6 sm:grid-cols-3 md:grid-cols-6 md:gap-4 lg:gap-6">
             {benefits.map((benefit, index) => {
               const Icon = benefit.icon;
               return (
                 <ScrollViewStaggerWrapper key={index}>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <div className="flex flex-col items-center space-y-2 cursor-pointer group">
-                        <Icon className="w-5 h-5 text-foreground/80 group-hover:text-foreground transition-colors" />
-                        <span className="font-medium text-base text-center">
-                          {benefit.label}
-                        </span>
+                  {isMobile ? (
+                    // Mobile view - always show descriptions
+                    <div className="flex flex-col items-center text-center space-y-2">
+                      <div className="p-3 rounded-lg bg-muted/50">
+                        <Icon className="w-6 h-6 text-foreground/80" />
                       </div>
-                    </TooltipTrigger>
-                    <TooltipContent className="max-w-xs">
-                      <p className="text-xs">{benefit.description}</p>
-                    </TooltipContent>
-                  </Tooltip>
+                      <div className="space-y-1">
+                        <p className="font-medium text-sm">
+                          {benefit.label}
+                        </p>
+                        <p className="text-xs text-muted-foreground leading-relaxed">
+                          {benefit.description}
+                        </p>
+                      </div>
+                    </div>
+                  ) : (
+                    // Desktop/tablet view - with tooltips
+                    <Tooltip delayDuration={200}>
+                      <TooltipTrigger asChild>
+                        <div className="flex flex-col items-center space-y-3 cursor-pointer group transition-transform hover:scale-105">
+                          <div className="p-3 rounded-lg bg-muted/50 group-hover:bg-muted transition-colors">
+                            <Icon className="w-5 h-5 text-foreground/80 group-hover:text-foreground transition-colors" />
+                          </div>
+                          <span className="font-medium text-sm text-center">
+                            {benefit.label}
+                          </span>
+                        </div>
+                      </TooltipTrigger>
+                      <TooltipContent className="max-w-xs">
+                        <p className="text-xs leading-relaxed">{benefit.description}</p>
+                      </TooltipContent>
+                    </Tooltip>
+                  )}
                 </ScrollViewStaggerWrapper>
               );
             })}

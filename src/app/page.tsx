@@ -6,6 +6,7 @@ import RecentBuildsSection from "@/components/sections/home/recent-builds-sectio
 import ServicesSection2 from "@/components/sections/home/services-2";
 import StatsSection from "@/components/sections/home/stats";
 import FooterSection from "@/components/footer";
+import SectionDivider from "@/components/section-divider";
 
 export default function Home() {
   return (
@@ -13,6 +14,7 @@ export default function Home() {
       <HeroSection />
       <CredoSection />
       <QuickWinsSection />
+      <SectionDivider />
       <RecentBuildsSection />
       <AboutUsSection />
       {/* <ServicesSection /> */}
