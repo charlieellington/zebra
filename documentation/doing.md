@@ -40,6 +40,25 @@ Do the build plan for this section, thinking about best practices.
 - IMPORTANT: Make sure all content is in the build plan so we don't loose anything. 
 
 
+# Launch in Weeks, Not Months
+
+Zebra Design gets you from idea to **user-tested product** in a matter of weeks, not months. I design **and** code your app simultaneously for lightning-fast delivery, without sacrificing user feedback or quality. 
+
+1.  **Workshops with domain experts ▸**\
+     Rapid workshops get your whole team aligned---no endless feedback loops.\
+     *I run as many as needed to capture knowledge and map user goals.*
+
+2.  **Prototype in real code ▸**\
+     High‑fidelity UI coded in days, not months. It's the first working version, not a mock‑up.
+
+3.  **User testing built‑in ▸**\
+     I test the MVP with real users, so we learn before we burn budget.
+
+4.  **Continuous build: Request <> Receive ▸**\
+     With real feedback in hand, we iterate and build out your product continuously. Through our monthly subscription, we act as your on-call product team – refining the UX, adding features, and hooking up the back-end as needed to evolve your product. 
+
+---
+
 ## Who I Help 
 
 - **Startup founders** – who need to test a new app idea _ASAP_ to find product–market fit before the runway runs out. (We provide the speed and lean iteration to do exactly that.)
@@ -119,6 +138,10 @@ Book a free 30‑minute strategy call
 [Book your call] [See live examples]
 
 Let’s chat, see if we’re the right fit for your project. In that call, we’ll discuss your idea, brainstorm solutions, and sketch out a quick action plan – whether or not you decide to work with us. It’s a risk-free way to get expert insight and a roadmap for turning your concept into a live product. Time-to-market is critical, so don’t wait months to get started – **grab a slot now** and let’s get your product moving!
+
+
+
+
 
 
 

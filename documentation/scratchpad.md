@@ -130,6 +130,123 @@ Further enhancements to the hero section for better visual hierarchy:
 
 **Development Status**: Running on http://localhost:3002
 
+### Phase 4: Recent Builds Section ✅
+Successfully implemented new section after hero to showcase AI-built projects and design background:
+
+1. **Step 3.1 - Section Structure & Intro** ✅:
+   - Created new component: src/components/sections/home/recent-builds-section.tsx
+   - Added section with proper spacing (py-16 md:py-32) matching other sections
+   - Implemented Hemingway-style intro text with ScrollView animation
+   - Added to homepage right after HeroSection
+
+2. **Step 3.2 - "Built with AI" Subsection** ✅:
+   - Added 3 AI project cards with content:
+     - Therapist AI Tool (Bot icon) - Built in 1 week
+     - Waitlist Platform (Sparkles icon) - Built in 2 days  
+     - Sunni Photo Concept (Camera icon) - Built in two weeks
+   - Using Card components for consistency
+   - All cards link to https://www.energyflow.studio/ (temporary)
+   - Staggered ScrollView animations for visual appeal
+
+3. **Step 3.3 - "Design Background" Subsection** ✅:
+   - Added 4 design role cards:
+     - Deep Work Studio (Building2 icon)
+     - Ethereum Foundation (Building2 icon)
+     - Ramp Network (Briefcase icon)
+     - Nexus Mutual (Building2 icon)
+   - Added "And many more..." footer text
+   - Same card styling as AI projects for consistency
+   - All cards link to https://www.energyflow.studio/ (temporary)
+
+4. **Step 3.4 - Responsive Layout & Polish** ✅:
+   - Applied consistent FCF8F4 background color to match hero cards
+   - Added subtle border-black/5 for card definition
+   - Implemented hover effects: shadow + subtle scale transform
+   - Adjusted spacing: tighter card gaps (space-y-3) for better density
+   - Responsive grid: single column mobile, two columns on lg screens
+   - Improved padding: content indented under icons (pl-11)
+   - Font hierarchy: base font for titles, sm for descriptions
+   - Tested responsive behavior across all breakpoints
+
+5. **Step 3.5 - Update Documentation** ✅:
+   - Updated step3-builds.md with completion status
+   - Documented all implementation decisions and changes
+
+**Files Modified**:
+- src/components/sections/home/recent-builds-section.tsx (new)
+- src/app/page.tsx (added RecentBuildsSection)
+- documentation/step3-builds.md (marked complete)
+- documentation/step8-updates.md (added link update task)
+
+**Design Decisions**:
+- Cards are clickable and open https://www.energyflow.studio/ in new tab
+- Using Lucide icons throughout
+- Two-column layout for desktop, stacking on mobile
+- Consistent styling with hero section cards (FCF8F4 background)
+
+### Recent Builds Cards Enhancement
+Further refinements to the Recent Builds section cards based on user feedback:
+
+1. **Visual Updates**:
+   - Changed background from FCF8F4 to pure white
+   - Moved icons to top with left alignment
+   - Increased icon size to h-6 w-6 for better visibility
+   - Reduced corner radius to 8px (rounded-lg)
+
+2. **Color System**:
+   - Each card has unique icon colors based on brand palette:
+     - AI Projects: #CDCBFF (purple), #E7BDD7 (pink), #FDA7A0 (coral)
+     - Design Roles: #B8D4E3 (light blue), #D4C5F9 (lavender), #FDBCB4 (peach), #F2C6DE (soft pink)
+
+3. **Interactive Elements**:
+   - Hover state shows "external link for demo" text with ExternalLink icon
+   - Cursor changes to alias (external link cursor) on hover
+   - Maintains scale animation on hover
+
+4. **Build Time Pills**:
+   - Converted "Built in X" text to rounded pills
+   - Background color matches icon color at 30% opacity
+   - Text color matches icon color for consistency
+   - Font weight increased to semibold
+
+**Files Modified**:
+- src/components/sections/home/recent-builds-section.tsx (enhanced styling)
+
+### Hover Image Preview Implementation
+Added interactive image previews to Recent Builds cards:
+
+1. **Desktop Hover Experience**:
+   - 300px wide preview images appear on hover
+   - Images follow mouse cursor with smooth transitions
+   - Positioned 20px below cursor, centered horizontally
+   - Z-index 9999 to appear above all elements
+   - Lazy loaded for performance
+
+2. **Image Mapping**:
+   - AI Projects:
+     - Therapist AI Tool → IFS Application (1).png
+     - Waitlist Platform → Waitlist.png
+     - Sunni Photo Concept → Sunni (1).png
+   - Design Background:
+     - Deep Work Studio → Deep Work Studio (2).png
+     - Ethereum Foundation → Ethereum Foundation.png
+     - Ramp Network → Ramp (1).png
+     - Nexus Mutual → Nexus Mutual.png
+
+3. **Mobile Affordance**:
+   - External link icon always visible on touch devices
+   - No hover previews on mobile (touch detection)
+   - Icon positioned top-right corner (h-4 w-4)
+
+4. **Technical Implementation**:
+   - Component converted to client-side ("use client")
+   - React state for hover tracking and mouse position
+   - Touch device detection using 'ontouchstart' and maxTouchPoints
+   - Next.js Image component for optimized loading
+
+**Files Modified**:
+- src/components/sections/home/recent-builds-section.tsx (added hover previews)
+
 ## Lessons
 - CONTRIBUTING.md defines core principles, roles, workflow, coding etiquette, secret handling, and project folder separation.
 - The assistant treats the CONTRIBUTING.md rules as persistent top-of-mind guidance and ensures responses comply, even if the file is not reread verbatim each time.
@@ -184,3 +301,46 @@ Currently reviewing step2-hero.md plan and preparing for implementation:
 - Confirmation on obtaining official tool logos (Cursor, OpenAI, Claude, reMarkable)
 
 **Next Steps**: Awaiting user input on questions before proceeding with Stage 1 implementation.
+
+### Phase 5: Post-Hero "Credo & Key Benefits" Section ✅
+Successfully implemented the Post-Hero section with Credo and Quick Wins components:
+
+1. **Step 4.1: Setup Prerequisites** ✅:
+   - Installed Shadcn Tooltip component via npx
+   - Installed Vanta.js and Three.js dependencies
+   - Created reusable VantaTrunk component wrapper
+   - Verified all Lucide icons (Zap, Target, Euro, Brush, Monitor, Scissors)
+
+2. **Step 4.2: Implement Credo Section** ✅:
+   - Created `<CredoSection>` component with Paul Graham quote
+   - Added founder's philosophy and solo practice messaging
+   - Styled with Tailwind (centered, italic quote, proper typography)
+   - Added to homepage after Hero, before Recent Builds
+
+3. **Step 4.3: Implement Quick Wins Section** ✅:
+   - Created `<QuickWinsSection>` component with 6 benefits grid
+   - Implemented icon + label layout with Lucide icons
+   - Added Tooltip functionality for desktop hover
+   - Implemented mobile-friendly solution (always visible descriptions on mobile)
+   - Added to homepage after Credo section
+
+4. **Step 4.4: Polish and Integration** ✅:
+   - Integrated Vanta Trunk animation into Credo section (desktop only)
+   - Two-column layout on desktop, single column on mobile
+   - Performance optimized: trunk only shows on desktop with good hardware
+   - Enhanced mobile experience: benefits show descriptions without tooltips
+   - Added hover effects and smooth transitions
+
+**Files Created/Modified**:
+- src/components/vanta-trunk.tsx (new - reusable Vanta wrapper)
+- src/components/sections/home/credo-section.tsx (new)
+- src/components/sections/home/quick-wins-section.tsx (new)
+- src/app/page.tsx (added both new sections)
+
+**Design Decisions**:
+- Vanta Trunk animation only renders on desktop with 4+ CPU cores for performance
+- Mobile users see benefit descriptions always visible in card format
+- Desktop users get clean icon grid with tooltips on hover
+- Used dynamic imports for Vanta to avoid SSR issues
+
+**Development Status**: Running on http://localhost:3002 (or appropriate port)

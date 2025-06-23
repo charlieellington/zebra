@@ -4,8 +4,9 @@
 
 # Should haves: 
 
-- Create an examples/portfolio section to showcase work (needed for "View examples" button in hero)
-- Update tool logos (Cursor, OpenAI, Claude, reMarkable) to high-quality official SVG versions
+- Create an examples/portfolio section to showcase work (for "View examples" button)
+- Update tool logos to high-quality official SVG versions
+- Update Recent Builds section links to point to actual project pages instead of https://www.energyflow.studio/
 
 # Could haves: 
 
