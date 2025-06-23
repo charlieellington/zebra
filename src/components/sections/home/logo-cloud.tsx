@@ -1,5 +1,4 @@
 import { InfiniteSlider } from "@/components/motion-primitives/infinite-slider";
-import { CursorLogo, OpenAILogo, ClaudeLogo, RemarkableLogo } from "@/components/tool-logos";
 
 export default function LogoCloud() {
   return (
@@ -8,25 +7,25 @@ export default function LogoCloud() {
         <div className="flex flex-col items-center md:flex-row">
           <div className="md:max-w-44 md:border-r md:pr-6">
             <p className="text-end text-sm hidden xl:block">
-              Tools we use
+              Powered by the best tools
             </p>
           </div>
           <div className="relative py-6 md:w-[calc(100%-11rem)]">
             <InfiniteSlider speedOnHover={20} speed={40} gap={100}>
               <div className="flex items-center">
-                <CursorLogo className="h-10 w-auto" />
+                <span className="text-lg font-medium text-muted-foreground">Cursor</span>
               </div>
 
               <div className="flex items-center">
-                <OpenAILogo className="h-10 w-auto" />
+                <span className="text-lg font-medium text-muted-foreground">OpenAI</span>
               </div>
               
               <div className="flex items-center">
-                <ClaudeLogo className="h-10 w-auto" />
+                <span className="text-lg font-medium text-muted-foreground">Claude</span>
               </div>
               
               <div className="flex items-center">
-                <RemarkableLogo className="h-10 w-auto" />
+                <span className="text-lg font-medium text-muted-foreground">reMarkable</span>
               </div>
             </InfiniteSlider>
 

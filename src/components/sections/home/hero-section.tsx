@@ -1,6 +1,6 @@
 import React from "react";
 import Link from "next/link";
-import { ArrowRight } from "lucide-react";
+import { ArrowRight, Zap, Code2, Users, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
 
 import { TextEffect } from "@/components/motion-primitives/text-effect";
@@ -60,7 +60,7 @@ export default function HeroSection() {
               }}
               className="absolute inset-0 -z-20"
             >
-              <div className="h-screen xl:h-auto absolute inset-2 -z-10 overflow-hidden rounded-3xl border border-black/10 lg:aspect-video lg:rounded-[3rem] dark:border-white/5">
+              <div className="h-screen xl:h-auto absolute inset-2 -z-10 overflow-hidden rounded-xl border border-black/10 lg:aspect-video dark:border-white/5">
                 <video
                   autoPlay
                   loop
@@ -119,12 +119,24 @@ export default function HeroSection() {
                   }}
                   className="mt-8 flex justify-center"
                 >
-                  <ul className="text-left max-w-2xl space-y-3 list-disc list-inside text-base md:text-lg md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-2 md:space-y-0">
-                    <li>Idea → tested product in weeks, not months</li>
-                    <li>I handle both design and development</li>
-                    <li>Made for startup founders, SMEs, and product teams</li>
-                    <li>A design-as-a-service model to design and develop your app lightning-fast</li>
-                  </ul>
+                  <div className="text-left max-w-2xl space-y-4 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-4 md:space-y-0">
+                    <div className="flex items-start gap-3">
+                      <Zap className="text-muted-foreground mt-1 flex-shrink-0" size={20} />
+                      <span className="text-base md:text-lg">Idea → tested product in weeks, not months</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Code2 className="text-muted-foreground mt-1 flex-shrink-0" size={20} />
+                      <span className="text-base md:text-lg">I handle both design and development</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Users className="text-muted-foreground mt-1 flex-shrink-0" size={20} />
+                      <span className="text-base md:text-lg">Made for startup founders, SMEs, and product teams</span>
+                    </div>
+                    <div className="flex items-start gap-3">
+                      <Rocket className="text-muted-foreground mt-1 flex-shrink-0" size={20} />
+                      <span className="text-base md:text-lg">A design-as-a-service model to design and develop your app lightning-fast</span>
+                    </div>
+                  </div>
                 </AnimatedGroup>
 
                 <AnimatedGroup
