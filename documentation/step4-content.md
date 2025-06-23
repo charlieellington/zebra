@@ -2,46 +2,39 @@
 
 ### Identified Issues
 1. **"TypeError: l is not a constructor"** - Vanta expects Three.js to be available globally, but we're importing it as ES modules
-2. **"removeChild" error** - Cleanup issues when component unmounts due to effect dependencies
+2. **"removeChild" error** - Persistent cleanup issues when component unmounts, even with improved cleanup
 
 ### Root Cause
-Vanta.js is an older library that expects Three.js to be available on the window object, not imported as ES modules. Additionally, our useEffect has dependencies that can cause re-initialization.
+Vanta.js is an older library that has compatibility issues with modern React and Next.js, particularly around cleanup and DOM manipulation.
 
-### Fix Implementation ✅
-1. **Fixed Three.js Import**
-   - Attached Three.js to window object before initializing Vanta
-   - Used dynamic import for Vanta to ensure proper load order
+### Implemented Solution ✅
+Due to persistent Vanta issues, we implemented a **pure CSS/SVG tree pattern** as the primary solution:
 
-2. **Fixed useEffect Dependencies**
-   - Removed all prop dependencies to prevent re-initialization
-   - Added proper cleanup checks to verify element exists
+1. **Created CSS Tree Pattern Component** (`src/components/css-tree-pattern.tsx`)
+   - Pure CSS/SVG implementation with no external dependencies
+   - Animated branches using CSS animations
+   - Floating dots for visual interest
+   - Lightweight and performant
 
-3. **Added Loading State**
-   - Added spinner while Vanta loads
-   - Gray background placeholder during initialization
+2. **Set CSS Pattern as Default**
+   - Added `USE_CSS_PATTERN = true` flag in credo-section.tsx
+   - Vanta code remains but is disabled by default
+   - Can easily switch back by changing the flag
 
-### CSS Alternative (If Vanta Issues Persist)
-```tsx
-// Pure CSS animated trunk pattern
-export function CSSTreePattern({ className = "" }) {
-  return (
-    <div className={`relative overflow-hidden ${className}`}>
-      <svg viewBox="0 0 300 300" className="w-full h-full">
-        <defs>
-          <pattern id="trunk-pattern" x="0" y="0" width="50" height="50" patternUnits="userSpaceOnUse">
-            <path d="M25 0 L25 50 M25 25 L10 10 M25 25 L40 10" 
-                  stroke="currentColor" 
-                  strokeWidth="0.5" 
-                  fill="none"
-                  className="animate-pulse" />
-          </pattern>
-        </defs>
-        <rect width="300" height="300" fill="url(#trunk-pattern)" />
-      </svg>
-    </div>
-  );
-}
-```
+3. **Benefits of CSS Solution**
+   - No cleanup issues or errors
+   - Better performance (no Three.js overhead)
+   - Consistent rendering across all devices
+   - Easier to customize and maintain
+
+### CSS Pattern Features
+- Repeating SVG pattern with trunk and branches
+- Subtle pulse animations on branches with delays
+- Gradient overlay for depth
+- Floating dot animations
+- Fully responsive and accessible
+
+The CSS pattern provides a similar aesthetic to Vanta's trunk effect while being much more stable and performant.
 
 ---
 
