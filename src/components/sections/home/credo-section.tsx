@@ -4,20 +4,27 @@ import { ScrollView } from "@/components/scroll-view";
 import dynamic from "next/dynamic";
 import { useEffect, useState } from "react";
 
-// Dynamic import to avoid SSR issues with Vanta
+// Dynamic imports to avoid SSR issues
 const VantaTrunk = dynamic(() => import("@/components/vanta-trunk"), {
   ssr: false,
 });
 
+const CSSTreePattern = dynamic(() => import("@/components/css-tree-pattern"), {
+  ssr: false,
+});
+
+// Set this to true to use CSS pattern instead of Vanta
+const USE_CSS_PATTERN = true;
+
 export default function CredoSection() {
-  const [showTrunk, setShowTrunk] = useState(false);
+  const [showAnimation, setShowAnimation] = useState(false);
 
   useEffect(() => {
     // Check if we're on desktop and not on a low-powered device
     const isDesktop = window.innerWidth >= 768;
     const hasGoodPerformance = !navigator.hardwareConcurrency || navigator.hardwareConcurrency >= 4;
     
-    setShowTrunk(isDesktop && hasGoodPerformance);
+    setShowAnimation(isDesktop && hasGoodPerformance);
   }, []);
 
   return (
@@ -56,16 +63,24 @@ export default function CredoSection() {
             </ScrollView>
           </div>
 
-          {/* Vanta Trunk animation */}
-          {showTrunk && (
+          {/* Animation - CSS Pattern or Vanta */}
+          {showAnimation && (
             <ScrollView delay={0.3}>
               <div className="mt-8 md:mt-0 flex justify-center">
-                <VantaTrunk
-                  width={300}
-                  height={300}
-                  chaos={1.0}
-                  className="rounded-lg"
-                />
+                {USE_CSS_PATTERN ? (
+                  <CSSTreePattern
+                    width={300}
+                    height={300}
+                    className="rounded-lg shadow-sm"
+                  />
+                ) : (
+                  <VantaTrunk
+                    width={300}
+                    height={300}
+                    chaos={1.0}
+                    className="rounded-lg"
+                  />
+                )}
               </div>
             </ScrollView>
           )}

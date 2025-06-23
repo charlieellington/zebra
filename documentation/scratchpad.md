@@ -347,3 +347,20 @@ Successfully implemented the Post-Hero section with Credo and Quick Wins compone
 - Used dynamic imports for Vanta to avoid SSR issues
 
 **Development Status**: Running on http://localhost:3002 (or appropriate port)
+
+### Vanta.js Error Fix ✅
+Resolved initialization and cleanup errors in Vanta Trunk animation:
+
+1. **Issue**: "TypeError: l is not a constructor" - Vanta couldn't find Three.js
+2. **Issue**: "removeChild" errors during component cleanup
+
+**Solution Implemented**:
+- Attached Three.js to window object for global access
+- Used dynamic import for Vanta to ensure proper load order  
+- Removed useEffect dependencies to prevent re-initialization
+- Added proper cleanup checks with error handling
+- Added loading spinner while Vanta initializes
+
+**Commit**: 4c6613a - "fix: resolve Vanta.js initialization and cleanup errors"
+
+If issues persist, a pure CSS/SVG alternative is documented in step4-content.md.

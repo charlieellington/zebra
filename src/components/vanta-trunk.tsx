@@ -25,54 +25,89 @@ export default function VantaTrunk({
   const vantaRef = useRef<HTMLDivElement>(null);
   const vantaEffect = useRef<any>(null);
   const [vantaLoaded, setVantaLoaded] = useState(false);
+  const mounted = useRef(true);
 
   useEffect(() => {
+    mounted.current = true;
+    
     // Make THREE available globally for Vanta
     if (typeof window !== "undefined") {
       (window as any).THREE = THREE;
     }
 
-    // Dynamically import Vanta after THREE is available
-    import("vanta/dist/vanta.trunk.min").then((VANTA) => {
-      setVantaLoaded(true);
-      
-      if (!vantaRef.current) return;
+    let timeoutId: NodeJS.Timeout;
 
+    // Dynamically import Vanta after THREE is available
+    const initVanta = async () => {
       try {
-        vantaEffect.current = VANTA.default({
-          el: vantaRef.current,
-          THREE: THREE,
-          mouseControls: false,
-          touchControls: false,
-          gyroControls: false,
-          minHeight: height,
-          minWidth: width,
-          scale: 1.0,
-          scaleMobile: 1.0,
-          color: color,
-          backgroundColor: backgroundColor,
-          chaos: chaos,
-          spacing: 10,
-        });
+        const VANTA = await import("vanta/dist/vanta.trunk.min");
+        
+        // Check if component is still mounted
+        if (!mounted.current || !vantaRef.current) return;
+        
+        setVantaLoaded(true);
+
+        // Small delay to ensure DOM is ready
+        timeoutId = setTimeout(() => {
+          if (!mounted.current || !vantaRef.current) return;
+
+          try {
+            vantaEffect.current = VANTA.default({
+              el: vantaRef.current,
+              THREE: THREE,
+              mouseControls: false,
+              touchControls: false,
+              gyroControls: false,
+              minHeight: height,
+              minWidth: width,
+              scale: 1.0,
+              scaleMobile: 1.0,
+              color: color,
+              backgroundColor: backgroundColor,
+              chaos: chaos,
+              spacing: 10,
+            });
+          } catch (error) {
+            console.error("Error initializing Vanta Trunk:", error);
+          }
+        }, 100);
       } catch (error) {
-        console.error("Error initializing Vanta Trunk:", error);
+        console.error("Error loading Vanta:", error);
       }
-    });
+    };
+
+    initVanta();
 
     // Cleanup function
     return () => {
-      if (vantaEffect.current) {
-        try {
-          // Check if the element still exists before destroying
-          if (vantaRef.current && vantaEffect.current.destroy) {
-            vantaEffect.current.destroy();
-          }
-        } catch (error) {
-          console.error("Error destroying Vanta effect:", error);
-        }
-        vantaEffect.current = null;
+      mounted.current = false;
+      
+      if (timeoutId) {
+        clearTimeout(timeoutId);
       }
-      if (onDestroy) onDestroy();
+
+      // Delay cleanup to avoid race conditions
+      setTimeout(() => {
+        if (vantaEffect.current) {
+          try {
+            // Override the destroy method to prevent errors
+            const renderer = vantaEffect.current.renderer;
+            if (renderer && renderer.domElement && renderer.domElement.parentNode) {
+              renderer.domElement.parentNode.removeChild(renderer.domElement);
+            }
+            
+            // Clear the effect without calling destroy
+            vantaEffect.current.renderer = null;
+            vantaEffect.current.scene = null;
+            vantaEffect.current.camera = null;
+            vantaEffect.current = null;
+          } catch (error) {
+            // Silently fail - element already removed
+          }
+        }
+        
+        if (onDestroy) onDestroy();
+      }, 0);
     };
   }, []); // Empty dependency array to prevent re-initialization
 
