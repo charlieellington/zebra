@@ -4,11 +4,34 @@ import Link from "next/link";
 import { motion } from "motion/react";
 import { ScrollView } from "./scroll-view";
 import { FOOTER_LINKS } from "@/content/footer";
+import VantaTrunk from "@/components/vanta-trunk";
+import { useEffect, useState } from "react";
 
 export default function FooterSection() {
+  const [isMounted, setIsMounted] = useState(false);
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
+
   return (
-    <footer className="py-16 md:py-32">
-      <div className="mx-auto max-w-5xl px-6">
+    <footer className="py-16 md:py-32 relative overflow-hidden">
+      {/* Subtle Vanta animation as background - only on larger screens */}
+      {isMounted && (
+        <div className="absolute inset-0 hidden md:block opacity-30">
+          <VantaTrunk 
+            chaos={0.2}
+            spacing={15}
+            color={0x494868}
+            backgroundColor={0xFAFAFA}
+            width="100%"
+            height="100%"
+          />
+        </div>
+      )}
+      
+      {/* Footer content with relative positioning to stay above Vanta */}
+      <div className="mx-auto max-w-5xl px-6 relative z-10">
         <ScrollView>
           <Link
             href="/"
