@@ -2,6 +2,11 @@
 
 import { ScrollView } from "@/components/scroll-view";
 import Image from "next/image";
+import { 
+  Tooltip, 
+  TooltipContent, 
+  TooltipTrigger 
+} from "@/components/ui/tooltip";
 
 export default function CredoSection() {
   return (
@@ -11,7 +16,7 @@ export default function CredoSection() {
           <ScrollView>
             <blockquote className="space-y-4 text-center">
               <p className="text-base md:text-lg italic leading-relaxed text-balance">
-                "Only hire people who either write code or go out and get users."
+                &ldquo;Only hire people who either write code or go out and get users.&rdquo;
               </p>
               <cite className="flex flex-wrap items-center justify-center gap-2 text-sm not-italic text-muted-foreground">
                 <Image
@@ -49,7 +54,7 @@ export default function CredoSection() {
           <ScrollView delay={0.1}>
             <div className="mt-16 space-y-4 text-center">
               <p className="text-lg md:text-xl italic leading-relaxed text-balance">
-                "This is the principle I've based Zebra Design on: ship working code, talk to users, design, code more and results"
+                &ldquo;This is the principle I&apos;ve based Zebra Design on: ship working code, talk to users, design, code more and results&rdquo;
               </p>
               <cite className="flex items-center justify-center gap-2 text-sm md:text-base not-italic text-muted-foreground whitespace-nowrap">
                 <Image
@@ -59,7 +64,25 @@ export default function CredoSection() {
                   height={32}
                   className="rounded-full object-cover"
                 />
-                <span>— Charlie Ellington · Zebra Design is my solo practice — no middle managers, you work directly with me.</span>
+                <span className="flex items-center gap-1 flex-wrap justify-center">
+                  <span>—</span>
+                  <span>Charlie Ellington</span>
+                  <span>·</span>
+                  <span>Solo designer-developer</span>
+                  <span>·</span>
+                  <Tooltip>
+                    <TooltipTrigger asChild>
+                      <span className="underline decoration-dotted underline-offset-2 cursor-help">One launch client at a time</span>
+                    </TooltipTrigger>
+                    <TooltipContent className="max-w-xs text-sm">
+                      <p>Right now I take on one launch client at a time so every build gets my full focus. I'll scale with hand-picked collaborators only when it improves outcomes.</p>
+                    </TooltipContent>
+                  </Tooltip>
+                  <span>·</span>
+                  <span>No middle managers</span>
+                  <span>—</span>
+                  <span>you work directly with me.</span>
+                </span>
               </cite>
             </div>
           </ScrollView>

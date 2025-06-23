@@ -86,7 +86,22 @@ export const HeroHeader = () => {
                   </ul>
                 </div>
                 <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
-                  {/* Removed all buttons to keep header clean */}
+                  {/* Desktop button - hidden on mobile, shown on desktop */}
+                  <div className="hidden lg:block">
+                    <Button asChild size="sm">
+                      <Link href="https://cal.com/charlieellington/zebra-call" target="_blank" rel="noopener noreferrer">
+                        Book a call with Charlie
+                      </Link>
+                    </Button>
+                  </div>
+                  {/* Mobile button - shown only when mobile menu is open */}
+                  <div className="block lg:hidden">
+                    <Button asChild size="default" className="w-full">
+                      <Link href="https://cal.com/charlieellington/zebra-call" target="_blank" rel="noopener noreferrer">
+                        Book a call with Charlie
+                      </Link>
+                    </Button>
+                  </div>
                 </div>
               </div>
             </div>

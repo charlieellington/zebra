@@ -1,4 +1,5 @@
 import { InfiniteSlider } from "@/components/motion-primitives/infinite-slider";
+import Image from "next/image";
 
 export default function LogoCloud() {
   return (
@@ -10,22 +11,56 @@ export default function LogoCloud() {
               Powered by the best tools
             </p>
           </div>
-          <div className="relative w-full py-4 md:py-6 md:w-[calc(100%-11rem)]">
+          <div className="relative w-full overflow-hidden py-4 md:py-6 md:w-[calc(100%-11rem)]">
             <InfiniteSlider speedOnHover={20} speed={40} gap={100}>
               <div className="flex items-center">
-                <span className="text-lg font-medium text-muted-foreground">Cursor</span>
+                <Image
+                  src="/images/tools/cursor.png"
+                  alt="Cursor"
+                  width={120}
+                  height={40}
+                  className="h-8 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                />
               </div>
 
               <div className="flex items-center">
-                <span className="text-lg font-medium text-muted-foreground">OpenAI</span>
+                <Image
+                  src="/images/tools/OpenAI_Logo.svg 1.png"
+                  alt="OpenAI"
+                  width={120}
+                  height={40}
+                  className="h-8 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                />
               </div>
               
               <div className="flex items-center">
-                <span className="text-lg font-medium text-muted-foreground">Claude</span>
+                <Image
+                  src="/images/tools/Claude_AI_logo.svg 1.png"
+                  alt="Claude"
+                  width={120}
+                  height={40}
+                  className="h-8 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                />
               </div>
               
               <div className="flex items-center">
-                <span className="text-lg font-medium text-muted-foreground">reMarkable</span>
+                <Image
+                  src="/images/tools/reMarkable-Logo-New 1.png"
+                  alt="reMarkable"
+                  width={120}
+                  height={40}
+                  className="h-8 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                />
+              </div>
+              
+              <div className="flex items-center">
+                <Image
+                  src="/images/tools/figma-vector-logo 1.png"
+                  alt="Figma"
+                  width={120}
+                  height={40}
+                  className="h-8 w-auto object-contain grayscale opacity-70 hover:grayscale-0 hover:opacity-100 transition-all duration-300"
+                />
               </div>
             </InfiniteSlider>
 

@@ -1,3 +1,5 @@
+"use client";
+
 import React from "react";
 import Link from "next/link";
 import { ArrowRight, Zap, Code2, Users, Rocket } from "lucide-react";
@@ -6,6 +8,7 @@ import { Button } from "@/components/ui/button";
 import { TextEffect } from "@/components/motion-primitives/text-effect";
 import { AnimatedGroup } from "@/components/motion-primitives/animated-group";
 import LogoCloud from "@/components/sections/home/logo-cloud";
+import Script from "next/script";
 
 const transitionVariants = {
   item: {
@@ -28,10 +31,68 @@ const transitionVariants = {
 };
 
 export default function HeroSection() {
+  const [vantaEffect, setVantaEffect] = React.useState<any>(null);
+  const vantaRef = React.useRef<HTMLDivElement>(null);
+
+  React.useEffect(() => {
+    if (!vantaEffect && vantaRef.current && (window as any).VANTA) {
+      setVantaEffect(
+        (window as any).VANTA.FOG({
+          el: vantaRef.current,
+          mouseControls: true,
+          touchControls: true,
+          gyroControls: false,
+          minHeight: 200.0,
+          minWidth: 200.0,
+          highlightColor: 0xe7bdd7,
+          midtoneColor: 0xcdcbff,
+          lowlightColor: 0xfda7a0,
+          baseColor: 0xffffff,
+          blurFactor: 0.48,
+          speed: 0.9,
+          zoom: 0.7,
+        })
+      );
+    }
+    return () => {
+      if (vantaEffect) vantaEffect.destroy();
+    };
+  }, [vantaEffect]);
+
   return (
     <>
-      <div className="overflow-hidden min-h-screen">
-        <section>
+      <Script
+        src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r134/three.min.js"
+        strategy="beforeInteractive"
+      />
+      <Script
+        src="https://cdn.jsdelivr.net/npm/vanta@latest/dist/vanta.fog.min.js"
+        strategy="afterInteractive"
+        onLoad={() => {
+          // Trigger effect initialization after script loads
+          if (vantaRef.current && (window as any).VANTA) {
+            setVantaEffect(
+              (window as any).VANTA.FOG({
+                el: vantaRef.current,
+                mouseControls: true,
+                touchControls: true,
+                gyroControls: false,
+                minHeight: 200.0,
+                minWidth: 200.0,
+                highlightColor: 0xe7bdd7,
+                midtoneColor: 0xcdcbff,
+                lowlightColor: 0xfda7a0,
+                baseColor: 0xffffff,
+                blurFactor: 0.48,
+                speed: 0.9,
+                zoom: 0.7,
+              })
+            );
+          }
+        }}
+      />
+      <div className="overflow-hidden">
+        <section className="pb-16 md:pb-20 lg:pb-24">
           <div className="relative pt-8 md:pt-12 lg:pt-16">
             <AnimatedGroup
               variants={{
@@ -61,15 +122,10 @@ export default function HeroSection() {
               className="absolute inset-0 -z-20"
             >
               <div className="h-screen xl:h-auto absolute inset-2 -z-10 overflow-hidden rounded-xl border border-black/10 lg:aspect-video dark:border-white/5">
-                <video
-                  autoPlay
-                  loop
-                  muted
-                  preload="auto"
-                  className="size-full -scale-x-100 object-cover opacity-50 invert-0 dark:opacity-35 dark:invert "
-                >
-                  <source src="/hero-light.mp4" type="video/mp4" />
-                </video>
+                <div
+                  ref={vantaRef}
+                  className="size-full object-cover opacity-90 dark:opacity-35"
+                />
               </div>
             </AnimatedGroup>
 
@@ -151,10 +207,11 @@ export default function HeroSection() {
                     <Button
                       asChild
                       size="lg"
-                      className="rounded-xl px-5 text-base"
+                      variant="default"
+                      className="rounded-xl px-5 text-base bg-black text-white hover:bg-black/90"
                     >
                       <Link href="https://cal.com/charlieellington/zebra-call" target="_blank">
-                        <span className="text-nowrap">Book intro call</span>
+                        <span className="text-nowrap">Book a call with Charlie</span>
                       </Link>
                     </Button>
                   </div>
@@ -165,7 +222,7 @@ export default function HeroSection() {
                     variant="ghost"
                     className="h-10.5 rounded-xl px-5"
                   >
-                    <Link href="#services">
+                    <Link href="#recent-builds">
                       <span className="text-nowrap">View examples</span>
                     </Link>
                   </Button>

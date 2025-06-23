@@ -55,8 +55,8 @@ Successfully executed hero section enhancements:
    - Added 4 key bullet points with responsive 2-column grid on desktop
 
 2. **Stage 2 - CTAs**: 
-   - Changed primary CTA to "Book intro call" with Cal.com link
-   - Changed secondary CTA to "View examples" (temporarily linking to #services)
+   - Changed primary CTA to "Book a call with Charlie" with Cal.com link
+   - Changed secondary CTA to "View examples" (temporarily linking to #recent-builds)
    - Cal.com URL: https://cal.com/charlieellington/zebra-call
 
 3. **Stage 3 - Tool Logos**: 
@@ -77,7 +77,7 @@ Successfully executed hero section enhancements:
 - src/components/tool-logos.tsx (new file)
 
 **Notes**: 
-- "View examples" button currently links to #services section since examples section doesn't exist yet
+- "View examples" button currently links to #recent-builds section since examples section doesn't exist yet
 - This task has been added to documentation/step8-updates.md for future implementation
 - All tool logos are simplified SVG versions in black for consistency
 
@@ -259,6 +259,23 @@ Improved the section with first-person Hemingway style copy and expandable text 
 - src/components/contact.tsx (removed shadow)
 - src/components/sections/home/full-version-section.tsx (removed shadow)
 
+### Build Cards Link Updates
+Updated the Design Background cards to link to the correct external websites:
+
+1. **Link Mapping**:
+   - Deep Work Studio → https://www.deepwork.network/case-studies
+   - Ethereum Foundation → https://www.investopedia.com/ethereum-2-0-6455959
+   - Ramp Network → https://ramp.network/blog/ramp-network-closes-70m-series-b-round
+   - Nexus Mutual → https://nexusmutual.io/
+
+2. **Implementation**:
+   - Added `url` property to each item in the `designRoles` array
+   - Updated Link component to use `role.url` instead of hardcoded energyflow.studio link
+   - All links open in new tab with security attributes (target="_blank", rel="noopener noreferrer")
+
+**Files Modified**:
+- src/components/sections/home/recent-builds-section.tsx (updated URLs)
+
 ### Fixed Responsive Layout Issue - Header and Logo Cloud Overlap
 Resolved an issue where the "Powered by the best tools" section was overlapping with the header at certain screen widths:
 
@@ -284,6 +301,24 @@ Resolved an issue where the "Powered by the best tools" section was overlapping 
 - src/components/sections/home/logo-cloud.tsx (improved responsive text visibility)
 
 **Result**: The header and content sections now maintain proper spacing at all viewport widths, preventing any overlap issues.
+
+### Expandable Text Animation Enhancement ✅
+Added smooth easing and transitions to the expandable text sections in Recent Builds:
+
+1. **Implementation Details**:
+   - Added Framer Motion (motion/react) for smooth height animations
+   - Intro section: Animates from 1.5rem height to auto with gradient overlay
+   - Outro section: Animates from 0px to auto with opacity fade
+   - Custom easing function [0.4, 0.0, 0.2, 1] for natural movement
+   - 0.5s duration for smooth but responsive feel
+
+2. **Visual Improvements**:
+   - Intro has a gradient overlay when collapsed for visual continuity
+   - Outro smoothly fades in/out with height animation
+   - Both sections now feel more polished and less abrupt
+
+**Files Modified**:
+- src/components/sections/home/recent-builds-section.tsx (added motion animations)
 
 ## Lessons
 - CONTRIBUTING.md defines core principles, roles, workflow, coding etiquette, secret handling, and project folder separation.
@@ -430,79 +465,107 @@ Successfully removed shadows from cards throughout the site and replaced with cl
    - Full Version section card: removed shadow-xl
    - Floating image preview: updated border styling
 
-### Quick Wins Section - Colorful Tooltips Enhancement
-Successfully enhanced the Quick Wins section with colorful tooltips and icon backgrounds:
+### Quick Wins Section - Enhanced Tooltips with Full Copy ✅
+Successfully enhanced the Quick Wins section with comprehensive tooltip content:
 
-1. **Added unique colors to each benefit**:
-   - Speed: #CDCBFF (Light purple/lavender)
-   - Validation: #E7BDD7 (Light pink)
-   - Flat Price: #FDA7A0 (Light coral/salmon)
-   - Quality Design: #FFE4B5 (Light peach)
-   - Full-Stack: #B8E8D4 (Light mint green)
-   - Cancel Anytime: #FFDAB9 (Light apricot)
+1. **Added full descriptions for desktop tooltips**:
+   - Speed: "Go from idea to a clickable, working product in 2–4 weeks. We move at breakneck speed to get a usable app in front of your users ASAP."
+   - Validation: "Every cycle includes user testing, so you know each iteration hits the mark before doubling down. It's built-in validation to de-risk your big ideas."
+   - Flat Price: "One flat monthly fee covers all design and development – no hourly rates or surprise change orders. Unlimited requests (handled one at a time for quality). Plus, you can pause or cancel whenever you need."
+   - Quality Design: "Enjoy beautiful, consistent UI using proven libraries and design systems. We prioritise a great user experience and fast delivery over any ego-driven from-scratch designs that slow you down."
+   - Full-Stack: "Need a backend or integrations? No problem. We handle front-end and back-end development as needed to deliver a complete, working product – not just a pretty prototype."
+   - Cancel Anytime: "When we deliver the value you need based on the Agile 'Money for Nothing' Principle."
 
-2. **Applied colors to both mobile and desktop views**:
-   - Icon backgrounds use the color at 25% opacity (40 in hex)
-   - Icons themselves use the full color
-   - Desktop tooltips have matching background color (same 25% opacity as icon background)
-   - Tooltip arrow/diamond uses the full color (matching the icon color)
-   - Added subtle shadow at 2% opacity for depth without heaviness
-   - Dark text (#1a1a1a) for contrast on light backgrounds
+2. **Mobile experience maintains shorter versions**:
+   - Shorter descriptions are displayed directly under each icon on mobile
+   - Full descriptions appear only in desktop tooltips
+   - Responsive behavior detects screen size and switches accordingly
 
-3. **Enhanced hover effects**:
-   - Icons and containers scale up to 110% on hover (from 105%)
-   - Icon size increases from 5x5 to 6x6 on hover
-   - Container gets additional scale effect for emphasis
-   - Very light shadow (2% opacity) appears on hover
-   - Smooth transitions for all effects
+3. **Implementation details**:
+   - Added `fullDescription` field to each benefit object
+   - Desktop tooltips now display the full description
+   - Mobile view continues to show the concise description
+   - Maintained existing colorful tooltip styling with matching backgrounds
 
-4. **Technical implementation**:
-   - Used TooltipPrimitive components for custom arrow styling
-   - Dynamic inline styles for color customization
-   - Maintained accessibility and animation standards
+### Launch Process Section Width Enhancement ✅
+Successfully made the "Launch in weeks, not months" section wider on large desktops:
 
-**Files Modified**:
-- src/components/sections/home/quick-wins-section.tsx (enhanced hover effects and tooltip styling)
+1. **Changes Made**:
+   - Updated container from fixed `max-w-3xl` to responsive widths
+   - Mobile/Tablet: Maintains `max-w-3xl` (768px)
+   - Large screens: Expands to `lg:max-w-5xl` (1024px)
+   - Extra large screens: Expands to `xl:max-w-6xl` (1152px)
 
-### Credo Section SVG Logo Fix
-Fixed Y Combinator logo compression issue:
-
-1. **Updated SVG viewBox**:
-   - Changed from compressed viewBox (0 0 120 60) to square (0 0 256 256)
-   - Logo now displays with proper proportions
-   - Based on the Wikimedia Commons version for better compatibility
-
-2. **Maintained styling**:
-   - Logo still sized to h-4 (16px height) with auto width
-   - Official Y Combinator color (#f26625) preserved
-   - Displays correctly inline with text
+2. **Result**:
+   - Section now has more breathing room on large desktops
+   - Content remains centered but with more spacious feel
+   - Responsive scaling maintains readability on all devices
 
 **Files Modified**:
-- src/components/sections/home/credo-section.tsx (fixed SVG viewBox)
+- src/components/sections/home/launch-process-section.tsx (responsive max-width)
 
-### Credo Section - Added Charlie Ellington Quote
-Enhanced the Credo section with a second quote from Charlie:
+### Navigation Update - Services to Case Studies ✅
+Successfully updated the header and footer navigation:
 
-1. **Added founder's principle quote**:
-   - New bold text: "This is the principle I've based Zebra Design on: ship working code, talk to users, design, code more and results"
-   - Styled with font-semibold for emphasis
-   - Same text size as Paul Graham quote (text-base/lg)
+1. **Changes Made**:
+   - Replaced "Services" with "Case Studies" in both header and footer navigation
+   - Updated href from "#services" to "/#recent-builds"
+   - Links now point to the "Founder-led. Design-centric. Outcome-driven." section
 
-2. **Charlie Ellington photo and attribution**:
-   - Added Charlie's photo (24x24px circular) matching Paul Graham's style
-   - Attribution formatted as citation with name and tagline
-   - Uses middot (·) separator for cleaner flow
-   - "Zebra Design is my solo practice — no middle managers, you work directly with me."
+2. **Files Modified**:
+   - src/content/nav.ts - Updated NAV_LINKS array
+   - src/content/footer.ts - Updated FOOTER_LINKS array
 
-3. **Layout improvements**:
-   - Increased spacing between quotes (mt-12 instead of mt-6)
-   - Both quotes styled consistently with centered text
-   - Responsive sizing maintained across all devices
+3. **Result**:
+   - "Case Studies" link in navigation now scrolls to the Recent Builds section
+   - Consistent naming between header and footer navigation
+   - Links directly to the section showcasing AI-built projects and design background
+   - "View examples" button in hero section also updated to link to #recent-builds
+
+### CTA Button Text Update - "Book a call with Charlie" ✅
+Successfully updated all booking button text across the site:
+
+1. **Changes Made**:
+   - Updated header buttons (desktop and mobile): "Book intro call" → "Book a call with Charlie"
+   - Updated hero section CTA: "Book intro call" → "Book a call with Charlie"
+   - Updated pricing summary CTA: "Book a Call" → "Book a call with Charlie"
+   - Updated final CTA section: "Book your call" → "Book a call with Charlie"
+
+2. **Files Modified**:
+   - src/components/header.tsx - Both desktop and mobile button instances
+   - src/components/sections/home/hero-section.tsx - Primary CTA button
+   - src/components/sections/pricing/pricing-summary-section.tsx - Pricing page CTA
+   - src/components/sections/home/final-cta-section.tsx - Homepage final CTA
+
+3. **Result**:
+   - Consistent booking button text across entire site
+   - Personalizes the call booking experience with Charlie's name
+   - Maintains same Cal.com booking URL (https://cal.com/charlieellington/zebra-call)
+
+**Note**: The About page button "Let's talk about your project" was intentionally left unchanged as it has specific context for that page.
+
+### Credo Section - Tooltip Enhancement ✅
+Successfully added a tooltip to the "One launch client at a time" text in the credo section:
+
+1. **Text Update**:
+   - Changed text structure to: "— Charlie Ellington · Solo designer-developer · One launch client at a time · No middle managers — you work directly with me."
+   - "One launch client at a time" is now a separate span with dotted underline
+   - **Improved wrapping**: Broke down text into individual spans for each phrase to enable proper word wrapping on smaller screens
+
+2. **Tooltip Implementation**:
+   - Added tooltip with message: "Right now I take on one launch client at a time so every build gets my full focus. I'll scale with hand-picked collaborators only when it improves outcomes."
+   - Used existing Tooltip components from Shadcn UI
+   - Styled with dotted underline and cursor-help to indicate interactivity
+   - Tooltip appears on hover with max-width constraint for readability
+
+3. **Technical Details**:
+   - Imported Tooltip, TooltipContent, and TooltipTrigger from "@/components/ui/tooltip"
+   - Wrapped text in flex container with flex-wrap and justify-center for responsive behavior
+   - Each phrase (separated by · or —) is now its own span element for better wrapping control
+   - Maintained existing styling and Charlie Ellington profile image
 
 **Files Modified**:
-- src/components/sections/home/credo-section.tsx (added Charlie's quote and photo)
-
-## Current Project Status
+- src/components/sections/home/credo-section.tsx (added tooltip, updated text, and improved wrapping)
 
 ### Recently Completed (Step 5)
 ✅ Removed all Vanta.js animations (performance issues)
@@ -512,40 +575,120 @@ Enhanced the Credo section with a second quote from Charlie:
    - Pricing
    - Pain Points
    - FAQs
-   - Final CTA
-✅ Mobile optimization for all sections
-✅ Fixed header/logo overlap with spacer div
-✅ **Optimized abstract PNG images (NEW)**
-   - Reduced from 7-9MB to under 500KB each
-   - Created WebP versions for better performance
-   - Implemented OptimizedImage component for WebP with PNG fallback
-   - All images now properly optimized
 
-### Technical Details
+### Hero Background Update with Vanta.js Fog Effect ✅
+Successfully replaced the video background in the hero section with Vanta.js fog effect:
 
-#### Image Optimization Solution
-- Installed `sharp` package for image processing
-- Created optimization script at `scripts/optimize-images.js`
-- Backed up original images to `public/images/originals/`
-- Generated both WebP and optimized PNG versions:
-  - WebP: 267KB - 456KB (82-91% reduction)
-  - PNG: 285KB - 444KB (significant reduction)
-- Created `OptimizedImage` component at `src/components/ui/optimized-image.tsx`
-- Updated components to use WebP with PNG fallback:
-  - LaunchProcessSection
-  - FinalCTASection
-  - PricingSection
-  - FullVersionSection
+1. **Implementation Details**:
+   - Removed the video element that was using `/hero-light.mp4`
+   - Added Vanta.js fog effect with custom parameters
+   - Using Three.js r134 and Vanta.js fog effect from CDN
+   - Effect initializes on component mount and properly cleans up on unmount
+   - **Important**: Added "use client" directive at top of file (required for React hooks)
 
-### Next Steps
-- Continue with any additional features or improvements
-- Consider implementing image lazy loading for further performance gains
-- Monitor Core Web Vitals to ensure performance improvements
+2. **Fog Effect Configuration**:
+   - mouseControls: true (interactive with mouse movement)
+   - touchControls: true (works on mobile devices)
+   - gyroControls: false
+   - minHeight/minWidth: 200px
+   - Colors:
+     - highlightColor: #E7BDD7 (pink from brand palette)
+     - midtoneColor: #CDCBFF (purple from brand palette)
+     - lowlightColor: #FDA7A0 (coral from brand palette)
+     - baseColor: #FFFFFF (white)
+   - blurFactor: 0.48
+   - speed: 0.9 (faster, more dynamic animation)
+   - zoom: 0.7
+   - opacity: 90% (opacity-90 class for prominent effect)
 
-### Notes
-- Original abstract images are preserved in `public/images/originals/` if needed
-- The services.tsx component uses MorphingDialogImage which may have its own optimization
-- WebP format provides better compression while maintaining quality
-- All optimized images are under the 500KB target
+3. **Technical Implementation**:
+   - Used Next.js Script component for proper script loading
+   - Scripts load with appropriate strategies (beforeInteractive for Three.js, afterInteractive for Vanta)
+   - React hooks (useState, useEffect, useRef) manage the effect lifecycle
+   - TypeScript any type used for window.VANTA (external library)
+   - Effect is contained within the same rounded border container as the previous video
 
-## Project Status Board
+4. **Files Modified**:
+   - src/components/sections/home/hero-section.tsx (replaced video with Vanta fog effect)
+
+**Result**: The hero section now features an animated, interactive fog effect that aligns with the brand colors and creates a modern, engaging visual experience while maintaining the same layout and structure as before.
+
+### Footer Enhancement ✅
+Successfully updated the footer component with correct social links and new content:
+
+1. **Updated Connect Section Links**:
+   - GitHub: Now links to https://github.com/charlieellington/
+   - LinkedIn: Now links to https://www.linkedin.com/in/charlie-ellington/
+   - Twitter: Kept as placeholder (no specific handle provided)
+
+2. **Added "Apps I've Built" Section**:
+   - No Bad Parts Collective (https://nobadpartscollective.com)
+   - Sunni.be (https://sunni.be)
+   - Waitlist Kit (https://github.com/charlieellington/waitlist-kit)
+
+3. **Added Energy Flow Studio Link**:
+   - Added link to https://www.energyflow.studio/ below the main footer content
+   - Included description: "My living knowledge hub—an ever-evolving collection of notes, plans and guiding principles"
+
+4. **Layout Updates**:
+   - Changed grid from 3 columns to 4 columns on large screens (lg:grid-cols-4)
+   - Responsive: 1 column on mobile, 2 on tablet, 4 on desktop
+   - Maintained responsive behavior across all breakpoints
+
+**Files Modified**:
+- src/components/footer.tsx (updated social links, added Apps section, added Energy Flow link)
+
+### About Page Style Updates ✅
+Made the following style refinements to clean up the About page:
+
+1. **Title Adjustments**:
+   - Reduced "About Me" title size: text-3xl on mobile → text-5xl on desktop (down from 4xl → 6xl)
+   - Added mb-12 for more spacing below the title
+
+2. **Shadow Removal**:
+   - Removed shadow-lg from Charlie's photo
+   - Removed hover:shadow-lg from Energy Flow Studio card
+   - Removed hover:shadow-lg from YouTube Channel card
+   - Removed shadow-sm and hover:shadow-md from journey timeline cards
+   - Removed hover:shadow-lg from philosophy section value cards
+
+3. **Journey Cards Cleanup**:
+   - Removed border from timeline cards for cleaner appearance
+   - Kept white background and rounded corners
+   - Simplified transition effects
+
+**Files Modified**:
+- src/components/sections/about/about-hero-section.tsx (title, photo, link cards)
+- src/components/sections/about/journey-section.tsx (timeline cards)
+- src/components/sections/about/philosophy-section.tsx (value cards)
+
+**Result**: Cleaner, more minimal design with better visual hierarchy and spacing
+
+## Recent Updates
+
+### Gitignore and Cleanup Task (Current Date)
+
+**Task:** Scan codebase for files to add to .gitignore or clean up
+
+**Status:** ✅ Complete
+
+**Changes Made:**
+1. Added `**/.DS_Store` to .gitignore to prevent macOS system files from being committed
+2. Removed existing `.DS_Store` file from root directory
+
+**Findings:**
+- Found and removed 1 .DS_Store file
+- Updated .gitignore to prevent future .DS_Store files
+- Identified and removed 3 large video files from old template (saved ~40MB):
+  - public/hero.mp4 (22MB) - ✅ Removed
+  - public/hero-light.mp4 (13MB) - ✅ Removed
+  - public/promo.mp4 (5.3MB) - ✅ Removed
+
+**Next Steps:**
+- ✅ All cleanup tasks complete
+- Codebase is now clean with no unnecessary files
+
+---
+
+
+

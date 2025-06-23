@@ -22,36 +22,42 @@ const benefits = [
     label: "Speed",
     icon: Zap,
     description: "Go from idea to a working, tested product in weeks, not months.",
+    fullDescription: "Go from idea to a clickable, working product in 2–4 weeks. We move at breakneck speed to get a usable app in front of your users ASAP.",
     color: "#CDCBFF", // Light purple/lavender
   },
   {
     label: "Validation",
     icon: Target,
     description: "Every iteration includes user testing to de-risk your ideas.",
+    fullDescription: "Every cycle includes user testing, so you know each iteration hits the mark before doubling down. It's built-in validation to de-risk your big ideas.",
     color: "#E7BDD7", // Light pink
   },
   {
     label: "Flat Price",
     icon: Euro,
     description: "One flat monthly fee, no surprise hours or change orders.",
+    fullDescription: "One flat monthly fee covers all design and development – no hourly rates or surprise change orders. Unlimited requests (handled one at a time for quality). Plus, you can pause or cancel whenever you need.",
     color: "#FDA7A0", // Light coral/salmon
   },
   {
     label: "Quality Design",
     icon: Star,
     description: "Quality design in every iteration — no shortcuts.",
+    fullDescription: "Enjoy beautiful, consistent UI using proven libraries and design systems. We prioritise a great user experience and fast delivery over any ego-driven from-scratch designs that slow you down.",
     color: "#FFE4B5", // Light peach
   },
   {
     label: "Full-Stack",
     icon: Monitor,
     description: "Front-end and back-end development as needed — not just design.",
+    fullDescription: "Need a backend or integrations? No problem. We handle front-end and back-end development as needed to deliver a complete, working product – not just a pretty prototype.",
     color: "#B8E8D4", // Light mint green
   },
   {
     label: "Cancel Anytime",
     icon: Scissors,
     description: "Month-to-month engagement. Pause or stop with a 20% wrap-up fee.",
+    fullDescription: "When we deliver the value you need based on the Agile 'Money for Nothing' Principle.",
     color: "#FFDAB9", // Light apricot
   },
 ];
@@ -135,7 +141,7 @@ export default function QuickWinsSection() {
                           }}
                           sideOffset={5}
                         >
-                          <p className="text-xs leading-relaxed font-medium">{benefit.description}</p>
+                          <p className="text-xs leading-relaxed font-medium">{benefit.fullDescription}</p>
                           <TooltipPrimitive.Arrow 
                             className="z-50 size-2.5 translate-y-[calc(-50%_-_2px)] rotate-45 rounded-[2px]" 
                             style={{ 

@@ -53,7 +53,7 @@ export default function LaunchProcessSection() {
       id="launch-process"
       className="py-12 md:py-24 lg:py-32 border-t border-black/5"
     >
-      <div className="mx-auto max-w-3xl px-4 md:px-6">
+      <div className="mx-auto max-w-3xl lg:max-w-5xl xl:max-w-6xl px-4 md:px-6">
         <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-6 md:mb-8 text-center md:text-left">
           Launch in weeks, not months.
         </h2>
@@ -100,7 +100,7 @@ export default function LaunchProcessSection() {
                   2. Prototype in real code
                 </AccordionTrigger>
                 <AccordionContent className="text-sm md:text-base text-muted-foreground">
-                  High-fidelity UI coded in days, not months. It's the first
+                  High-fidelity UI coded in days, not months. It&apos;s the first
                   working version, not a mock-up.
                 </AccordionContent>
               </AccordionItem>

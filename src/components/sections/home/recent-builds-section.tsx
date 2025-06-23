@@ -6,6 +6,7 @@ import { Sparkles, Bot, Camera, Building2, Briefcase, ExternalLink } from "lucid
 import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "motion/react";
 
 const aiProjects = [
   {
@@ -41,6 +42,7 @@ const designRoles = [
     icon: Building2,
     iconColor: "#B8D4E3", // Light blue (complementary)
     image: "/images/builds/Deep Work Studio (2).png",
+    url: "https://www.deepwork.network/case-studies",
   },
   {
     company: "Ethereum Foundation",
@@ -48,6 +50,7 @@ const designRoles = [
     icon: Building2,
     iconColor: "#D4C5F9", // Lavender (variation of purple)
     image: "/images/builds/Ethereum Foundation.png",
+    url: "https://www.investopedia.com/ethereum-2-0-6455959",
   },
   {
     company: "Ramp Network",
@@ -55,6 +58,7 @@ const designRoles = [
     icon: Briefcase,
     iconColor: "#FDBCB4", // Peach (variation of coral)
     image: "/images/builds/Ramp (1).png",
+    url: "https://ramp.network/blog/ramp-network-closes-70m-series-b-round",
   },
   {
     company: "Nexus Mutual",
@@ -62,6 +66,7 @@ const designRoles = [
     icon: Building2,
     iconColor: "#F2C6DE", // Soft pink (variation)
     image: "/images/builds/Nexus Mutual.png",
+    url: "https://nexusmutual.io/",
   },
 ];
 
@@ -128,18 +133,29 @@ export default function RecentBuildsSection() {
               <p className="text-lg font-semibold md:text-xl">
                 <span className="block">Founder-led. Design-centric. Outcome-driven.</span>
               </p>
-              <p className="text-muted-foreground">
-                {expandedIntro ? (
-                  <>
-                    I founded Zebra Design after ten years of launching early-stage products. 
-                    After co-founding Deep Work Studio (a design agency that delivered successful UX for Web3 innovators like Ethereum, MakerDAO and others), 
-                    I saw how traditional design handoffs often slowed development to a crawl. 
-                    In 2025 I embraced AI-assisted coding and discovered a better way to build products: <span className="font-semibold text-foreground">design and development unified from the start</span> for ultra-fast results.
-                  </>
-                ) : (
-                  <>I founded Zebra Design after ten years of launching early-stage products ...</>
-                )}
-              </p>
+              <div className="text-muted-foreground">
+                <p>I founded Zebra Design after ten years of launching early-stage products.</p>
+                <div className="overflow-hidden relative">
+                  <motion.div
+                    initial={false}
+                    animate={{ 
+                      height: expandedIntro ? "auto" : "0px",
+                      opacity: expandedIntro ? 1 : 0,
+                      marginTop: expandedIntro ? "1rem" : "0px"
+                    }}
+                    transition={{ 
+                      duration: 0.5, 
+                      ease: [0.4, 0.0, 0.2, 1] // Custom easing for smooth animation
+                    }}
+                  >
+                    <p>
+                      After co-founding Deep Work Studio (a design agency that delivered successful UX for Web3 innovators like Ethereum, MakerDAO and others), 
+                      I saw how traditional design handoffs often slowed development to a crawl. 
+                      In 2025 I embraced AI-assisted coding and discovered a better way to build products: <span className="font-semibold text-foreground">design and development unified from the start</span> for ultra-fast results.
+                    </p>
+                  </motion.div>
+                </div>
+              </div>
             </div>
           </ScrollView>
         </div>
@@ -217,7 +233,7 @@ export default function RecentBuildsSection() {
                 return (
                   <ScrollView key={index} delay={0.1 * (index + 1)}>
                     <Link 
-                      href="https://www.energyflow.studio/" 
+                      href={role.url} 
                       target="_blank" 
                       rel="noopener noreferrer" 
                       className="block group"
@@ -269,16 +285,28 @@ export default function RecentBuildsSection() {
               onClick={() => isMobile && setExpandedOutro(!expandedOutro)}
             >
               <p className="text-lg font-semibold md:text-xl">
-                I'm your hands-on partner with skin in the game – when you succeed, I succeed.
+                I&apos;m your hands-on partner with skin in the game – when you succeed, I succeed.
               </p>
-              {expandedOutro && (
-                <p className="text-muted-foreground">
-                  Today, Zebra Design is my solo practice where I blend design thinking with AI-powered development. 
-                  I'm obsessed with making product development <span className="font-semibold text-foreground">faster and more user-centric</span>. 
-                  My mission is simple: help innovators launch sooner and learn faster. 
-                  Yes, I love beautiful design, but I love real-world results even more.
-                </p>
-              )}
+              <div className="text-muted-foreground overflow-hidden relative">
+                <motion.div
+                  initial={false}
+                  animate={{ 
+                    height: expandedOutro ? "auto" : "0px",
+                    opacity: expandedOutro ? 1 : 0
+                  }}
+                  transition={{ 
+                    duration: 0.5, 
+                    ease: [0.4, 0.0, 0.2, 1] // Custom easing for smooth animation
+                  }}
+                >
+                  <p className="pt-4">
+                    Today, Zebra Design is my solo practice where I blend design thinking with AI-powered development. 
+                    I&apos;m obsessed with making product development <span className="font-semibold text-foreground">faster and more user-centric</span>. 
+                    My mission is simple: help innovators launch sooner and learn faster. 
+                    Yes, I love beautiful design, but I love real-world results even more.
+                  </p>
+                </motion.div>
+              </div>
             </div>
           </ScrollView>
         </div>

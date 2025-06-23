@@ -16,6 +16,7 @@ export default function Home() {
     <main className="min-h-screen">
       <HeroSection />
       <CredoSection />
+      <SectionDivider />
       <QuickWinsSection />
       <SectionDivider />
       <RecentBuildsSection />
@@ -23,8 +24,8 @@ export default function Home() {
       <WhoIHelpSection />
       <PricingSection />
       <PainPointsSection />
-      <FaqSection />
       <FinalCtaSection />
+      <FaqSection />
       <FooterSection />
     </main>
   );

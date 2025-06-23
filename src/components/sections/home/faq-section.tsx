@@ -6,6 +6,65 @@ import {
 } from "@/components/ui/accordion"
 import { ScrollView } from "@/components/scroll-view"
 
+const faqs = [
+  {
+    id: "pricing",
+    question: "How does your pricing work?",
+    answer: "I offer a flat monthly subscription starting at €5,000. Standard engagement is one year, but you can cancel anytime. I price at roughly 20% of the value I expect to add in the first two years. For example, if the work should bring €500k value, your cost is about €8k a month."
+  },
+
+  {
+    id: "cancellation",
+    question: "What if I want to cancel?",
+    answer: "You can cancel anytime during our one-year engagement. You pay only 20% of the unused balance as a wrap-up fee. Example: on €5k/month for a year, if you cancel after 3 months (paid €15k), with €45k remaining, your wrap-up fee is €9k. Total: €24k instead of €60k. You keep every asset, I'm fairly compensated."
+  },
+  {
+    id: "pause",
+    question: "Can I pause my subscription?",
+    answer: "Yes! You may park the project twice, up to one month each time, at no cost. Your subscription clock simply stops and restarts. This gives you breathing space if priorities shift or budgets need reallocating."
+  },
+  {
+    id: "speed",
+    question: "How can you deliver so fast?",
+    answer: "We work in month-long sprints focused on highest-value outcomes. I leverage AI coding assistants, pre-built components, and build in code immediately (no throwaway mockups). By focusing only on what matters for the user and your business metrics, we compress timelines dramatically."
+  },
+  {
+    id: "parallel",
+    question: "What if I need to move faster?",
+    answer: "Add another lane! A second subscription lets me run two tasks in parallel. Many clients start with one lane, then add a second when they see the velocity. You can scale up or down as needed."
+  },
+  {
+    id: "workshops",
+    question: "What's included vs. add-on services?",
+    answer: "Month one includes up to 5 workshop days, on me. After that: Extra workshop days are €400/day, ad-hoc calls you request are €150/hour, and user-testing rounds (5-6 users with report) are €1,000. I'll suggest these only when they speed us up."
+  },
+  {
+    id: "commitment",
+    question: "Is there a long-term commitment?",
+    answer: "Our standard engagement is one year, but you can cancel anytime with the 'Money for Nothing' model - you pay only 20% of the unused balance. Many clients start with a one-month trial to see the value first-hand. This model means I stay hungry to deliver; you never fund dead weight."
+  },
+  {
+    id: "team",
+    question: "Can you work with our existing team?",
+    answer: "Absolutely. Think of me as an extension of your team — a special forces unit that plugs right in. I'll collaborate with your developers, sync with your PM or designer, and work with any stack. My goal is to enhance your capabilities, not duplicate them."
+  },
+  {
+    id: "design-only",
+    question: "What if I just need design or just development?",
+    answer: "That's fine! For design-only, I offer design-in-code where I craft your UX/UI in live code. For dev-only, I'll turn your existing designs into a working product. The subscription adapts to what you need — you're hiring me to achieve outcomes, not fill a timesheet."
+  },
+  {
+    id: "websites-branding",
+    question: "Do you do websites and branding?",
+    answer: "Yes. The approach depends on your needs. Sometimes it's a simple task in your product roadmap. Other times it's the main project. For bigger branding work, we dive deep: content strategy, hierarchy, stakeholder alignment, internal brand development, and user testing on visuals and messaging. I tailor the process to fit your scope."
+  },
+  {
+    id: "custom-designs",
+    question: "Do you create custom designs?",
+    answer: "I believe in beautiful design — but shipping beats custom Figma files. I code with proven component libraries like shadcn/ui that have excellent UX built in and look great. This approach is faster and gets you to your goals sooner. Why spend weeks on mockups when we can build the real thing?"
+  }
+];
+
 export default function FaqSection() {
   return (
     <section id="faqs" className="py-12 md:py-24 lg:py-32 border-t border-black/5">
@@ -22,87 +81,16 @@ export default function FaqSection() {
             collapsible
             className="w-full"
           >
-            <AccordionItem value="faq1">
-              <AccordionTrigger className="text-left text-sm md:text-base font-medium hover:no-underline py-3 md:py-4">
-                How can you deliver so fast?
-              </AccordionTrigger>
-              <AccordionContent className="text-sm md:text-base text-muted-foreground pb-4 md:pb-6">
-                We've honed an ultra-streamlined process. From day one we
-                leverage your team's existing knowledge (instead of weeks of
-                slow "discovery"), then we use efficient tools like AI coding
-                assistants and pre-built components. By focusing only on what
-                matters for the user and building in code immediately (no
-                throwaway mockups), we compress the timeline dramatically
-                without cutting corners. The result is high-quality output at
-                breakneck speed.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="faq2">
-              <AccordionTrigger className="text-left text-sm md:text-base font-medium hover:no-underline py-3 md:py-4">
-                What does "unlimited requests" really mean?
-              </AccordionTrigger>
-              <AccordionContent className="text-sm md:text-base text-muted-foreground pb-4 md:pb-6">
-                Exactly what it sounds like – you can request as many features,
-                design tweaks, or tasks as you want each month. We'll handle
-                them one at a time with laser focus to maintain quality. You can
-                continually prioritise your backlog, and we'll keep delivering
-                tasks in order of importance. There's effectively no cap on the
-                amount of work; we just make sure each item is done right before
-                moving to the next.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="faq3">
-              <AccordionTrigger className="text-left text-sm md:text-base font-medium hover:no-underline py-3 md:py-4">
-                Can you work with our existing team?
-              </AccordionTrigger>
-              <AccordionContent className="text-sm md:text-base text-muted-foreground pb-4 md:pb-6">
-                Absolutely. Think of us as an extension of your team – a special
-                forces unit that plugs right in. If you have in-house
-                developers, we'll collaborate with them (for example, we can
-                consume your existing API or work alongside your back-end
-                engineers). If you have a product manager or designer, we'll
-                sync up to ensure our work complements yours. We play nice with
-                any stack or team; our goal is to enhance your capabilities, not
-                duplicate or disrupt them.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="faq4">
-              <AccordionTrigger className="text-left text-sm md:text-base font-medium hover:no-underline py-3 md:py-4">
-                What if I just need design or just development?
-              </AccordionTrigger>
-              <AccordionContent className="text-sm md:text-base text-muted-foreground pb-4 md:pb-6">
-                That's fine too! We're flexible. If you only need design, we
-                offer a <strong className="text-foreground">design-in-code</strong> plan where we craft
-                your UX/UI in live code and deliver an interactive front-end for
-                your developers to plug into. Conversely, if you already have
-                designs and just need them built out, we can go into{" "}
-                <strong className="text-foreground">dev-only mode</strong> – turning your existing design
-                files into a working product. Our subscription adapts to what
-                you need: you're hiring us to achieve outcomes (finished
-                designs, coded features), not to fill a timesheet.
-              </AccordionContent>
-            </AccordionItem>
-
-            <AccordionItem value="faq5">
-              <AccordionTrigger className="text-left text-sm md:text-base font-medium hover:no-underline py-3 md:py-4">
-                Is there a commitment?
-              </AccordionTrigger>
-              <AccordionContent className="text-sm md:text-base text-muted-foreground pb-4 md:pb-6">
-                No long-term commitment required. Our standard engagement is
-                month-to-month — use us for as long (or as short) as you need.
-                You can cancel anytime. If you're on a multi-month plan or
-                decide to stop mid-project, you're free to do so; we'd just
-                charge a 20% wrap-up fee on the remaining work as a courtesy
-                (this follows agile's "cancel anytime" ethos with a fair
-                compensation for unused time). Many clients start with a
-                one-month pilot to see the value first-hand. If you love the
-                results, you can simply continue; if not, you can stop with no
-                hard feelings.
-              </AccordionContent>
-            </AccordionItem>
+            {faqs.map((faq, index) => (
+              <AccordionItem key={faq.id} value={faq.id}>
+                <AccordionTrigger className="text-left text-sm md:text-base font-medium hover:no-underline py-3 md:py-4">
+                  {faq.question}
+                </AccordionTrigger>
+                <AccordionContent className="text-sm md:text-base text-muted-foreground pb-4 md:pb-6">
+                  {faq.answer}
+                </AccordionContent>
+              </AccordionItem>
+            ))}
           </Accordion>
         </ScrollView>
       </div>

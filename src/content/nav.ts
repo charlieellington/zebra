@@ -5,11 +5,11 @@ export const NAV_LINKS = [
   },
   {
     name: "About",
-    href: "#about",
+    href: "/about",
   },
   {
-    name: "Services",
-    href: "#services",
+    name: "Case Studies",
+    href: "/#recent-builds",
   },
   {
     name: "Pricing",

@@ -22,7 +22,7 @@ const Footer = () => {
 
       <div className="relative z-10 bg-background py-12">
         <div className="mx-auto max-w-5xl px-6">
-          <div className="grid grid-cols-1 gap-8 sm:grid-cols-3">
+          <div className="grid grid-cols-1 gap-8 sm:grid-cols-2 lg:grid-cols-4">
             <div>
               <h3 className="mb-4 text-lg font-semibold">Zebra Design</h3>
               <p className="text-sm text-muted-foreground">
@@ -53,10 +53,46 @@ const Footer = () => {
             </div>
 
             <div>
+              <h3 className="mb-4 text-lg font-semibold">Apps I've Built</h3>
+              <ul className="space-y-2 text-sm">
+                <li>
+                  <a
+                    href="https://nobadpartscollective.com"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    No Bad Parts Collective
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://sunni.be"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    Sunni.be
+                  </a>
+                </li>
+                <li>
+                  <a
+                    href="https://github.com/charlieellington/waitlist-kit"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-muted-foreground transition-colors hover:text-foreground"
+                  >
+                    Waitlist Kit
+                  </a>
+                </li>
+              </ul>
+            </div>
+
+            <div>
               <h3 className="mb-4 text-lg font-semibold">Connect</h3>
               <div className="flex space-x-4">
                 <a
-                  href="https://github.com"
+                  href="https://github.com/charlieellington/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground transition-colors hover:text-foreground"
@@ -65,7 +101,7 @@ const Footer = () => {
                   <Github className="h-5 w-5" />
                 </a>
                 <a
-                  href="https://linkedin.com"
+                  href="https://www.linkedin.com/in/charlie-ellington/"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="text-muted-foreground transition-colors hover:text-foreground"
@@ -86,8 +122,21 @@ const Footer = () => {
             </div>
           </div>
 
-          <div className="mt-8 border-t pt-8 text-center">
-            <p className="text-sm text-muted-foreground">
+          <div className="mt-8 border-t pt-8">
+            <div className="mb-4 text-center">
+              <a
+                href="https://www.energyflow.studio/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+              >
+                Energy Flow Studio
+              </a>
+              <p className="mt-1 text-xs text-muted-foreground">
+                My living knowledge hub—an ever-evolving collection of notes, plans and guiding principles
+              </p>
+            </div>
+            <p className="text-center text-sm text-muted-foreground">
               © {currentYear} Zebra Design. All rights reserved.
             </p>
           </div>
