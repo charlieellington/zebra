@@ -1,8 +1,8 @@
 import { AnimatedGroup } from "@/components/motion-primitives/animated-group";
 import { TextEffect } from "@/components/motion-primitives/text-effect";
 import { Button } from "@/components/ui/button";
+import { OptimizedImage } from "@/components/ui/optimized-image";
 import { Mail, SendHorizonal } from "lucide-react";
-import Image from "next/image";
 
 const transitionVariants = {
   item: {
@@ -129,12 +129,10 @@ export default function FullVersionSection() {
                       <div className="text-sm font-medium">Pro</div>
                     </div>
                     <div className="space-y-3">
-                      <Image
+                      <OptimizedImage
                         src="/images/abstract-3.png"
                         alt="pro-filler"
-                        height={300}
-                        width={500}
-                        className="rounded-full"
+                        className="rounded-full w-full h-auto"
                       />
                     </div>
                   </div>

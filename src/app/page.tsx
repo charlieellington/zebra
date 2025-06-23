@@ -1,12 +1,15 @@
-import AboutUsSection from "@/components/sections/home/about-section";
 import HeroSection from "@/components/sections/home/hero-section";
 import CredoSection from "@/components/sections/home/credo-section";
 import QuickWinsSection from "@/components/sections/home/quick-wins-section";
-import RecentBuildsSection from "@/components/sections/home/recent-builds-section";
-import ServicesSection2 from "@/components/sections/home/services-2";
-import StatsSection from "@/components/sections/home/stats";
-import FooterSection from "@/components/footer";
 import SectionDivider from "@/components/section-divider";
+import RecentBuildsSection from "@/components/sections/home/recent-builds-section";
+import LaunchProcessSection from "@/components/sections/home/launch-process-section";
+import WhoIHelpSection from "@/components/sections/home/who-i-help-section";
+import PricingSection from "@/components/sections/home/pricing-section";
+import PainPointsSection from "@/components/sections/home/pain-points-section";
+import FaqSection from "@/components/sections/home/faq-section";
+import FinalCtaSection from "@/components/sections/home/final-cta-section";
+import FooterSection from "@/components/footer";
 
 export default function Home() {
   return (
@@ -16,10 +19,12 @@ export default function Home() {
       <QuickWinsSection />
       <SectionDivider />
       <RecentBuildsSection />
-      <AboutUsSection />
-      {/* <ServicesSection /> */}
-      <ServicesSection2 />
-      <StatsSection />
+      <LaunchProcessSection />
+      <WhoIHelpSection />
+      <PricingSection />
+      <PainPointsSection />
+      <FaqSection />
+      <FinalCtaSection />
       <FooterSection />
     </main>
   );

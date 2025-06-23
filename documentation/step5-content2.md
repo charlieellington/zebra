@@ -7,7 +7,90 @@ I'll let you know once it's ready to review.
 Developer Plan for the Next Home Page Sections
 ==============================================
 
-**Objective:** Implement the next set of content blocks after the **Recent Builds** section on the Zebra Design one-page site, using the Lume Studio Next.js template's existing components and Tailwind styles. These blocks (Launch Process, Audience List, Pricing Summary, Pain Points, FAQs, and final CTA) should seamlessly match the site's clean, minimalist design with minimal custom code. We will reuse established section structures and UI patterns for consistency, ensure all content is mobile-responsive, and optimize performance (especially when adding multiple Vanta backgrounds).
+## Implementation Sub-Steps
+
+### Step 5.1: Launch Process Section
+- [ ] Create `LaunchProcessSection.tsx` component
+- [ ] Check if Accordion component exists, install if needed: `npx shadcn@latest add accordion`
+- [ ] Implement accordion with 4 steps (using content from documentation/content lines 7-15)
+- [ ] Configure auto-expand on desktop, collapsed on mobile
+- [ ] Test responsive behavior
+
+### Step 5.2: Who I Help Section  
+- [ ] Create `WhoIHelpSection.tsx` component
+- [ ] Implement bullet list with audience types (using content from documentation/content lines 21-31)
+- [ ] Style with emphasis on key nouns (potentially using #E7BDD7 or #CDCBFF for text highlights)
+- [ ] Test mobile/desktop layouts
+
+### Step 5.3: Pricing Section
+- [ ] Create `PricingSection.tsx` component  
+- [ ] Add pricing summary text (using EXACT content from documentation/content lines 37-47)
+- [ ] Add abstract image placeholder (select based on content fit and responsive needs)
+- [ ] Create "Pricing Calculations" link button pointing to `/pricing`
+- [ ] Style with brand card background (#FCF8F4 only for background tint)
+
+### Step 5.4: Pain Points Section
+- [ ] Create `PainPointsSection.tsx` component
+- [ ] Implement accordion with 4 pain points (using content from documentation/content lines 51-65)
+- [ ] Configure default expand behavior (same as Launch Process)
+- [ ] Test accordion interactions
+
+### Step 5.5: FAQs Section
+- [ ] Create `FaqSection.tsx` component
+- [ ] Implement FAQ accordion (using EXACT content from documentation/content lines 71-91)
+- [ ] Keep all items collapsed by default
+- [ ] Use single-open mode for cleaner UX
+
+### Step 5.6: Final CTA Section
+- [ ] Create `FinalCtaSection.tsx` component
+- [ ] Add CTA text (using content from documentation/content lines 95-99)
+- [ ] Add abstract image accent (select based on dynamic feel and responsive needs)
+- [ ] Implement "Book your call" button linking to https://cal.com/charlieellington/zebra-call
+- [ ] Implement "See live examples" button linking to #recent-builds
+- [ ] Style section (consider using #FCF8F4 for subtle background tint)
+
+### Step 5.7: Mobile and Responsive Best Practices
+- [ ] Test at different responsive widths the content 
+- [ ] Research best practices and improve the user experience and adjust the content to be visually great at different responsive sizes. Specially mobile.
+
+
+### Step 5.8: Integration & Testing
+- [ ] Add all new sections to homepage in correct order
+- [ ] Test all responsive breakpoints
+- [ ] Verify all links and interactions
+- [ ] Performance check (ensure images are optimized)
+- [ ] Final content accuracy review
+
+---
+
+**Objective:** Implement the next set of content blocks after the **Recent Builds** section on the Zebra Design one-page site, using the Lume Studio Next.js template's existing components and Tailwind styles. These blocks (Launch Process, Audience List, Pricing Summary, Pain Points, FAQs, and final CTA) should seamlessly match the site's clean, minimalist design with minimal custom code. We will reuse established section structures and UI patterns for consistency, ensure all content is mobile-responsive, and optimize performance.
+
+## Implementation Details (Updated with Clarifications)
+
+### Button Links Configuration
+- **"Book your call"**: Will link to https://cal.com/charlieellington/zebra-call (external booking page)
+- **"Pricing Calculations"**: Will link to `/pricing` (internal page, content to be created later)
+
+### Abstract Image Strategy
+- Select images based on content appropriateness and responsive design best practices
+- Suggested approach:
+  - Use more structured/geometric images (like abstract-3.png) for business-oriented sections (Pricing)
+  - Use more dynamic/flowing images (like abstract-5.png) for action-oriented sections (CTA)
+  - Position images to complement content without overwhelming it
+  - Ensure proper optimization and lazy loading for all images
+
+### Accordion Component Setup
+- First check if Accordion component exists in the project
+- If not present, install via: `npx shadcn@latest add accordion`
+- This component will be used in Launch Process, Pain Points, and FAQs sections
+
+### Color Usage Guidelines
+- **Background tints**: Only use #FCF8F4 (light cream/tan) for subtle background coloring
+- **Accent colors** (#E7BDD7 pink, #CDCBFF purple): Reserved for:
+  - Icon highlighting
+  - Text emphasis (e.g., bold keywords in lists)
+  - Interactive element accents
+  - NOT for section backgrounds
 
 General Structure & Styling Guidelines
 --------------------------------------
@@ -20,7 +103,7 @@ General Structure & Styling Guidelines
 
 -   **Responsive Design:** Follow a mobile-first approach -- build for small screens, then enhance layout on larger screens. Use Tailwind responsive utilities (like `md:flex`, `lg:text-xl`, etc.) to adjust as needed. After implementing each section, test it at various breakpoints. On mobile, content will stack vertically and accordions should be easy to tap; on desktop, utilize multi-column layouts or expanded views as described per block. Verify that no text or element overflows the screen on small devices and that spacing is comfortable on all sizes.
 
--   **Vanta Integration:** Two of these sections will include **Vanta "Trunk"** background visuals (animated canvas effects). Plan to use them sparingly so that at most two Vanta instances run at once for performance. We'll detail this in the relevant sections (Pricing and CTA) and in the performance notes, but generally prepare to conditionally initialize these effects only on capable devices or when the section is in view, and provide a static fallback or no background on low-end devices. This ensures the page remains smooth.
+-   **Abstract Image Integration:** Since Vanta animations caused performance issues, we'll use static abstract images from `public/images/abstract-[1-5].png` as visual accents in select sections. These should be used sparingly and with proper optimization (lazy loading, appropriate sizing) to maintain performance.
 
 With these general guidelines in mind, we break down the implementation of each content block:
 
@@ -35,7 +118,7 @@ This section will communicate the fast launch process in four steps, using an ac
 
     -   **Trigger:** Use `<AccordionTrigger>` with the step title (e.g. "Workshops", "Prototype", "User Testing", "Continuous Build"). Style the trigger text to stand out --- likely using a font size and weight similar to a subsection heading (check existing accordion or toggle styles in the template). It should be clear and clickable. If the template provides an icon (like a chevron) for accordion triggers, that will appear automatically; ensure it's visible.
 
-    -   **Content:** Inside `<AccordionContent>`, put the step's description text (as a `<p>` or small block of text). Use the exact content provided for each step, but edit for brevity and clarity. Aim for a direct, **Hemingway-esque** explanation of what each step entails. For example, if the original text is wordy, simplify it: *"**Workshops:** We kick off with rapid idea workshops to clarify your vision."* Keep sentences short and active. Use Tailwind utility classes for text as needed (e.g. `text-sm md:text-base` if you want slightly smaller text on mobile).
+    -   **Content:** Inside `<AccordionContent>`, put the step's description text (as a `<p>` or small block of text). Use the exact content provided for each step from the content file, but edit for brevity and clarity. The content for steps is in documentation/content lines 7-15.
 
     -   Ensure the content is given some margin or padding for readability (the default AccordionContent in Shadcn might already have appropriate spacing; if not, add a class like `mt-2` on the `<p>`).
 
@@ -47,16 +130,16 @@ This section will communicate the fast launch process in four steps, using an ac
 
     -   Make sure the accordion is keyboard-accessible (Shadcn will handle ARIA roles) and that the trigger area is large enough for easy clicking on mobile (you might make the text a block-level button or add padding).
 
-    -   The section should appear minimalist and informative. Consider using a small icon or emoji for each step if it adds clarity (e.g., a lightbulb for Workshops, a rocket for Launch) -- but this is optional and only if it matches the site's style. Keep it subtle if used.
+    -   The section should appear minimalist and informative. Keep it subtle and clean.
 
 -   **Responsive Behavior:** On small screens, each accordion item will occupy the full width. On desktop, since we are auto-expanding them, they will simply stack vertically showing all content. If the content for each step is short (a sentence or two), this will look like a brief 4-step outline. Verify that this section doesn't become too tall; if each item's text is lengthy, you might keep only the first item expanded on desktop by default instead of all four -- but per requirements, likely all should be visible. Test the interaction: collapsing and expanding should work on all devices (the default expanded state on desktop doesn't prevent users from collapsing if they want, since we set `type="multiple"` and can set `collapsible` true as needed).
 
 2\. **"Who I Help" -- Audience List Section**
 --------------------------------------------
 
-This block highlights the types of clients or audiences that Zebra Design serves (e.g. startup founders, SMEs, etc.), in a simple bullet list for quick scanning.
+This block highlights the types of clients or audiences that Zebra Design serves (e.g. startup founders, SMEs, etc.), in a simple bullet list for quick scanning. Content is in documentation/content lines 21-31.
 
--   **Component & Layout:** Create `WhoIHelpSection.tsx` and wrap in a `<section className="py-16 md:py-32">` as usual. You can include a small heading or intro line for context, like an `<h2>` "Who I Help" or a brief lead-in sentence (e.g. *"I collaborate with... "), styled in the same way as other section headings or subtitles. This could even be visually subtle (since the content is self-explanatory as a list). Below that, place an unordered list of the audience types.
+-   **Component & Layout:** Create `WhoIHelpSection.tsx` and wrap in a `<section className="py-16 md:py-32">` as usual. You can include a small heading or intro line for context, like an `<h2>` "Who I Help" or a brief lead-in sentence, styled in the same way as other section headings or subtitles. This could even be visually subtle (since the content is self-explanatory as a list). Below that, place an unordered list of the audience types.
 
 -   **List Markup:** Use a semantic `<ul>` with each audience category as an `<li>`. Apply Tailwind list utilities for styling:
 
@@ -64,47 +147,44 @@ This block highlights the types of clients or audiences that Zebra Design serves
 
     -   Ensure there's spacing between list items -- e.g., add `space-y-2` on the `<ul>` to give a small gap between each line, making it easier to read.
 
--   **Text Styling:** Keep each list item concise, ideally just a role or short descriptor. Emphasize the key nouns in each item for quick scanning. For example, if one item is "Early-stage startup **founders** looking to launch quickly", you might bold **founders** or the primary term (**startup founders**) within it. You can do this by wrapping that word in a `<span className="font-semibold">` or using `<strong>` in the JSX. Another approach: if each item is just 1-3 words (like "Startup founders", "SME owners", "Product managers at SMEs"), you could just render them normally (they're inherently the nouns). But if the provided copy includes a phrase, highlight the category word. This slight emphasis helps those terms stand out when scanning.
+-   **Text Styling:** Keep each list item as provided in the content file. Emphasize the key nouns in each item for quick scanning. For example, bold **Startup founders**, **Product teams with developers**, etc. You can do this by wrapping that word in a `<span className="font-semibold">` or using `<strong>` in the JSX.
 
--   **Mobile Optimization:** On small screens, the list will simply be a vertical list of bullets. That's fine, but ensure the text wraps nicely (avoid super long items). On larger screens, if the list is lengthy (say more than 6 items), you might consider splitting into two columns for a balanced layout. You could achieve this with Tailwind's responsive column classes (e.g., `md:grid md:grid-cols-2 md:gap-x-8`) wrapping the `<li>` elements. However, if there are only a few items (4-5), a single column centered or left-aligned is acceptable. Align text left for readability, and consider increasing font size slightly on larger screens for better presence (e.g., `text-base md:text-lg`), while keeping it consistent with body text style.
+-   **Mobile Optimization:** On small screens, the list will simply be a vertical list of bullets. That's fine, but ensure the text wraps nicely (avoid super long items). On larger screens, if the list is lengthy (say more than 6 items), you might consider splitting into two columns for a balanced layout. You could achieve this with Tailwind's responsive column classes (e.g., `md:grid md:grid-cols-2 md:gap-x-8`) wrapping the `<li>` elements. However, since there are only 5 items, a single column centered or left-aligned is acceptable. Align text left for readability, and consider increasing font size slightly on larger screens for better presence (e.g., `text-base md:text-lg`), while keeping it consistent with body text style.
 
--   **Tailwind Typography:** Ensure the list uses the same font and color as the rest of the site text (probably the default body text color). If the template has the Typography plugin and a `prose` class for content, you could wrap the list in a `<div className="prose prose-lg:md">` to automatically style it. But that may add margins on paragraphs/lists; since we want a clean, minimal look, it might be better to style manually with utilities as above. The goal is a clean list that fits with the minimalist design -- no overly fancy icons or graphics, just text and simple bullets.
+-   **Tailwind Typography:** Ensure the list uses the same font and color as the rest of the site text (probably the default body text color). The goal is a clean list that fits with the minimalist design -- no overly fancy icons or graphics, just text and simple bullets.
 
 3\. **Pricing -- Value-Based Pricing Summary**
 ---------------------------------------------
 
-In this section, we present the founder's value-based pricing approach in a concise form. There are no tiered plans here -- just a single summary of how pricing works, with a call-to-action link to the detailed pricing page.
+In this section, we present the founder's value-based pricing approach in a concise form. There are no tiered plans here -- just a single summary of how pricing works, with a call-to-action link to the detailed pricing page. Content is in documentation/content lines 37-47.
 
 -   **Component & Layout:** Create a `PricingSection.tsx` component and wrap it in the standard `<section className="py-16 md:py-32">` container. This section should visually stand out a bit as a distinct block. A common approach is to use a **card-style container** within the section:
 
-    -   Add a centered `<div>` that contains the pricing text and the link button. You might give this an extra class like `className="bg-[#FCF8F4] rounded-xl p-6 md:p-8 shadow-sm"` to create a light colored box (using the brand's light tan/cream color #FCF8F4 from the style guide) with padding and maybe a small shadow or border. This provides contrast against the white page background ("bg-[#FCF8F4]" gives a subtle paper-like tone). Ensure the text color remains the standard body color (dark) for readability against this light background.
+    -   Add a centered `<div>` that contains the pricing text and the link button. You might give this an extra class like `className="bg-[#FCF8F4] rounded-xl p-6 md:p-8 shadow-sm"` to create a light colored box (using the brand's light tan/cream color #FCF8F4) with padding and maybe a small shadow or border. This provides contrast against the white page background. Ensure the text color remains the standard body color (dark) for readability against this light background.
 
     -   Make this inner container responsive: perhaps width 100% on mobile and a max width (e.g. `max-w-xl`) center-aligned on larger screens, so it doesn't stretch too wide.
 
--   **Content:** Use the **exact pricing summary text provided by the user** (do not alter the wording, as requested). This is likely a short explanation of the value-based pricing philosophy or a single-plan description. Place it as a paragraph or a couple of paragraphs inside the card. If it's multiple paragraphs, keep them tight with minimal spacing -- e.g., if using `<p>` tags, add a class like `mb-4 last:mb-0` or use Tailwind's `space-y-4` on a wrapping element to control spacing. "Short paragraph spacing" is key for a neat look, so avoid large gaps between lines. The tone should remain consistent with the user's writing (since we're not modifying it), but the styling should make it easy to read. Perhaps center-align the text if it's very short, or left-align if it's a bit longer; center alignment can give it a distinct, highlight feel, but use your judgement based on content length.
+-   **Content:** Use the **exact pricing summary text provided** from documentation/content lines 37-47 (do not alter the wording, as requested). This includes the headline, sub-copy, and the paragraph about pricing & terms. Place it as structured in the content file. If it's multiple paragraphs, keep them tight with minimal spacing -- e.g., if using `<p>` tags, add a class like `mb-4 last:mb-0` or use Tailwind's `space-y-4` on a wrapping element to control spacing. The tone should remain consistent with the user's writing (since we're not modifying it), but the styling should make it easy to read.
 
--   **"Pricing Calculations" Link Button:** Below or alongside the text, include a call-to-action link that says **PricingCalculationsPricing Calculations**. This should be a styled link that looks like a button. Use the same style as other buttons on the site (check the hero or any other CTA for existing classes -- likely something like `px-5 py-3 font-semibold text-white bg-gray-900 rounded` or a variant of brand color). If the template has a Button component, use that. Set this link's `href` to the Pricing page (e.g. `/pricing#calculations` if the anchor is expected, or simply `/pricing` if not). Ensure it opens the pricing page in the same tab (normal navigation, since it's an internal link).
+-   **"Pricing Calculations" Link Button:** Below or alongside the text, include a call-to-action link that says **"Pricing Calculations"**. This should be a styled link that looks like a button. Use the same style as other buttons on the site. Set this link's `href` to `/pricing`. Ensure it opens the pricing page in the same tab (normal navigation, since it's an internal link).
 
-    -   Style considerations: Because this link is within a colored card, ensure the button has sufficient contrast. For instance, a dark button (black or deep gray background with white text) will stand out against the light card background. You could also use one of the brand accent colors for the button background if that's part of the style (e.g., a purple or coral from the palette), as long as it's used consistently. Add a hover state if not already present (Tailwind can handle this with `hover:bg-opacity-90` etc., or the Button component may have it).
+    -   Style considerations: Because this link is within a colored card, ensure the button has sufficient contrast. For instance, a dark button (black or deep gray background with white text) will stand out against the light card background.
 
-    -   Positioning: Center the button under the text (add a wrapper div with `text-center` if needed). Alternatively, if the text is center-aligned, the button will naturally be centered beneath. Give some top margin to separate it from the text (e.g. `mt-4`).
+    -   Positioning: Center the button under the text (add a wrapper div with `text-center` if needed). Give some top margin to separate it from the text (e.g. `mt-4`).
 
--   **Vanta Trunk Visual:** As a subtle accent, incorporate a Vanta **Trunk** background effect in this section with a "mid-level" complexity. We can achieve a **subtle placement** by perhaps attaching the effect to a specific container rather than the entire section background:
+-   **Abstract Image Accent:** As a subtle visual accent, incorporate one of the abstract images. Select an image that complements the professional nature of pricing information:
 
-    -   One idea: create a `<div>` with an id or class (ex: `<div id="vanta-pricing" className="absolute inset-0 ...">`) that covers part of the section or is positioned behind the card. For subtlety, you might constrain it to a corner or half of the section. For instance, position a Vanta canvas in the top-right behind the text, or as a faint background pattern for the card.
+    -   Consider using a more structured/geometric abstract image for this business-focused section
+    -   Position the image subtly (e.g., partially visible in a corner with `opacity-30`)
+    -   On mobile, consider hiding the image for cleaner layout
+    -   Ensure the image is optimized and uses lazy loading (`loading="lazy"`)
 
-    -   Configure the Trunk effect with the parameters given: `chaos: 1.0` and `spacing: 7`. These likely control the visual complexity (chaos) and branch spacing; chaos 1.0 is moderate, spacing 7 probably gives a balanced density. The result should be a networked organic pattern that isn't too busy. Use the library's API (usually something like `VANTA.TRUNK({ el: ..., backgroundColor: 0xffffff, color: 0x... , chaos: 1.0, spacing: 7, ... })`) in a `useEffect` hook to initialize on that element. Set a backgroundColor that matches the section (probably white or the card's off-white) so it blends subtly.
-
-    -   **Placement & z-index:** Ensure the Vanta canvas does not obscure the text. You might need to place it behind the content: e.g., by giving the card container `relative` positioning and the Vanta `<div>` as absolutely positioned behind (with a lower z-index). Alternatively, apply the effect to the section itself but tune colors so it's faint. Since the prompt says "placed subtly nearby", an approach is to have a small canvas area floating to the side: e.g., a square or circle off to one side with the effect inside it. But simplest is a background effect behind the text with low opacity.
-
-    -   Check on different screens that this effect doesn't hinder readability. If it does, consider toning down chaos further or using a lighter color for the effect lines.
-
--   **Responsive & Contrast:** Ensure this card is responsive: on mobile, it should be full width (minus padding) and stack text and button nicely. On larger screens, the card can be centered with fixed max width. The Vanta effect, if used, might be disabled on mobile for performance (we'll address that in performance notes, but you can conditionally not initialize it if `window.innerWidth < some threshold`). The text should have sufficient contrast against the card background (#FCF8F4 is very light, so regular dark text is fine). The card itself should contrast from the page background (assuming the page is pure white, the slight tint will be visible; if not enough, you could use a border or shadow to delineate it).
+-   **Responsive & Contrast:** Ensure this card is responsive: on mobile, it should be full width (minus padding) and stack text and button nicely. On larger screens, the card can be centered with fixed max width. The text should have sufficient contrast against the card background (#FCF8F4 is very light, so regular dark text is fine). The card itself should contrast from the page background (assuming the page is pure white, the slight tint will be visible; if not enough, you could use a border or shadow to delineate it).
 
 4\. **"Pain Points Solved" -- Problem/Solution Accordion**
 ---------------------------------------------------------
 
-This section will list common pain points that target clients face, and how the Zebra Design approach solves them. We'll present each as an accordion item -- likely phrased as a statement of a pain point (or question) as the title, and a brief resolution or answer as the content.
+This section will list common pain points that target clients face, and how the Zebra Design approach solves them. We'll present each as an accordion item -- likely phrased as a statement of a pain point (or question) as the title, and a brief resolution or answer as the content. Content is in documentation/content lines 51-65.
 
 -   **Component & Layout:** Create `PainPointsSection.tsx` and wrap in `<section className="py-16 md:py-32">`. You might include a small heading for this section as well -- e.g., `<h2>Pain Points Solved</h2>` or a short intro line like *"Common challenges I address:"* to set context. Style it similarly to other section titles (consistent font and size). Then implement an accordion for the list of pain points, similar to how we did for the Launch Process.
 
@@ -128,12 +208,12 @@ This section will list common pain points that target clients face, and how the 
 
     -   Font and color should match the site -- likely black or dark gray text on white background. If the section background is white, this is straightforward. If you wanted to differentiate this section slightly, you could use a very light background tint on the whole section (e.g., `bg-gray-50`), but since we already have colored backgrounds for Pricing and perhaps CTA, you may keep this one white to not overdo it.
 
--   **Copy Editing:** As noted, keep the founder's tone. If the founder's writing is casual (using "you" or "we"), preserve that, just trim any unnecessary words. The result should read as four succinct problems and answers, which effectively communicate "I understand your pain points and I have solutions."
+    -   Copy Editing:** As noted, keep the founder's tone. If the founder's writing is casual (using "you" or "we"), preserve that, just trim any unnecessary words. The result should read as four succinct problems and answers, which effectively communicate "I understand your pain points and I have solutions."
 
 5\. **FAQs -- Frequently Asked Questions (Accordion)**
 -----------------------------------------------------
 
-The FAQ section will address common questions in a classic Q&A accordion format. We need to implement it so that all answers are hidden initially, letting users click on the questions they care about.
+The FAQ section will address common questions in a classic Q&A accordion format. We need to implement it so that all answers are hidden initially, letting users click on the questions they care about. Content is in documentation/content lines 71-91.
 
 -   **Component & Layout:** Create `FaqSection.tsx` and add the `<section className="py-16 md:py-32">` wrapper. You can include a heading for FAQs if desired -- e.g., `<h2>FAQs</h2>` -- or simply start the accordion if a heading already exists in another part of the page (depending on design). Likely a simple "FAQs" title centered above the list would be clear. Use a similar style to other section headings. If the design is minimalist, even just a line of text like "**FAQ**" or "**Common Questions**" could suffice.
 
@@ -166,69 +246,81 @@ The FAQ section will address common questions in a classic Q&A accordion format.
 6\. **Final Call to Action (CTA) -- "Ready to launch in weeks?"**
 ----------------------------------------------------------------
 
-The last section is a strong call-to-action encouraging the visitor to take the next step. It will feature a bold prompt, a bit of supporting text, and two side-by-side buttons. We'll also add a subtle Vanta visual accent here to make it eye-catching. This section should visually stand out as the culmination of the page.
+The last section is a strong call-to-action encouraging the visitor to take the next step. It will feature a bold prompt, a bit of supporting text, and two side-by-side buttons. We'll also add an abstract image accent here to make it eye-catching. This section should visually stand out as the culmination of the page. Content is in documentation/content lines 95-99.
 
--   **Component & Layout:** Create `FinalCtaSection.tsx` with the usual `<section className="py-16 md:py-32">`. To make this section distinct, consider using a different background color or style. For example, you could apply one of the brand accent colors as a very light background tint to the entire section (`className="bg-[#E7BDD7] bg-opacity-10"` for a tiny hint of pink, or `bg-[#CDCBFF] bg-opacity-10` for a hint of purple) -- just enough to differentiate it from plain white. This is optional; even without a colored bg, we'll use the Vanta effect to add visual interest.
+-   **Component & Layout:** Create `FinalCtaSection.tsx` with the usual `<section className="py-16 md:py-32">`. To make this section distinct, consider using a subtle background tint with #FCF8F4 (the approved background color) -- just enough to differentiate it from plain white.
 
     -   Inside the section, have a container (centered div) to hold the text and buttons, similar to other sections (e.g., `max-w-xl mx-auto text-center px-4`). Center alignment is recommended here to give a sense of focus on the CTA.
 
--   **Content:** Use the provided CTA text. Likely it includes a heading phrase like **"Ready to launch in weeks?"** (which should be exactly that text per the prompt) and some supporting sentence(s) persuading the user. For instance, the support copy might say something like "I'm here to help you get there. Let's build your vision together." Use it as given, only making tiny grammar tweaks if absolutely needed.
+-   **Content:** Use the provided CTA text from the content file. The heading is **"Ready to launch in weeks?"** and the supporting text is the full paragraph from lines 95-99 starting with "Let's chat, see if we're the right fit...". Use it exactly as given.
 
-    -   Render the main question as a prominent headline. Possibly use an `<h2>` or `<h1>` style for this final call (depending on how the rest of the page is structured -- if the hero used an h1, this could be an h2). Apply a larger font size, e.g. `text-2xl md:text-4xl`, and a bold weight. You want this line to be very clear and attention-grabbing. If you applied a background tint, ensure the text color has enough contrast (likely you'll continue using the dark text color on a very light tint, which is fine).
+    -   Render the main question as a prominent headline. Possibly use an `<h2>` or `<h1>` style for this final call. Apply a larger font size, e.g. `text-2xl md:text-4xl`, and a bold weight. You want this line to be very clear and attention-grabbing.
 
-    -   Place the supporting copy just below the headline as a normal paragraph. Keep it short -- if the user gave a long sentence, you might break it into two lines for impact. For example: "Let's turn your idea into a product. I can help you launch quickly and efficiently." (Exact wording from user to be used.) Use a slightly larger than normal font (maybe `text-lg`) to make it easily readable, and maintain a friendly, encouraging tone (which the user's copy likely already has).
+    -   Place the supporting copy just below the headline as a normal paragraph. Use the full text from the content file. Use a slightly larger than normal font (maybe `text-lg`) to make it easily readable, and maintain a friendly, encouraging tone.
 
 -   **Buttons:** Below the text, include the two side-by-side buttons: **"Book your call"** and **"See live examples"**.
 
     -   Markup: If using a Button component from the template, create two `<Button>` elements. Otherwise, use `<a>` or `<button>` styled with Tailwind. These should be displayed inline on desktop and stacked on mobile.
 
-    -   Layout classes: Wrap them in a flex container: `<div className="flex flex-col md:flex-row justify-center gap-4 mt-6">` (for example). This will stack them on small screens (one on top of the other with some gap) and place them side by side centered on md+ screens with a gap between.
+    -   Layout classes: Wrap them in a flex container: `<div className="flex flex-col md:flex-row justify-center gap-4 mt-6">`. This will stack them on small screens (one on top of the other with some gap) and place them side by side centered on md+ screens with a gap between.
 
-    -   **"Book your call"**: This is the primary CTA, so style it as a primary button. Likely a solid fill color. For consistency, use the same style as the Pricing link button if you made one, or the hero's primary button. For example, a black or dark button with white text (or a vibrant brand color background) that visually stands out. It should link to whatever booking mechanism is used (if the user has a Calendly or a contact page). The prompt implies it's just text; possibly it should open a scheduling link or scroll to a contact section. If there's no specific URL given, you can make it `href="#contact"` or trigger a modal -- but since no contact form exists, it might be an external link. We'll assume the user will fill in the correct link (mention this in comments if needed).
+    -   **"Book your call"**: This is the primary CTA, so style it as a primary button. Likely a solid fill color. Link to: https://cal.com/charlieellington/zebra-call (opens in same tab for booking flow).
 
-    -   **"See live examples"**: Style this as a secondary button. Perhaps an outlined style or a less emphasized color. For instance, if primary is a filled dark button, this could be a light outline of the same color (`border-2 border-gray-900 text-gray-900 bg-transparent`). Or if using brand colors, one button could be one accent and the other another accent, but be cautious not to clash. The secondary should still be noticeable but slightly less "loud" than the primary. This button likely scrolls or links to examples of work. Since we already showed Recent Builds, "live examples" might mean linking out to live sites of those projects or a portfolio page. In absence of clarity, we can have it anchor to the Recent Builds section or a portfolio section. For instance, `href="#recent-builds"` could scroll up to the projects section where presumably live links might exist. The user can adjust this link as needed.
+    -   **"See live examples"**: Style this as a secondary button. Perhaps an outlined style or a less emphasized color. Link to: `#recent-builds` to scroll to the Recent Builds section.
 
-    -   Both buttons should have hover and focus states (Tailwind `hover:` styles or the Button component's built-in states). Also ensure proper `cursor: pointer` and accessible labels.
+    -   Both buttons should have hover and focus states. Also ensure proper `cursor: pointer` and accessible labels.
 
--   **Vanta Trunk Accent:** Similar to the Pricing section, add a **low-chaos Vanta Trunk** visual to this CTA section for a dynamic accent. This time, use an even gentler setting: `chaos: 0.5` and `spacing: 10` as specified. This will produce a more sparse, subtle pattern.
+-   **Abstract Image Accent:** Add a dynamic abstract image to this CTA section for visual interest. Select an image that conveys energy and action:
 
-    -   Implementation: Attach the Vanta effect perhaps to the entire section background or a part of it. One idea is to use it as a **background overlay for the text**: for example, an absolutely positioned canvas behind the CTA content, covering maybe the top half of the section with some opacity. Low chaos means it won't be too distracting -- it might look like faint connecting lines or tree branches in the back.
+    -   Consider using a more dynamic/flowing abstract image for this action-oriented section
+    -   Position as a background element or floating accent with `opacity-40`
+    -   Ensure it adds visual interest without overwhelming the text
+    -   Consider responsive positioning (different placement on mobile vs desktop)
 
-    -   If the Pricing section already has a Vanta, consider not overlapping too much. Maybe position this one differently (e.g., if Pricing had it top-right, put this CTA one bottom-left, etc.) so they don't visually conflict when scrolling.
+-   **Visual Emphasis:** This CTA section should be very noticeable. Using a combination of the above (a bit of background tint, the abstract image, big bold text, prominent buttons) will ensure it stands out. Yet, stick to the minimalist vibe: the design should not suddenly become overly flashy. The abstract image is modern and fits the tech aesthetic, and the background tint is subtle. The typography and spacing being consistent with prior sections will keep it looking like part of the same site.
 
-    -   Use a different color for this effect if needed to contrast the section background. For instance, if the section is white or lightly tinted, perhaps use a neutral gray or a soft brand color for the trunk lines (Vanta allows specifying color). Keep it subtle -- maybe a light purple from the brand with high transparency.
-
-    -   As with the Pricing Vanta, initialize it in a `useEffect` on component mount. Because we already have another Vanta on the page, be mindful of performance -- we might want to only enable both on desktop. We'll address that below, but essentially if you have to prioritize, this final CTA could be a good place to have the effect since it's the last push for user attention.
-
--   **Visual Emphasis:** This CTA section should be very noticeable. Using a combination of the above (a bit of background tint, the Vanta effect, big bold text, prominent buttons) will ensure it stands out. Yet, stick to the minimalist vibe: the design should not suddenly become overly flashy. The Vanta is abstract and low chaos, which fits the modern techy feel, and the background tint is subtle. The typography and spacing being consistent with prior sections will keep it looking like part of the same site.
-
--   **Finishing Touches:** Make sure the spacing around elements (headline, subtext, buttons) is balanced. For example, add `mb-4` after the headline for spacing before the subtext, and `mt-2` after subtext before the buttons (or use the `mt-6` on the button container as suggested). On mobile, check that the buttons stack nicely and the text doesn't overflow. Everything should be center-aligned and easy to read without zooming.
+-   **Finishing Touches:** Make sure the spacing around elements (headline, subtext, buttons) is balanced. On mobile, check that the buttons stack nicely and the text doesn't overflow. Everything should be center-aligned and easy to read without zooming.
 
 Performance Optimizations & Final Checks
 ----------------------------------------
 
--   **Limit Vanta Instances:** As noted, running too many Vanta animations can hurt performance. We have potentially three: one maybe in the hero (if the template had a Vanta background already), one in Pricing, and one in CTA. We should ensure no more than two are active at any given time. If the hero uses Vanta, then adding two more means three total -- to comply with *"only 2 Vanta Trunk visuals active at a time"*, consider these strategies:
-
-    -   Only initialize the Pricing and CTA Vanta effects on devices with sufficient capability (e.g., use `window.matchMedia("(min-width: 768px)")` to maybe only run on desktop, or check for WebGL support and skip if not available).
-
-    -   Use an **Intersection Observer** to start/stop effects on scroll. For instance, when the Pricing section scrolls out of view, you could call the Vanta `destroy()` on it, freeing resources, and then initialize the CTA one when it comes into view. If the user scrolls back up, you might re-init Pricing's effect (or simply don't destroy Pricing's until CTA is about to init). Simpler: since the CTA is last, you might init Pricing's on page load (desktop only), and only init CTA's when the user scrolls near it (and possibly then remove or pause Pricing's if it's still running off-screen).
-
-    -   If you want to keep it simple, you might decide to not use Vanta on mobile at all (saving resources). So wrap the Vanta init code in a `if (window.innerWidth >= 768)` check. Most mobile users won't see the effect, but they also won't experience any lag.
-
-    -   Document this decision in code comments so future maintainers know why you did it.
-
--   **Fallbacks:** If Vanta fails to load or is disabled (e.g., on older browsers with no WebGL), the sections should still look fine. Ensure that the background color of sections is explicitly set so that text is readable even without the canvas. You might also consider providing a static image as a fallback (though not necessary if the design doesn't rely on the effect for understanding). For example, you could capture a screenshot of the trunk pattern and use it as a `<canvas>` fallback image via CSS background in the Vanta container. But given it's purely decorative, it's acceptable to have nothing in its place if it can't run.
+-   **Image Optimization:** Since we're using static abstract images instead of Vanta animations:
+    - Ensure all abstract images are properly optimized (consider using Next.js Image component with proper sizing)
+    - Use lazy loading for images that aren't immediately visible
+    - Consider serving different image sizes for different screen sizes
+    - The abstract PNGs are quite large (7-9MB each), so they should be optimized before use
 
 -   **Testing:** After implementing, thoroughly test all sections:
 
     -   **Responsive check:** Confirm each section looks good on a small smartphone screen up to a large desktop. Pay attention to the accordion behavior: on mobile, the Launch and Pain Points sections should start collapsed -- test tapping each item. On desktop, verify they start expanded (for those two sections) and that doesn't break the layout. Also ensure the FAQ is collapsed on both.
 
-    -   **Content verification:** Make sure all provided text is correctly inserted and any minor edits still convey the intended meaning. Especially double-check that the Pricing text and FAQ text match exactly what the user provided (since those should not be altered).
+    -   **Content verification:** Make sure all provided text is correctly inserted from the documentation/content file. Especially double-check that the Pricing text and FAQ text match exactly what the user provided (since those should not be altered).
 
     -   **Styling consistency:** Compare with earlier sections of the page. The spacing above and below each new section should match that of the Recent Builds section (py-16 md:py-32 ensures that). Headings should visually align with other headings. Lists and paragraphs should use the same font sizes. This consistency gives a polished feel.
 
     -   **Links and Buttons:** Click the "Pricing Calculations" link -- it should navigate to the pricing page anchor correctly. Click "Book your call" and "See live examples" -- ensure they go where expected (if those links aren't live yet, just ensure the placeholders are correct).
 
-    -   **Vanta performance:** Test on a mid-range device or throttled network to see if the page still scrolls smoothly. If you notice jank, you might reduce the complexity further (e.g., increase spacing or lower chaos, or disable one effect).
+    -   **Image performance:** Verify that abstract images load quickly and don't cause layout shift. Test on a throttled network to ensure acceptable performance.
 
 By following this plan, you will extend the one-page site with rich content sections that feel cohesive and professional. Each block reuses the template's structure and keeps the design simple and bold, in line with the founder's style. Once implemented, these additions will guide users from understanding the process and value (launch steps, audience, pricing) through handling objections (pain points, FAQs) to a compelling call-to-action -- all within a fast, responsive experience.
+
+## Information Needed for Confident Execution
+
+✅ **All questions have been answered:**
+
+1. **Button Links**: 
+   - "Book your call" → https://cal.com/charlieellington/zebra-call
+   - "Pricing Calculations" → /pricing
+
+2. **Abstract Image Selection**:
+   - Make selections based on content fit and responsive best practices
+   - Use structured images for business sections, dynamic images for action sections
+
+3. **Accordion Component**:
+   - Check first, then install if needed: `npx shadcn@latest add accordion`
+
+4. **Color Palette**:
+   - #FCF8F4 for background tints only
+   - #E7BDD7 and #CDCBFF for icon/text highlights only
+
+**Ready for implementation following the sub-steps outlined above.**

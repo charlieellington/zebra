@@ -1,77 +1,68 @@
 "use client";
 
 import { ScrollView } from "@/components/scroll-view";
-import VantaTrunk from "@/components/vanta-trunk";
-import { useEffect, useState } from "react";
+import Image from "next/image";
 
 export default function CredoSection() {
-  const [isMounted, setIsMounted] = useState(false);
-
-  useEffect(() => {
-    setIsMounted(true);
-  }, []);
-
   return (
-    <section className="py-16 md:py-24 lg:py-32" id="credo">
-      <div className="mx-auto max-w-5xl px-6">
-        <div className="lg:grid lg:grid-cols-2 lg:gap-12 items-center">
-          {/* Text content - left column on desktop */}
-          <div className="max-w-xl mx-auto lg:mx-0 text-center lg:text-left">
-            <ScrollView>
-              <blockquote className="space-y-6">
-                <p className="text-2xl md:text-3xl lg:text-4xl italic leading-relaxed text-balance">
-                  "Only hire people who either write code or go out and get users."
-                </p>
-                <cite className="block text-lg not-italic text-muted-foreground">
-                  — Paul Graham, <span className="italic">The 18 Mistakes That Kill Startups</span>
-                </cite>
-              </blockquote>
-            </ScrollView>
-            
-            <ScrollView delay={0.1}>
-              <div className="mt-8 space-y-4">
-                <p className="text-lg font-medium text-balance">
-                  That's the lens I use for every project: ship working code, talk to users, skip the fluff.
-                </p>
-                <p className="text-lg text-muted-foreground">
-                  Zebra Design is my solo practice. No middle managers — you work directly with me.
-                </p>
-              </div>
-            </ScrollView>
-          </div>
-
-          {/* Vanta animation - responsive sizing */}
-          {isMounted && (
-            <>
-              {/* Tablet view - smaller animation below text */}
-              <div className="hidden sm:flex lg:hidden justify-center mt-12">
-                <div className="w-[250px] h-[250px] opacity-70">
-                  <VantaTrunk 
-                    chaos={0.8}
-                    spacing={12}
-                    color={0x111111}
-                    backgroundColor={0xFCF8F4}
-                    width={250}
-                    height={250}
-                  />
-                </div>
-              </div>
-
-              {/* Desktop view - full size animation in right column */}
-              <div className="hidden lg:flex justify-center items-center">
-                <div className="w-[350px] h-[350px] xl:w-[400px] xl:h-[400px]">
-                  <VantaTrunk 
-                    chaos={1.0}
-                    spacing={10}
-                    color={0x111111}
-                    backgroundColor={0xFCF8F4}
-                    width="100%"
-                    height="100%"
-                  />
-                </div>
-              </div>
-            </>
-          )}
+    <section className="py-16 md:py-20" id="credo">
+      <div className="mx-auto max-w-4xl px-6">
+        <div className="mx-auto max-w-2xl">
+          <ScrollView>
+            <blockquote className="space-y-4 text-center">
+              <p className="text-base md:text-lg italic leading-relaxed text-balance">
+                "Only hire people who either write code or go out and get users."
+              </p>
+              <cite className="flex flex-wrap items-center justify-center gap-2 text-sm not-italic text-muted-foreground">
+                <Image
+                  src="/images/other/bio-12.jpeg"
+                  alt="Paul Graham"
+                  width={24}
+                  height={24}
+                  className="rounded-full object-cover"
+                />
+                <span>— Paul Graham,</span>
+                <span className="flex items-center gap-1">
+                  Founder of
+                  <svg
+                    xmlns="http://www.w3.org/2000/svg"
+                    viewBox="0 0 36 36"
+                    className="inline-block h-4 w-4"
+                    aria-label="Y Combinator"
+                  >
+                    <rect width="36" height="36" fill="#F26625" />
+                    <path d="M12 8h5l3.5 7 3.5-7h5l-6.5 11v9h-4v-9L12 8z" fill="white" />
+                  </svg>
+                </span>
+                <a 
+                  href="https://paulgraham.com/startupmistakes.html" 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="italic hover:underline underline-offset-2"
+                >
+                  The 18 Mistakes That Kill Startups
+                </a>
+              </cite>
+            </blockquote>
+          </ScrollView>
+          
+          <ScrollView delay={0.1}>
+            <div className="mt-16 space-y-4 text-center">
+              <p className="text-lg md:text-xl italic leading-relaxed text-balance">
+                "This is the principle I've based Zebra Design on: ship working code, talk to users, design, code more and results"
+              </p>
+              <cite className="flex items-center justify-center gap-2 text-sm md:text-base not-italic text-muted-foreground whitespace-nowrap">
+                <Image
+                  src="/images/other/charlie-ellington.jpg"
+                  alt="Charlie Ellington"
+                  width={32}
+                  height={32}
+                  className="rounded-full object-cover"
+                />
+                <span>— Charlie Ellington · Zebra Design is my solo practice — no middle managers, you work directly with me.</span>
+              </cite>
+            </div>
+          </ScrollView>
         </div>
       </div>
     </section>

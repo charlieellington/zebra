@@ -32,7 +32,7 @@ export default function HeroSection() {
     <>
       <div className="overflow-hidden min-h-screen">
         <section>
-          <div className="relative pt-24 md:pt-36">
+          <div className="relative pt-8 md:pt-12 lg:pt-16">
             <AnimatedGroup
               variants={{
                 container: {
@@ -186,7 +186,7 @@ export default function HeroSection() {
               ...transitionVariants,
             }}
           >
-            <div className="relative -mr-56 mt-8 overflow-hidden px-2 sm:mr-0 sm:mt-12 md:mt-20">
+            <div className="relative -mr-56 mt-12 overflow-hidden px-2 sm:mr-0 sm:mt-16 md:mt-24 lg:mt-20">
               <LogoCloud />
             </div>
           </AnimatedGroup>

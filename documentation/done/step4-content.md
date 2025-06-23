@@ -101,7 +101,9 @@ The beauty of our `VantaTrunk` component is that it can be reused with different
 - Documented all props with usage examples and recommended values
 - Currently using 2 Vanta instances: Credo (moderate) + Footer (calm)
 
-### Step 4.6: Testing & Best Practices ✅
+
+
+### Step 4.7: Testing & Best Practices ✅
 
 Before considering this build complete, thoroughly test the integrated Vanta effect and the surrounding sections:
 
