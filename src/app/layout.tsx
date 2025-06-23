@@ -17,6 +17,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Zebra Design — Designers That Code with AI",
   description: "I help you launch a digital product—designed and coded—faster than you thought possible. Idea → tested product in weeks, not months. Design-as-a-Service for startup founders, SMEs, and product teams.",
+  icons: {
+    icon: 'data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>🌈</text></svg>',
+  },
 };
 
 export default function RootLayout({
