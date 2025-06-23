@@ -58,7 +58,7 @@ export default function FeaturesSection() {
           </div>
           <div className="lg:col-span-3">
             <ScrollView>
-              <Card className="mx-auto mt-12 max-w-lg p-8 shadow-md sm:p-16 w-full">
+              <Card className="mx-auto mt-12 max-w-lg p-8 sm:p-16 w-full">
                 <div>
                   <h3 className="text-lg font-semibold">
                     Let&apos;s get you to the right place

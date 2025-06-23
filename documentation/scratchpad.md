@@ -247,6 +247,35 @@ Added interactive image previews to Recent Builds cards:
 **Files Modified**:
 - src/components/sections/home/recent-builds-section.tsx (added hover previews)
 
+### Recent Builds Section - Expandable Text Enhancement
+Improved the section with first-person Hemingway style copy and expandable text effects:
+
+1. **Intro Text (Before Cards)**:
+   - Permanent header: "Founder-led. Design-centric. Outcome-driven."
+   - Truncated version: "I founded Zebra Design after ten years of launching early-stage products ..."
+   - Expands on hover/click to show full story about Deep Work Studio, AI-assisted coding in 2025
+   - Bold emphasis on "design and development unified from the start"
+   - Clean inline expansion without visual indicators
+
+2. **Outro Text (After Cards)**:
+   - Header/truncated version: "I'm your hands-on partner with skin in the game – when you succeed, I succeed."
+   - Expands to show additional context about solo practice philosophy
+   - Rewritten in first person for solo practice (not team)
+   - Emphasizes faster, user-centric development and real-world results
+
+3. **Technical Implementation**:
+   - Hover expansion on desktop, click expansion on mobile
+   - Smooth inline text replacement
+   - No chevron icons or visual indicators
+   - Mobile-aware (no hover on touch devices)
+   - Cards use clean borders with hover effect (no shadows)
+
+**Files Modified**:
+- src/components/ui/card.tsx (removed shadow)
+- src/components/sections/home/recent-builds-section.tsx (border styling + expandable text)
+- src/components/contact.tsx (removed shadow)
+- src/components/sections/home/full-version-section.tsx (removed shadow)
+
 ## Lessons
 - CONTRIBUTING.md defines core principles, roles, workflow, coding etiquette, secret handling, and project folder separation.
 - The assistant treats the CONTRIBUTING.md rules as persistent top-of-mind guidance and ensures responses comply, even if the file is not reread verbatim each time.
@@ -302,30 +331,49 @@ Currently reviewing step2-hero.md plan and preparing for implementation:
 
 **Next Steps**: Awaiting user input on questions before proceeding with Stage 1 implementation.
 
-### Phase 5: Post-Hero "Credo & Key Benefits" Section (Planning)
-Currently reviewing step4-content.md plan and preparing for implementation:
+### Phase 5: Post-Hero "Credo & Key Benefits" Section (In Progress)
+Currently implementing the post-hero sections from step4-content.md:
 
-1. **Plan Review**: Comprehensive build plan includes two sub-sections:
-   - Credo Section: Paul Graham quote with founder's philosophy
-   - Quick Wins Section: 6 key benefits with icons and tooltips
+1. **Step 4.1: Setup Prerequisites** ✅ COMPLETE
+   - Installed Vanta.js and p5 dependencies
+   - Tooltip component already existed (Shadcn UI)
+   - Created reusable VantaTrunk component at `src/components/vanta-trunk.tsx`
+   - Verified Lucide icons availability
+   - Created test page at `/vanta-test` with 4 different configurations
+   - Vanta Trunk animation is working correctly
 
-2. **Implementation Steps Created**: Split into 4 manageable steps in step4-content.md:
-   - Step 4.1: Setup Prerequisites (Tooltip component, Vanta.js, icons)
-   - Step 4.2: Implement Credo Section
-   - Step 4.3: Implement Quick Wins Section  
-   - Step 4.4: Polish and Integration
+2. **Step 4.2: Implement Credo Section** (Next)
+   - Will create `<CredoSection>` with Paul Graham quote
+   - Add founder's philosophy and solo practice messaging
+   - Integrate Vanta Trunk animation
 
-3. **Content Decisions Integrated** ✅:
-   - Quality Design description: "Quality design in every iteration -- no shortcuts."
-   - Label consistency: Using "Flat Price" throughout
-   - Vanta.js integration confirmed (will be installed in Step 4.1)
-   - Tooltip component confirmed (will be installed in Step 4.1)
-   - Component reuse strategy confirmed (adapt testimonials.tsx for blockquote)
+3. **Step 4.3: Implement Quick Wins Section** (Pending)
+   - Create 6 benefits grid with icons and tooltips
+   
+4. **Step 4.4: Polish and Integration** (Pending)
+   - Fine-tune responsive behavior
+   - Performance optimization
 
-4. **Technical Findings**:
-   - `testimonials.tsx` has blockquote structure that could be adapted
-   - `services-2.tsx` is too complex for Quick Wins - better to create new component
-   - No existing Vanta integration in codebase
-   - Tooltip component not yet installed from Shadcn UI
+**Technical Notes**:
+- Vanta requires "use client" directive for client-side rendering
+- Component includes proper cleanup with destroy() on unmount
+- Props allow full customization of chaos, spacing, colors, and dimensions
 
-**Next Steps**: Ready to proceed with Step 4.1 (prerequisites installation) when user confirms.
+**Next Steps**: Ready to proceed with Step 4.2 (Credo Section implementation)
+
+### Card Styling Updates
+Successfully removed shadows from cards throughout the site and replaced with clean border styling:
+
+1. **Global Card Component**:
+   - Removed shadow-sm class from base Card component
+   - Cards now have clean borders without shadows
+
+2. **Recent Builds Section Cards**:
+   - Updated from shadow-md hover effect to border color change on hover
+   - Border changes from default to foreground/20 on hover (foreground/30 in dark mode)
+   - Maintains scale animation on hover
+
+3. **Other Components Updated**:
+   - Contact form card: removed shadow-md
+   - Full Version section card: removed shadow-xl
+   - Floating image preview: updated border styling

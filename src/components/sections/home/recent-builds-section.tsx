@@ -70,6 +70,8 @@ export default function RecentBuildsSection() {
   const [mousePosition, setMousePosition] = useState({ x: 0, y: 0 });
   const [isMobile, setIsMobile] = useState(false);
   const [isLargeDesktop, setIsLargeDesktop] = useState(false);
+  const [expandedIntro, setExpandedIntro] = useState(false);
+  const [expandedOutro, setExpandedOutro] = useState(false);
 
   useEffect(() => {
     // Check if device is mobile/touch
@@ -114,16 +116,29 @@ export default function RecentBuildsSection() {
   return (
     <section className="py-16 md:py-32" id="recent-builds">
       <div className="mx-auto max-w-5xl space-y-12 px-6 md:space-y-16">
-        {/* Section Intro */}
-        <div className="mx-auto max-w-3xl text-center space-y-4">
+        {/* Section Intro with Expandable Text */}
+        <div className="mx-auto max-w-3xl text-center">
           <ScrollView>
-            <div className="space-y-2">
+            <div 
+              className="space-y-4 cursor-pointer"
+              onMouseEnter={() => !isMobile && setExpandedIntro(true)}
+              onMouseLeave={() => !isMobile && setExpandedIntro(false)}
+              onClick={() => isMobile && setExpandedIntro(!expandedIntro)}
+            >
               <p className="text-lg font-semibold md:text-xl">
                 <span className="block">Founder-led. Design-centric. Outcome-driven.</span>
               </p>
               <p className="text-muted-foreground">
-                I founded Zebra Design after more than a decade of launching early-stage products as a product designer. 
-                My approach is grounded in experience and focused on delivering real results.
+                {expandedIntro ? (
+                  <>
+                    I founded Zebra Design after ten years of launching early-stage products. 
+                    After co-founding Deep Work Studio (a design agency that delivered successful UX for Web3 innovators like Ethereum, MakerDAO and others), 
+                    I saw how traditional design handoffs often slowed development to a crawl. 
+                    In 2025 I embraced AI-assisted coding and discovered a better way to build products: <span className="font-semibold text-foreground">design and development unified from the start</span> for ultra-fast results.
+                  </>
+                ) : (
+                  <>I founded Zebra Design after ten years of launching early-stage products ...</>
+                )}
               </p>
             </div>
           </ScrollView>
@@ -151,7 +166,7 @@ export default function RecentBuildsSection() {
                       onMouseEnter={() => handleMouseEnter(project.image)}
                       onMouseLeave={handleMouseLeave}
                     >
-                      <Card className="bg-white border-black/5 hover:shadow-md transition-all duration-200 hover:scale-[1.02] rounded-lg relative overflow-hidden group-hover:cursor-alias">
+                      <Card className="bg-white dark:bg-card border hover:border-foreground/20 dark:hover:border-foreground/30 transition-all duration-200 hover:scale-[1.02] rounded-lg relative overflow-hidden group-hover:cursor-alias">
                         <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center gap-1 text-xs text-muted-foreground">
                           <ExternalLink className="h-3 w-3" />
                           <span>external link for demo</span>
@@ -210,7 +225,7 @@ export default function RecentBuildsSection() {
                       onMouseEnter={() => handleMouseEnter(role.image)}
                       onMouseLeave={handleMouseLeave}
                     >
-                      <Card className="bg-white border-black/5 hover:shadow-md transition-all duration-200 hover:scale-[1.02] rounded-lg relative overflow-hidden group-hover:cursor-alias">
+                      <Card className="bg-white dark:bg-card border hover:border-foreground/20 dark:hover:border-foreground/30 transition-all duration-200 hover:scale-[1.02] rounded-lg relative overflow-hidden group-hover:cursor-alias">
                         <div className="absolute top-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-200 flex items-center gap-1 text-xs text-muted-foreground">
                           <ExternalLink className="h-3 w-3" />
                           <span>external link for demo</span>
@@ -243,6 +258,30 @@ export default function RecentBuildsSection() {
             </div>
           </div>
         </div>
+
+        {/* Outro with Expandable Text */}
+        <div className="mx-auto max-w-3xl text-center">
+          <ScrollView>
+            <div 
+              className="space-y-4 cursor-pointer"
+              onMouseEnter={() => !isMobile && setExpandedOutro(true)}
+              onMouseLeave={() => !isMobile && setExpandedOutro(false)}
+              onClick={() => isMobile && setExpandedOutro(!expandedOutro)}
+            >
+              <p className="text-lg font-semibold md:text-xl">
+                I'm your hands-on partner with skin in the game – when you succeed, I succeed.
+              </p>
+              {expandedOutro && (
+                <p className="text-muted-foreground">
+                  Today, Zebra Design is my solo practice where I blend design thinking with AI-powered development. 
+                  I'm obsessed with making product development <span className="font-semibold text-foreground">faster and more user-centric</span>. 
+                  My mission is simple: help innovators launch sooner and learn faster. 
+                  Yes, I love beautiful design, but I love real-world results even more.
+                </p>
+              )}
+            </div>
+          </ScrollView>
+        </div>
       </div>
 
       {/* Floating Image Preview */}
@@ -256,7 +295,7 @@ export default function RecentBuildsSection() {
           }}
         >
           <div 
-            className="relative rounded-lg overflow-hidden shadow-2xl border border-black/10"
+            className="relative rounded-lg overflow-hidden border border-foreground/10"
             style={{ width: `${previewWidth}px` }}
           >
             <Image
