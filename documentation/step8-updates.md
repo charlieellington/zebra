@@ -9,5 +9,6 @@
 
 # Could haves: 
 
+- Update hero cards to look better
 
 # Won't Haves: 

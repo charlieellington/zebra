@@ -111,21 +111,21 @@ export default function HeroSection() {
                   className="mt-8 flex justify-center"
                 >
                   <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl w-full">
-                    <div className="flex items-start gap-3 p-4 rounded-lg bg-[#FCF8F4] border border-black/5">
+                    <div className="flex items-start gap-3 p-4 rounded-lg bg-white">
                       <Zap className="text-muted-foreground mt-0.5 flex-shrink-0" size={18} />
-                      <span className="text-sm">Idea → tested product in weeks, not months</span>
+                      <span className="text-sm text-left">Idea → tested product in weeks, not months</span>
                     </div>
-                    <div className="flex items-start gap-3 p-4 rounded-lg bg-[#FCF8F4] border border-black/5">
+                    <div className="flex items-start gap-3 p-4 rounded-lg bg-white">
                       <Code2 className="text-muted-foreground mt-0.5 flex-shrink-0" size={18} />
-                      <span className="text-sm">I handle both design and development</span>
+                      <span className="text-sm text-left">I handle both design and development</span>
                     </div>
-                    <div className="flex items-start gap-3 p-4 rounded-lg bg-[#FCF8F4] border border-black/5">
+                    <div className="flex items-start gap-3 p-4 rounded-lg bg-white">
                       <Users className="text-muted-foreground mt-0.5 flex-shrink-0" size={18} />
-                      <span className="text-sm">Made for startup founders, SMEs, and product teams</span>
+                      <span className="text-sm text-left">Made for startup founders, SMEs, and product teams</span>
                     </div>
-                    <div className="flex items-start gap-3 p-4 rounded-lg bg-[#FCF8F4] border border-black/5">
+                    <div className="flex items-start gap-3 p-4 rounded-lg bg-white">
                       <Rocket className="text-muted-foreground mt-0.5 flex-shrink-0" size={18} />
-                      <span className="text-sm">A design-as-a-service model to design and develop your app lightning-fast</span>
+                      <span className="text-sm text-left">A design-as-a-service model to design and develop your app lightning-fast</span>
                     </div>
                   </div>
                 </AnimatedGroup>
