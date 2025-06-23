@@ -7,6 +7,7 @@ import Link from "next/link";
 import Image from "next/image";
 import { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "motion/react";
+import { ColoredHighlight } from "@/components/ui/colored-highlight";
 
 const aiProjects = [
   {
@@ -76,7 +77,8 @@ const metrics = [
     logo: "/images/logos/ramp.png",
     logoAlt: "Ramp Network",
     description: "Ramp raised $120M on the product I designed",
-    bg: "#CDCBFF",
+    bg: "#B8E8D4", // Changed to green to match
+    textColor: "#4A9B7F", // Green text color
   },
   {
     metric: "$200M+",
@@ -84,6 +86,7 @@ const metrics = [
     logoAlt: "Nexus Mutual",
     description: "Nexus Mutual manages $200M+ coverage on the platform I built",
     bg: "#E7BDD7",
+    textColor: "#C054A0", // Pink text color
   },
   {
     metric: "Billions",
@@ -91,6 +94,7 @@ const metrics = [
     logoAlt: "Ethereum Foundation",
     description: "Ethereum transitioned billions via the interface I crafted",
     bg: "#FDA7A0",
+    textColor: "#E85D75", // Coral text color
   },
 ];
 
@@ -150,7 +154,7 @@ export default function RecentBuildsSection() {
           <ScrollView>
             <div className="space-y-2 mb-8 md:mb-12 relative">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold">
-                Trusted By Startups That Raised $120M+
+                Trusted By Startups That Raised <span className="font-bold" style={{ color: "#4A9B7F" }}>$120M+</span>
               </h2>
               <p className="text-base md:text-lg text-muted-foreground">
                 Founder-led. Design-centric. Outcome-driven.
@@ -196,7 +200,7 @@ export default function RecentBuildsSection() {
               return (
                 <div key={index} className="space-y-3">
                   <div className="flex items-center gap-3">
-                    <div className="flex items-center justify-center px-3 py-2 rounded-lg flex-shrink-0 font-bold text-lg" style={{ backgroundColor: `${result.bg}40`, color: result.bg }}>
+                    <div className="flex items-center justify-center px-4 py-2.5 rounded-lg flex-shrink-0 font-bold text-2xl md:text-3xl" style={{ backgroundColor: `${result.bg}30`, color: result.textColor }}>
                       {result.metric}
                     </div>
                     <Image 

@@ -8,7 +8,8 @@ const results = [
     metric: "$120M",
     logo: "/images/logos/ramp.png",
     description: "raised on product I designed",
-    bg: "#CDCBFF",
+    bg: "#B8E8D4",
+    textColor: "#4A9B7F",
   },
   {
     icon: Shield,
@@ -16,6 +17,7 @@ const results = [
     logo: "/images/logos/nexus%20mutual.png",
     description: "coverage on platform I built",
     bg: "#E7BDD7",
+    textColor: "#C054A0",
   },
   {
     icon: TrendingUp,
@@ -23,6 +25,7 @@ const results = [
     logo: "/images/logos/ethereum.png",
     description: "transitioned via interface I crafted",
     bg: "#FDA7A0",
+    textColor: "#E85D75",
   },
 ];
 
@@ -35,16 +38,21 @@ export default function ProvenResultsSection() {
             const Icon = result.icon;
             return (
               <ScrollView key={index} delay={0.1 * (index + 1)}>
-                <div className="flex items-center justify-center md:justify-start gap-4">
-                  <div className="inline-flex p-2.5 rounded-lg" style={{ backgroundColor: `${result.bg}40` }}>
-                    <Icon className="w-5 h-5" style={{ color: result.bg }} />
-                  </div>
+                <div className="flex flex-col items-center md:items-start gap-2">
                   <div className="flex items-center gap-3">
-                    <p className="text-xl md:text-2xl font-bold text-foreground">
-                      {result.metric}
-                    </p>
-                    <Image src={result.logo} alt="logo" width={50} height={20} className="object-contain opacity-60" />
+                    <div className="inline-flex p-3 rounded-lg" style={{ backgroundColor: `${result.bg}30` }}>
+                      <Icon className="w-6 h-6" style={{ color: result.textColor }} />
+                    </div>
+                    <div className="flex items-center gap-3">
+                      <p className="text-3xl md:text-4xl font-bold" style={{ color: result.textColor }}>
+                        {result.metric}
+                      </p>
+                      <Image src={result.logo} alt="logo" width={70} height={28} className="object-contain opacity-70 hover:opacity-100 transition-opacity" />
+                    </div>
                   </div>
+                  <p className="text-sm text-muted-foreground text-center md:text-left pl-0 md:pl-[60px]">
+                    {result.description}
+                  </p>
                 </div>
               </ScrollView>
             );

@@ -1426,27 +1426,60 @@ Successfully executed the requested design consistency improvements:
 
 **Note**: Card backgrounds were not changed as requested - will address in a later update.
 
+### Header Button Enhancement ✅
+Made the "See Recent Work" button in the hero section more prominent:
 
+1. **Style Changes**:
+   - Changed from `variant="ghost"` to `variant="secondary"`
+   - Added white background with `bg-white`
+   - Added hover state with `hover:bg-gray-100`
+   - Maintains the same size and rounded corners
 
-
-1. **Visual Enhancement**:
-   - Added red X icons (from Lucide) to the beginning of each accordion trigger
-   - X icons are 4x4 size with red-500 color to emphasize these are problems/negatives
-   - 3px gap between icon and text for proper spacing
-
-2. **Layout Adjustments**:
-   - Wrapped each trigger text in a flex container with icon
-   - Added pl-7 padding to accordion content to align with text (not icon)
-   - Maintains clean, readable layout
-
-3. **Consistency**:
-   - Both accordion sections now have icons (Who Is This For has colored icons, Pain Points has red X marks)
-   - Creates visual hierarchy and makes pain points immediately recognizable as problems
+2. **Visual Impact**:
+   - Button now stands out more against the animated background
+   - White background creates better contrast
+   - Maintains visual hierarchy with primary CTA still being more prominent
 
 **Files Modified**:
-- src/components/sections/home/pain-points-section.tsx (added X icons to all triggers)
+- src/components/sections/home/hero-section.tsx (updated button styling)
 
-**Result**: The pain points are now visually marked as negatives/problems, making it clearer that these are issues the service solves.
+**Result**: The secondary CTA is now more visible and clickable while still maintaining appropriate visual hierarchy with the primary "Book Free Intro Call" button.
+
+### Audience Identifier Text Update ✅
+Updated the audience identifier text in the hero section:
+
+1. **Text Change**:
+   - Changed from: "Built for startup founders, SMEs, and teams racing the runway—or simply ready to grow."
+   - Changed to: "Built for startup founders, SMEs, and teams needing more runway—or simply ready to grow."
+   - This change softens the language from "racing" to "needing more" which is less urgent and more supportive
+
+**Files Modified**:
+- src/components/sections/home/hero-section.tsx (line 224)
+
+**Result**: The audience identifier now uses more empathetic language that resonates better with teams looking to extend their runway rather than feeling like they're in a race against time.
+
+### Metrics Display Enhancement ✅
+Updated the proven results section and recent builds metrics to have consistent colors and more prominent numbers:
+
+1. **Color Consistency**:
+   - Changed $120M from purple (#CDCBFF) to green (#B8E8D4) to match the ColoredHighlight in recent builds
+   - Added matching text colors for each metric (green, pink, coral)
+
+2. **Number Prominence**:
+   - Proven Results: Increased from text-xl/2xl to text-3xl/4xl
+   - Recent Builds: Increased from text-lg to text-2xl/3xl
+   - Added more padding (px-4 py-2.5) for better visual weight
+   - Increased logo sizes for better balance
+
+3. **Layout Improvements**:
+   - Proven Results: Changed to column layout with description below
+   - Added proper spacing and alignment for mobile/desktop views
+
+**Files Modified**:
+- src/components/sections/home/proven-results-section.tsx
+- src/components/sections/home/recent-builds-section.tsx
+
+**Result**: The $120M now uses consistent green color across both sections, and all metrics are more prominent and eye-catching with larger font sizes and better visual hierarchy.
 
 
 

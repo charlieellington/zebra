@@ -4,6 +4,7 @@ import React from "react";
 import Link from "next/link";
 import { ArrowRight, Zap, Code2, Users, Rocket } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { ColoredHighlight } from "@/components/ui/colored-highlight";
 
 import { TextEffect } from "@/components/motion-primitives/text-effect";
 import { AnimatedGroup } from "@/components/motion-primitives/animated-group";
@@ -140,26 +141,41 @@ export default function HeroSection() {
                 >
                   Design & Code, On-Demand
                 </TextEffect>
-                <TextEffect
-                  preset="fade-in-blur"
-                  speedSegment={0.3}
-                  delay={0.3}
-                  as="p"
+                <AnimatedGroup
+                  variants={{
+                    container: {
+                      visible: {
+                        transition: {
+                          delayChildren: 0.3,
+                        },
+                      },
+                    },
+                    ...transitionVariants,
+                  }}
                   className="mt-4 text-xl md:text-2xl lg:text-3xl text-muted-foreground"
                 >
-                  From designers that code with AI
-                </TextEffect>
-                <TextEffect
-                  per="line"
-                  preset="fade-in-blur"
-                  speedSegment={0.3}
-                  delay={0.5}
-                  as="p"
+                  <p className="leading-relaxed">
+                    From <ColoredHighlight color="pink">designers</ColoredHighlight> that code with <ColoredHighlight color="coral">AI</ColoredHighlight>
+                  </p>
+                </AnimatedGroup>
+                <AnimatedGroup
+                  variants={{
+                    container: {
+                      visible: {
+                        transition: {
+                          delayChildren: 0.5,
+                        },
+                      },
+                    },
+                    ...transitionVariants,
+                  }}
                   className="mx-auto mt-8 max-w-2xl text-balance text-lg"
                 >
-                  Get from idea to a tested product in weeks, not months. 
-                  I design and build your digital product through an AI-powered, user-focused partnership.
-                </TextEffect>
+                  <p className="leading-relaxed">
+                    Get from <ColoredHighlight color="blue">idea to a tested product</ColoredHighlight> in <ColoredHighlight color="purple">weeks, not months</ColoredHighlight>. 
+                    I design and build your digital product through an <ColoredHighlight color="coral">AI-powered</ColoredHighlight>, <ColoredHighlight color="green">user-focused</ColoredHighlight> <ColoredHighlight color="yellow">partnership</ColoredHighlight>.
+                  </p>
+                </AnimatedGroup>
 
                 <AnimatedGroup
                   variants={{
@@ -194,8 +210,8 @@ export default function HeroSection() {
                     key={2}
                     asChild
                     size="lg"
-                    variant="ghost"
-                    className="h-10.5 rounded-xl px-5"
+                    variant="secondary"
+                    className="h-10.5 rounded-xl px-5 bg-white hover:bg-gray-100"
                   >
                     <Link href="#recent-builds">
                       <span className="text-nowrap">See Recent Work</span>
@@ -205,8 +221,8 @@ export default function HeroSection() {
                 <p className="mt-2 text-xs text-muted-foreground">Intro call · 30&nbsp;min · zero sales pressure</p>
 
                 {/* Audience identifier */}
-                <p className="mt-8 text-sm md:text-base text-muted-foreground max-w-lg mx-auto">
-                  Built for startup founders, SMEs, and teams racing the runway—or simply ready to grow.
+                <p className="mt-8 text-sm md:text-base text-muted-foreground font-semibold max-w-lg mx-auto">
+                  Built for startup founders, SMEs, and teams needing more runway—or simply ready to grow.
                 </p>
               </div>
             </div>

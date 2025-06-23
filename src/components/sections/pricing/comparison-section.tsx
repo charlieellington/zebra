@@ -18,8 +18,8 @@ const comparisons = [
   },
   {
     option: "Traditional Agency",
-    cost: "€10k+ project",
-    what: "Separate contracts, variable quality",
+    cost: "€20k-€40k/mo retainer",
+    what: "Headline fee balloons with change-orders and slower turn-around",
     benefits: ["Large team", "Fixed timeline", "Communication layers", "Change order costs"],
     highlighted: false,
   },

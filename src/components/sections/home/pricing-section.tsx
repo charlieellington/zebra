@@ -2,6 +2,7 @@ import Link from "next/link"
 import { OptimizedImage } from "@/components/ui/optimized-image"
 import { ScrollView } from "@/components/scroll-view"
 import { Button } from "@/components/ui/button"
+import { ColoredHighlight } from "@/components/ui/colored-highlight"
 
 export default function PricingSection() {
   return (
@@ -21,11 +22,11 @@ export default function PricingSection() {
           <ScrollView>
             <div className="bg-[#FCF8F4] rounded-lg md:rounded-xl p-5 md:p-6 lg:p-8 max-w-2xl mx-auto relative z-10">
               <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-3 md:mb-4">
-                Monthly subscription, starting ~€5k
+                Monthly subscription, starting <ColoredHighlight color="green">~€5k</ColoredHighlight>
               </h2>
               
               <p className="text-base md:text-lg text-muted-foreground mb-4">
-                <strong className="text-foreground">Cancel anytime.</strong> No long-term contracts.
+                <ColoredHighlight color="yellow">Cancel anytime.</ColoredHighlight> No long-term contracts.
               </p>
               
               <p className="text-sm text-muted-foreground mb-6">

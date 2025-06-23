@@ -6,6 +6,7 @@ import { Card } from "@/components/ui/card";
 import { ExternalLink, Youtube, BookOpen } from "lucide-react";
 import { ScrollView } from "@/components/scroll-view";
 import { Button } from "@/components/ui/button";
+import { ColoredHighlight } from "@/components/ui/colored-highlight";
 
 export default function AboutHeroSection() {
   return (
@@ -74,8 +75,8 @@ export default function AboutHeroSection() {
               {/* Intro text */}
               <div className="space-y-6 text-lg text-muted-foreground">
                 <p>
-                  I'm <strong className="text-foreground">Charlie Ellington</strong> — a designer-developer who's launched products that raised <strong className="text-foreground">$120M</strong> and secured <strong className="text-foreground">billions in web3 applications</strong>. 
-                  Experience I now pour into shipping <em>your</em> product in weeks, not months.
+                  I'm <strong className="text-foreground">Charlie Ellington</strong> — a designer-developer who's launched products that raised <ColoredHighlight color="green">$120M</ColoredHighlight> and secured <strong className="text-foreground">billions in web3 applications</strong>. 
+                  Experience I now pour into shipping <em>your</em> product in <ColoredHighlight color="purple">weeks, not months</ColoredHighlight>.
                 </p>
                 <p>
                   Over the past decade I've worn many hats. From digital marketer and sailing instructor to startup founder and design lead — including founding a yoga retreat holiday company that grew to €1.2&nbsp;million in revenue in just two years. 

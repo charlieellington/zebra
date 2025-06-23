@@ -8,6 +8,7 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { X } from "lucide-react"
+import { ColoredHighlight } from "@/components/ui/colored-highlight"
 
 export default function PainPointsSection() {
   const [defaultOpen, setDefaultOpen] = useState<string[] | undefined>(undefined)
@@ -39,7 +40,7 @@ export default function PainPointsSection() {
                 </div>
               </AccordionTrigger>
               <AccordionContent className="text-sm md:text-base text-muted-foreground pl-7">
-                <strong className="text-foreground">I use AI-assisted coding to deliver in a fraction of the time.</strong> I've spent all of 2024 perfecting AI-powered development with tools like Cursor. Your MVP ships in weeks, not months. No more watching competitors launch while you're still in development.
+                <strong className="text-foreground">I use AI-assisted coding to deliver in a fraction of the time.</strong> I've spent all of 2024 perfecting AI-powered development with tools like Cursor. Your MVP ships in <ColoredHighlight color="purple">weeks, not months</ColoredHighlight>. No more watching competitors launch while you're still in development.
               </AccordionContent>
             </AccordionItem>
 

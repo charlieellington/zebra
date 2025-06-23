@@ -7,6 +7,7 @@
 
 import React from "react";
 import { ScrollView } from "@/components/scroll-view";
+import { ColoredHighlight } from "@/components/ui/colored-highlight";
 
 export default function PricingHeroSection() {
   return (
@@ -22,9 +23,9 @@ export default function PricingHeroSection() {
       
       <ScrollView delay={0.1}>
         <p className="text-lg text-muted-foreground leading-relaxed">
-          From <span className="font-semibold text-foreground">€5,000/month</span> for all design and development.
+          From <ColoredHighlight color="green">€5,000/month</ColoredHighlight> for all design and development.
           <br />
-          <strong className="text-foreground">Month-to-month. Cancel anytime.</strong> No long contracts.
+          <ColoredHighlight color="yellow">Month-to-month. Cancel anytime.</ColoredHighlight> No long contracts.
           <br />
           <span className="text-sm">
             I handle one task at a time with full focus. Need more speed? Add a second subscription for parallel work.
