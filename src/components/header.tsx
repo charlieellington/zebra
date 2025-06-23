@@ -39,6 +39,7 @@ export const HeroHeader = () => {
                 className="flex items-center space-x-2"
               >
                 <Logo />
+                <span className="text-lg font-semibold">Zebra Design</span>
               </Link>
 
               <button

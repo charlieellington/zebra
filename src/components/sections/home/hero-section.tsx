@@ -82,15 +82,6 @@ export default function HeroSection() {
                   as="h1"
                   className="mt-8 text-balance text-5xl md:text-7xl lg:mt-16 xl:text-[5.25rem] font-semibold"
                 >
-                  Zebra Design
-                </TextEffect>
-                <TextEffect
-                  preset="fade-in-blur"
-                  speedSegment={0.3}
-                  delay={0.3}
-                  as="p"
-                  className="mt-2 text-balance text-3xl md:text-5xl lg:text-6xl font-semibold"
-                >
                   Designers That Code with AI
                 </TextEffect>
                 <TextEffect
@@ -119,22 +110,22 @@ export default function HeroSection() {
                   }}
                   className="mt-8 flex justify-center"
                 >
-                  <div className="text-left max-w-2xl space-y-4 md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-4 md:space-y-0">
-                    <div className="flex items-start gap-3">
-                      <Zap className="text-muted-foreground mt-1 flex-shrink-0" size={20} />
-                      <span className="text-base md:text-lg">Idea → tested product in weeks, not months</span>
+                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl w-full">
+                    <div className="flex items-start gap-3 p-4 rounded-lg bg-[#FCF8F4] border border-black/5">
+                      <Zap className="text-muted-foreground mt-0.5 flex-shrink-0" size={18} />
+                      <span className="text-sm">Idea → tested product in weeks, not months</span>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <Code2 className="text-muted-foreground mt-1 flex-shrink-0" size={20} />
-                      <span className="text-base md:text-lg">I handle both design and development</span>
+                    <div className="flex items-start gap-3 p-4 rounded-lg bg-[#FCF8F4] border border-black/5">
+                      <Code2 className="text-muted-foreground mt-0.5 flex-shrink-0" size={18} />
+                      <span className="text-sm">I handle both design and development</span>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <Users className="text-muted-foreground mt-1 flex-shrink-0" size={20} />
-                      <span className="text-base md:text-lg">Made for startup founders, SMEs, and product teams</span>
+                    <div className="flex items-start gap-3 p-4 rounded-lg bg-[#FCF8F4] border border-black/5">
+                      <Users className="text-muted-foreground mt-0.5 flex-shrink-0" size={18} />
+                      <span className="text-sm">Made for startup founders, SMEs, and product teams</span>
                     </div>
-                    <div className="flex items-start gap-3">
-                      <Rocket className="text-muted-foreground mt-1 flex-shrink-0" size={20} />
-                      <span className="text-base md:text-lg">A design-as-a-service model to design and develop your app lightning-fast</span>
+                    <div className="flex items-start gap-3 p-4 rounded-lg bg-[#FCF8F4] border border-black/5">
+                      <Rocket className="text-muted-foreground mt-0.5 flex-shrink-0" size={18} />
+                      <span className="text-sm">A design-as-a-service model to design and develop your app lightning-fast</span>
                     </div>
                   </div>
                 </AnimatedGroup>
