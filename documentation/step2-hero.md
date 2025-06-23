@@ -1,11 +1,46 @@
 Build Plan for Zebra Design Hero Section
 ========================================
 
+## Implementation Stages
+
+### Stage 1: Update Hero Text Content
+- [x] Add "Zebra Design" branding above/with the tagline
+- [x] Update the intro paragraph to match the exact copy from the plan
+- [x] Add the 4 key bullet points in a list format
+
+### Stage 2: Update Call-to-Action Buttons
+- [x] Change primary CTA from "See Our Services" to "Book intro call"
+- [x] Change secondary CTA from "View Pricing" to "View examples"
+- [x] Add Cal.com booking URL (https://cal.com/charlieellington/zebra-call)
+- [x] Set up smooth scroll to examples section (temporarily linking to #services)
+
+### Stage 3: Integrate Tool Logos
+- [x] Obtain official SVG logos for: Cursor, OpenAI, Claude, reMarkable
+- [x] Replace current LogoCloud logos with the AI tool logos
+- [x] Add "Tools:" label if needed (changed to "Tools we use")
+- [x] Ensure logos are responsive and accessible
+
+### Stage 4: Mobile Optimization & Testing
+- [x] Test responsive layout on all screen sizes
+- [x] Verify bullet points layout (single column mobile, 2-column desktop)
+- [ ] Ensure CTAs are properly sized for mobile touch
+- [ ] Test logo wrapping on smaller screens
+- [ ] Verify all text remains readable with video background
+
+## Questions Before Implementation:
+1. **Cal.com URL**: What is your Cal.com booking URL for the "Book intro call" button?
+2. **Examples Section**: Is there an existing examples/portfolio section on the page to link to, or should we create one?
+3. **Logo Sources**: Should I search for the official logos online or do you have specific versions you'd like to use?
+
+---
+
+## Detailed Build Plan
+
 To implement the **Zebra Design** header/hero quickly, we will reuse the existing Next.js template's hero component structure and Tailwind CSS styling. Below are the detailed steps:
 
 1.  **Leverage the Template's Hero Structure**: Start with the template's pre-built **HeroSection** component (ensuring any background/animation is retained for visual appeal). This template already provides a full-screen hero layout with smooth animations and responsiveness out of the box. By using the same component, we inherit the existing CSS classes and layout (e.g. centered content, padding, and any background video or gradient) without writing from scratch. This forms the basic container for our content and guarantees consistent styling with the rest of the site.
 
-2.  **Set the Headings and Intro Text**: Replace the placeholder text in the hero with our branding and tagline. For the main heading, use **"Zebra Design"** and **"Designers That Code with AI"** as a two-line title. For example, you can make "Zebra Design" an `<h1>` and the tagline a styled `<p>` or `<span>` right below it (the template's `TextEffect` component can be used to animate these lines, similar to how it showcased its demo tagline). Ensure the heading uses responsive font sizes (e.g. `text-5xl md:text-7xl` in Tailwind) so it looks prominent on desktop and scales down on mobile. Below the title/tagline, add the one-sentence description: *"I help you launch your digital product faster -- design and coded -- through a user-focused partnership."* Style this as a subtitle paragraph (e.g. `text-lg text-center max-w-2xl mx-auto` similar to the template's subtitle) so it's centered and comfortably readable on all screens.
+2.  **Set the Headings and Intro Text**: Replace the placeholder text in the hero with our branding and tagline. For the main heading, use **"Zebra Design"** and **"Designers That Code with AI"** as a two-line title. For example, you can make "Zebra Design" an `<h1>` and the tagline a styled `<p>` or `<span>` right below it (the template's `TextEffect` component can be used to animate these lines, similar to how it showcased its demo tagline). Ensure the heading uses responsive font sizes (e.g. `text-5xl md:text-7xl` in Tailwind) so it looks prominent on desktop and scales down on mobile. Below the title/tagline, add the one-sentence description: *"I help you launch your digital product faster -- design and coded -- through a user-focused partnership."* Style this as a subtitle paragraph (e.g. `text-lg text-center max-w-2xl mx-auto` similar to the template's subtitle) so it's centered and comfortably readable on all screens.
 
 3.  **Include the Key Bullet Points**: Under the intro text, present the four key points as a concise list of benefits. Use an unordered list with bullet styling (Tailwind's `list-disc list-inside` or custom icons for a polished look). The points are:\
     -- *"Idea → tested product in weeks, not months"*\

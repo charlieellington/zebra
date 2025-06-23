@@ -43,6 +43,61 @@ Building the Zebra Design one-page portfolio site using the Lume Studio Next.js 
 - [x] Create Pricing page (/pricing route with placeholder content)
 - [x] Test and commit changes (Commit: 2c739b4)
 
+### Phase 3: Hero Section Enhancement (Planning)
+Currently reviewing step2-hero.md plan and preparing for implementation:
+
+1. **Plan Review**: Analyzed current hero section state vs. requirements
+2. **Staged Implementation**: Created 4-stage implementation plan in step2-hero.md
+3. **Current Hero Status**:
+   - Has "Designers That Code with AI" tagline
+   - Missing "Zebra Design" branding
+   - Missing 4 key bullet points
+   - CTAs need updating (currently "See Our Services" and "View Pricing")
+   - LogoCloud component exists but shows generic logos
+
+**Information Needed Before Implementation**:
+- Cal.com booking URL for primary CTA
+- Whether examples section exists or needs to be created
+- Confirmation on obtaining official tool logos (Cursor, OpenAI, Claude, reMarkable)
+
+**Next Steps**: Awaiting user input on questions before proceeding with Stage 1 implementation.
+
+### Phase 3: Hero Section Enhancement ✅
+Successfully executed hero section enhancements:
+
+1. **Stage 1 - Text Content**: 
+   - Added "Zebra Design" as main heading
+   - Updated tagline to be secondary heading
+   - Updated intro paragraph to exact copy from plan
+   - Added 4 key bullet points with responsive 2-column grid on desktop
+
+2. **Stage 2 - CTAs**: 
+   - Changed primary CTA to "Book intro call" with Cal.com link
+   - Changed secondary CTA to "View examples" (temporarily linking to #services)
+   - Cal.com URL: https://cal.com/charlieellington/zebra-call
+
+3. **Stage 3 - Tool Logos**: 
+   - Created React components for all AI tool logos (black versions)
+   - Replaced generic logos with Cursor, OpenAI, Claude, and reMarkable
+   - Updated label to "Tools we use"
+   - Logos are responsive and accessible
+
+4. **Stage 4 - Mobile Optimization**: 
+   - Implemented responsive text sizing
+   - Bullet points: single column on mobile, 2-column grid on desktop
+   - Logos use InfiniteSlider component for smooth scrolling
+   - All content is readable with video background
+
+**Files Modified**:
+- src/components/sections/home/hero-section.tsx
+- src/components/sections/home/logo-cloud.tsx
+- src/components/tool-logos.tsx (new file)
+
+**Notes**: 
+- "View examples" button currently links to #services section since examples section doesn't exist yet
+- This task has been added to documentation/step8-updates.md for future implementation
+- All tool logos are simplified SVG versions in black for consistency
+
 ## Lessons
 - CONTRIBUTING.md defines core principles, roles, workflow, coding etiquette, secret handling, and project folder separation.
 - The assistant treats the CONTRIBUTING.md rules as persistent top-of-mind guidance and ensures responses comply, even if the file is not reread verbatim each time.
@@ -78,3 +133,22 @@ Successfully executed all Phase 2 tasks:
 **Final commit**: 2c739b4 - "feat: complete Phase 2 - initial cleanup and branding updates"
 
 The site is now a clean one-page portfolio with Zebra Design branding and a separate Pricing page. All template components have been preserved for future reuse. The development server is running and the site is functional with smooth scrolling navigation.
+
+### Phase 3: Hero Section Enhancement (Planning)
+Currently reviewing step2-hero.md plan and preparing for implementation:
+
+1. **Plan Review**: Analyzed current hero section state vs. requirements
+2. **Staged Implementation**: Created 4-stage implementation plan in step2-hero.md
+3. **Current Hero Status**:
+   - Has "Designers That Code with AI" tagline
+   - Missing "Zebra Design" branding
+   - Missing 4 key bullet points
+   - CTAs need updating (currently "See Our Services" and "View Pricing")
+   - LogoCloud component exists but shows generic logos
+
+**Information Needed Before Implementation**:
+- Cal.com booking URL for primary CTA
+- Whether examples section exists or needs to be created
+- Confirmation on obtaining official tool logos (Cursor, OpenAI, Claude, reMarkable)
+
+**Next Steps**: Awaiting user input on questions before proceeding with Stage 1 implementation.

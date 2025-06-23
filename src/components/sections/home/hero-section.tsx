@@ -82,6 +82,15 @@ export default function HeroSection() {
                   as="h1"
                   className="mt-8 text-balance text-5xl md:text-7xl lg:mt-16 xl:text-[5.25rem] font-semibold"
                 >
+                  Zebra Design
+                </TextEffect>
+                <TextEffect
+                  preset="fade-in-blur"
+                  speedSegment={0.3}
+                  delay={0.3}
+                  as="p"
+                  className="mt-2 text-balance text-3xl md:text-5xl lg:text-6xl font-semibold"
+                >
                   Designers That Code with AI
                 </TextEffect>
                 <TextEffect
@@ -92,9 +101,31 @@ export default function HeroSection() {
                   as="p"
                   className="mx-auto mt-8 max-w-2xl text-balance text-lg"
                 >
-                  I help you launch a digital product—designed and coded—faster 
-                  than you thought possible. Idea → tested product in weeks, not months.
+                  I help you launch your digital product faster — design and coded — 
+                  through a user-focused partnership.
                 </TextEffect>
+
+                <AnimatedGroup
+                  variants={{
+                    container: {
+                      visible: {
+                        transition: {
+                          staggerChildren: 0.05,
+                          delayChildren: 0.65,
+                        },
+                      },
+                    },
+                    ...transitionVariants,
+                  }}
+                  className="mt-8 flex justify-center"
+                >
+                  <ul className="text-left max-w-2xl space-y-3 list-disc list-inside text-base md:text-lg md:grid md:grid-cols-2 md:gap-x-8 md:gap-y-2 md:space-y-0">
+                    <li>Idea → tested product in weeks, not months</li>
+                    <li>I handle both design and development</li>
+                    <li>Made for startup founders, SMEs, and product teams</li>
+                    <li>A design-as-a-service model to design and develop your app lightning-fast</li>
+                  </ul>
+                </AnimatedGroup>
 
                 <AnimatedGroup
                   variants={{
@@ -119,8 +150,8 @@ export default function HeroSection() {
                       size="lg"
                       className="rounded-xl px-5 text-base"
                     >
-                      <Link href="#services">
-                        <span className="text-nowrap">See Our Services</span>
+                      <Link href="https://cal.com/charlieellington/zebra-call" target="_blank">
+                        <span className="text-nowrap">Book intro call</span>
                       </Link>
                     </Button>
                   </div>
@@ -131,8 +162,8 @@ export default function HeroSection() {
                     variant="ghost"
                     className="h-10.5 rounded-xl px-5"
                   >
-                    <Link href="/pricing">
-                      <span className="text-nowrap">View Pricing</span>
+                    <Link href="#services">
+                      <span className="text-nowrap">View examples</span>
                     </Link>
                   </Button>
                 </AnimatedGroup>
