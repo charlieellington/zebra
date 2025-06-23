@@ -10,7 +10,7 @@ import {
 
 export default function CredoSection() {
   return (
-    <section className="py-16 md:py-20" id="credo">
+    <section className="py-12 md:py-16 lg:py-20" id="credo">
       <div className="mx-auto max-w-4xl px-6">
         <div className="mx-auto max-w-2xl">
           <ScrollView>
@@ -56,13 +56,13 @@ export default function CredoSection() {
               <p className="text-lg md:text-xl italic leading-relaxed text-balance">
                 &ldquo;This is the principle I&apos;ve based Zebra Design on: ship working code, talk to users, design, code more and results&rdquo;
               </p>
-              <cite className="flex items-center justify-center gap-2 text-sm md:text-base not-italic text-muted-foreground whitespace-nowrap">
+              <cite className="flex items-center justify-center gap-3 text-sm md:text-base not-italic text-muted-foreground">
                 <Image
                   src="/images/other/charlie-ellington.jpg"
                   alt="Charlie Ellington"
-                  width={32}
-                  height={32}
-                  className="rounded-full object-cover"
+                  width={40}
+                  height={40}
+                  className="h-10 w-10 rounded-full object-cover"
                 />
                 <span className="flex items-center gap-1 flex-wrap justify-center">
                   <span>—</span>

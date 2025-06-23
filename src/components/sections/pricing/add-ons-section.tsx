@@ -29,7 +29,7 @@ export default function AddOnsSection() {
       <div className="mx-auto max-w-4xl px-6">
         <ScrollView>
           <div className="text-center space-y-4 mb-12">
-            <h2 className="text-2xl md:text-3xl font-medium text-foreground">
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground">
               Usage Add-Ons
             </h2>
             <p className="text-base md:text-lg text-muted-foreground">

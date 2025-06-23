@@ -60,7 +60,7 @@ const Footer = () => {
                     href="https://nobadpartscollective.com"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground transition-colors hover:text-foreground"
+                    className="text-foreground font-semibold transition-colors hover:text-primary"
                   >
                     No Bad Parts Collective
                   </a>
@@ -70,7 +70,7 @@ const Footer = () => {
                     href="https://sunni.be"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground transition-colors hover:text-foreground"
+                    className="text-foreground font-semibold transition-colors hover:text-primary"
                   >
                     Sunni.be
                   </a>
@@ -80,7 +80,7 @@ const Footer = () => {
                     href="https://github.com/charlieellington/waitlist-kit"
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-muted-foreground transition-colors hover:text-foreground"
+                    className="text-foreground font-semibold transition-colors hover:text-primary"
                   >
                     Waitlist Kit
                   </a>
@@ -128,7 +128,7 @@ const Footer = () => {
                 href="https://www.energyflow.studio/"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="text-sm text-muted-foreground transition-colors hover:text-foreground"
+                className="text-foreground font-semibold transition-colors hover:text-primary"
               >
                 Energy Flow Studio
               </a>

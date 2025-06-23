@@ -39,7 +39,7 @@ export default function ValueExamplesSection() {
       <div className="mx-auto max-w-4xl px-6">
         <ScrollView>
           <div className="text-center space-y-4 mb-12">
-            <h2 className="text-2xl md:text-3xl font-medium text-foreground">
+            <h2 className="text-2xl md:text-3xl font-semibold text-foreground">
               Value-Based Agile Pricing – Four Sample Scenarios
             </h2>
             <p className="text-base md:text-lg text-muted-foreground">
@@ -85,19 +85,19 @@ export default function ValueExamplesSection() {
         <ScrollView delay={0.2}>
           <div className="mt-12 space-y-4">
             <h3 className="text-lg font-medium text-foreground">
-              Examples how we calculate the value
+              Examples of how I calculate the value
             </h3>
             
             <div className="space-y-4 text-base text-muted-foreground">
               <p>
-                <strong className="text-foreground">Customer onboarding automation:</strong> We save on your team costs by creating an application 
-                for onboarding your customers: it frees up 10% of your team time and increases revenue 
+                <strong className="text-foreground">Customer onboarding automation:</strong> I save your team costs by creating an application 
+                for onboarding your customers: it frees up 10% of team time and increases revenue 
                 by 20% — €300k value over two years.
               </p>
               
               <p>
-                <strong className="text-foreground">Development team replacement:</strong> We take a workflow out of your development 
-                team's hands (one PM, one designer and two developers){" "}
+                <strong className="text-foreground">Development team replacement:</strong> I take a workflow out of your development 
+                team's hands (one PM, one designer and two developers) 
                 <Link 
                   href="https://www.glassdoor.com/Salaries/london-product-manager-salary-SRCH_IL.0,6_IM1035_KO7,22.htm" 
                   target="_blank" 

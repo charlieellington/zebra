@@ -12,7 +12,7 @@ export default function MoneyForNothingSection() {
       <div className="mx-auto max-w-4xl px-6 space-y-8">
         {/* Heading */}
         <ScrollView>
-          <h2 className="text-2xl md:text-3xl font-medium text-foreground text-center">
+          <h2 className="text-2xl md:text-3xl font-semibold text-foreground text-center">
             Money-for-Nothing, Change-for-Free
           </h2>
         </ScrollView>
@@ -30,7 +30,7 @@ export default function MoneyForNothingSection() {
             <li>
               <strong>Short, outcome-driven cycles</strong>
               <br />
-              We work in month-long sprints. At the start of each cycle we pick the next, highest-value goal—launch a feature, lift conversions, cut churn. I build that first.
+              I work in month-long sprints. At the start of each cycle we pick the next, highest-value goal—launch a feature, lift conversions, cut churn. Then I build that first.
             </li>
             <li>
               <strong>Change course any time</strong>

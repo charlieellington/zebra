@@ -3,56 +3,125 @@
 import React from "react";
 import { ScrollView } from "@/components/scroll-view";
 import { motion } from "motion/react";
-import { Anchor, Briefcase, Building2, Camera, Plane, Calendar } from "lucide-react";
+import Image from "next/image";
+import {
+  Anchor,
+  Briefcase,
+  Building2,
+  Camera,
+  Plane,
+  Calendar,
+  Wind,
+  Ship,
+  Car,
+  Heart,
+  Baby,
+} from "lucide-react";
 
 const timelineItems = [
   {
-    period: "2008–2015",
-    title: "Finding my footing",
-    description: "I began in digital marketing while pursuing my passion for the outdoors as a sailing instructor. These years taught me the importance of discipline, communication, and guiding others — skills that still inform my work today.",
-    icon: Anchor,
+    period: "1995–2007",
+    title: "Ocean roots",
+    description:
+      "Kitesurfing since eleven and surfing even earlier. Salt water, wind and waves shaped my mindset long before pixels and code did.",
+    icon: Wind,
     color: "#B8D4E3",
+    image: "/images/about/Kitesurfing%202.jpg",
+  },
+  {
+    period: "2008–2012",
+    title: "Sailing-instructor summers",
+    description:
+      "Taught sailing by day, chased wind with a kite by evening. Forged self-reliance early, learning to hustle without a safety net.",
+    icon: Anchor,
+    color: "#CDCBFF",
+    image: "/images/about/Kitesurfing%201.jpg",
   },
   {
     period: "2013–2017",
-    title: "Entrepreneurial ventures",
-    description: "I founded a yoga retreat business in Ibiza (summers) and ran ski holiday tours in winters. Building these experiences from the ground up honed my entrepreneurial spirit and showed me how design and storytelling can create memorable customer experiences.",
+    title: "Yoga retreats in Ibiza & the Alps",
+    description:
+      "Bootstrapped a yoga-holiday company from zero to €1.2 M revenue in two years. Proof that storytelling, design and sweat can build real businesses.",
     icon: Plane,
-    color: "#CDCBFF",
-  },
-  {
-    period: "2017–2018",
-    title: "Freelance design beginnings",
-    description: "Eager to pivot into tech, I started taking on freelance product design projects for early-stage startups. One of my first big breaks was designing for a Web3 startup (Nexus Mutual) — I volunteered to redesign their site to up-skill, which led to paid work on their app and opened the door to many more projects. I discovered that when I'm designing digital products, I often find myself in a flow state — hours can pass by effortlessly because I'm doing what I love.",
-    icon: Briefcase,
     color: "#E7BDD7",
+    image: "/images/about/Founder%20yoga%20retreat%20company.jpg",
   },
   {
-    period: "2018–2023",
-    title: "Studio leadership",
-    description: "I founded Deep Work, a product design studio focused on Web3. As founder and Head of Design, I led a team of over 40 designers and worked on 40+ projects in blockchain and fintech. Our team collaborated with founders and engineers to create bold, user‑centred interfaces that drove product-market fit and growth for clients. We tackled projects for notable platforms like Ethereum 2.0, MakerDAO, and many others in the decentralized tech space. While this period was exciting and full of impact, it was also intense — running a fast-growing studio taught me about scaling, leadership, and the importance of balance.",
-    icon: Building2,
+    period: "2018",
+    title: "Electric yacht conversion",
+    description:
+      "Diesel engine died, so I taught myself DC electronics on YouTube. Ripped out the fumes and wired in solar, batteries, and a silent motor. First taste of hardware hacking.",
+    icon: Ship,
     color: "#FDA7A0",
+    image: "/images/about/Electric%20sailing%20yacht%20conversion.jpg",
+  },
+  {
+    period: "2017–2019",
+    title: "Freelance design beginnings",
+    description:
+      "Volunteered a redesign for Nexus Mutual. One open-source pull request snowballed into paid work, then a full-time leap into product design.",
+    icon: Briefcase,
+    color: "#B8D4E3",
+    image: "/images/builds/Nexus%20Mutual.png",
+  },
+  {
+    period: "2019–2023",
+    title: "Deep Work studio",
+    description:
+      "Founded and led a 40-person Web3 design studio. Projects for Ethereum, MakerDAO and others taught me scale, leadership, and when to step back.",
+    icon: Building2,
+    color: "#CDCBFF",
+    image: "/images/builds/Deep%20Work%20Studio%20(2).png",
   },
   {
     period: "2023",
-    title: "Sabbatical and refocus",
-    description: "After years of pushing hard, I stepped away for a sabbatical. I traveled in a self-built campervan (yes, I even got obsessed with designing and building campervans as a side project!) and spent months surfing, kiteboarding, and reflecting on what mattered most. This time off was transformative. I realized that true \"energy flow\" in work comes from a sweet spot: doing challenging, skill-building work that genuinely benefits people and the planet, while still leaving room for family, health and community. In other words, I needed to balance meaningful work with a healthy life. I also came to terms with the fact that I'm happiest when I'm creating (designing solutions), not managing large teams or chasing endless business growth. This insight set the stage for my next chapter.",
+    title: "Remote-work campervan",
+    description:
+      "Took a sabbatical, gutted a van, and built a solar-powered rolling office. Coded by cliffs, wing-foiled at lunch, shipped side projects at sunset.",
+    icon: Car,
+    color: "#E7BDD7",
+    image: "/images/about/Remote%20work%20campervan.jpg",
+  },
+  {
+    period: "2023",
+    title: "Surfing & values reset",
+    description:
+      "Months of dawn patrol and salt-water reflection distilled my core values: freedom, craft, and work that serves real people.",
     icon: Camera,
+    color: "#FDA7A0",
+    image: "/images/about/Surfing.jpg",
+  },
+  {
+    period: "2023",
+    title: "Meeting Bene",
+    description:
+      "Met my partner Bene, who taught me to flow rather than fixate. Life's richer when you leave space for serendipity.",
+    icon: Heart,
     color: "#B8D4E3",
+    image: "/images/about/Bene-1.jpg",
+  },
+  {
+    period: "2025 (planned)",
+    title: "Growing family",
+    description:
+      "Photo of Bene days before we learned we're expecting our first daughter. Baby arrives December 2025; we're still chasing waves and building a life we love.",
+    icon: Heart,
+    color: "#CDCBFF",
+    image: "/images/about/Bene.jpg",
   },
   {
     period: "2024–Present",
-    title: "Zebra Design — my solo venture",
-    description: "Refreshed and refocused, I launched Zebra Design as a one-man design-as-a-service studio. Now I collaborate directly with founders and technical teams to design bold, user-focused products on demand — without the overhead of a big agency. Going solo means clients get my personal attention and expertise at every step, and I get to ensure each project aligns with my values and love for the craft. This chapter is about staying in flow: doing work I excel at and enjoy, while maintaining the balance I gained on sabbatical.",
+    title: "Zebra Design — solo venture",
+    description:
+      "Launched a one-person design-as-a-service studio. Founders get my full focus; I get to craft products end-to-end. Win-win.",
     icon: Calendar,
-    color: "#CDCBFF",
+    color: "#E7BDD7",
   },
 ];
 
 export default function JourneySection() {
   return (
-    <section className="py-16 md:py-32">
+    <section className="py-16 md:py-24 lg:py-32">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <ScrollView>
           <h2 className="text-center text-3xl font-semibold md:text-4xl lg:text-5xl">
@@ -81,7 +150,7 @@ export default function JourneySection() {
 
                   {/* Content card */}
                   <div className={`md:w-1/2 ${index % 2 === 0 ? "md:pr-12" : "md:pl-12"}`}>
-                    <div className="bg-white rounded-lg p-6 transition-all">
+                    <div className="bg-white rounded-xl p-6 transition-all">
                       <div className="flex items-start gap-4">
                         <div 
                           className="p-2 rounded-lg flex-shrink-0"
@@ -103,6 +172,15 @@ export default function JourneySection() {
                           <p className="text-muted-foreground leading-relaxed">
                             {item.description}
                           </p>
+                          {item.image && (
+                            <Image
+                              src={item.image}
+                              alt={item.title}
+                              width={600}
+                              height={400}
+                              className="rounded-lg mt-4"
+                            />
+                          )}
                         </div>
                       </div>
                     </div>

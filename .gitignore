@@ -46,3 +46,6 @@ next-env.d.ts
 
 # image backups
 /public/images/originals/
+
+# documentation
+/documentation/

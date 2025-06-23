@@ -320,6 +320,241 @@ Added smooth easing and transitions to the expandable text sections in Recent Bu
 **Files Modified**:
 - src/components/sections/home/recent-builds-section.tsx (added motion animations)
 
+### Recent Builds Section - Supporting Copy Added (Current Date)
+Added concise Hemingway-style paragraphs under the "Built with AI" and "Design Background" headings to speak directly to the visitor and highlight pain→solution positioning.
+
+1. **Built with AI paragraph**: "I designed, coded, and shipped every build below using an AI-first workflow. They prove the process works—and that I can launch your product just as fast."  
+   • Focuses on proof and speed, addresses reader benefits.
+2. **Design Background paragraph**: "Years in product design taught me to spot real user pain and focus on what matters. I bring those skills into development so your build moves faster and delivers more impact than traditional agencies."  
+   • Emphasises product-focused skills applied to dev for faster outcomes.
+   • Updated copy to remove "cut the fluff" - replaced with "focus on what matters" for more professional tone
+
+**File Modified**:
+- `src/components/sections/home/recent-builds-section.tsx` (inserted two `<p>` tags with new copy)
+
+Result: The section now immediately contextualises each list, reinforcing credibility and addressing the visitor's needs in clear, punchy language.
+
+### Website Communication Updates Based on Recommendations ✅
+Successfully updated website copy following the communication recommendations document:
+
+1. **Refined Value Proposition & Tagline**:
+   - Changed hero from "Designers That Code with AI" to "Design & Code, On-Demand"
+   - Updated sub-heading to lead with benefit: "Get from idea to a tested product in weeks, not months"
+   - Made the core offering and benefit obvious at a glance
+
+2. **Aligned Messaging with Startup Founders & SMEs**:
+   - Updated hero bullet points to use "you" language and highlight pain → solution
+   - Changed "Who I Help" to "Who Is This For?" section
+   - Rewritten all audience descriptions to speak directly to reader's pain points
+   - Example: "Need to test your app idea ASAP before funding runs out? I'll get you from concept to tested product in weeks"
+
+3. **Adopted Clear, Concise, Human Tone**:
+   - Simplified pain points section with shorter, punchier sentences
+   - Changed from quotes to direct questions: "Tired of 12-month dev timelines?"
+   - Reduced word count while maintaining impact
+   - Consistent use of "I" throughout for personal, solo practice voice
+
+4. **Highlighted Proof Points and Credibility**:
+   - Updated Recent Builds header to "Trusted By Startups That Raised $120M+"
+   - Condensed credibility statements: "Ramp Network raised $120M on a product I designed"
+   - Made achievements more prominent and scannable
+
+5. **Emphasized Clear Calls to Action**:
+   - Updated all CTAs to "Book Free Intro Call" for consistency
+   - Changed secondary CTAs to be more specific: "See Recent Work", "See Pricing First"
+   - Made CTAs more compelling and action-oriented throughout
+
+6. **Ensured Transparent & Founder-Friendly Pricing**:
+   - Updated pricing section to lead with "Monthly subscription, starting ~€5k"
+   - Added prominent "Cancel anytime. No long-term contracts."
+   - Simplified value-based pricing explanation with concrete example
+   - Changed pricing page hero to "Simple, Transparent Pricing"
+   - Made pricing more upfront and less intimidating
+
+**Files Modified**:
+- src/components/sections/home/hero-section.tsx (value prop, CTAs, bullet points)
+- src/components/sections/home/who-i-help-section.tsx (direct "you" language)
+- src/components/sections/home/pain-points-section.tsx (Hemingway style)
+- src/components/sections/home/recent-builds-section.tsx (proof points header)
+- src/components/sections/home/pricing-section.tsx (transparent pricing)
+- src/components/sections/home/final-cta-section.tsx (compelling CTAs)
+- src/components/header.tsx (CTA consistency)
+- src/components/sections/pricing/pricing-hero-section.tsx (clarity)
+
+**Communication Improvements Summary**:
+- More benefit-driven messaging throughout
+- Direct second-person language addressing reader's needs
+- Shorter, punchier sentences in Hemingway style
+- Prominent proof points and credibility markers
+- Clear, compelling CTAs with consistent labeling
+- Transparent, founder-friendly pricing presentation
+- Overall tone is more human, direct, and action-oriented
+
+### Additional Communication Updates (Steps 4, 6, 7) ✅
+Completed remaining steps from the communication guide:
+
+1. **Step 4 - Enhanced Proof Points and Credibility**:
+   - Enhanced design role descriptions with specific outcomes:
+     - "Product I designed helped raise $120M. Now processing millions in web3-to-fiat transactions."
+     - "Built web3 insurance UI before patterns existed. Now a category leader with $200M+ coverage."
+     - "Designed the Eth2.0 staking interface. Helped transition billions in value to proof-of-stake."
+   - Added new "Proven Results" section with key metrics:
+     - $120M raised by Ramp Network
+     - $200M+ in coverage on Nexus Mutual
+     - Billions transitioned via Ethereum staking
+   - Results displayed prominently with icons and animations
+
+2. **Step 6 - Value Comparison on Pricing Page**:
+   - Created comprehensive comparison section showing three options:
+     - Zebra Design (~€5k/month)
+     - Hire In-House (€15-20k/month)  
+     - Traditional Agency (€10k+ project)
+   - Highlighted benefits of Zebra: fast iterations, cancel anytime, no hiring hassle
+   - Added context: "€5k per month is roughly the cost of a single junior developer's salary"
+   - Visual comparison table makes value proposition immediately clear
+
+3. **Step 7 - Quick Pricing Comparison on Homepage**:
+   - Added comparison note to homepage pricing section:
+     - "(That's about 1/4 the cost of hiring a PM, designer, and two developers – roughly €20k/month in salaries)"
+   - Provides immediate context for the €5k figure
+   - Helps visitors understand value before even visiting pricing page
+
+**Files Modified**:
+- src/components/sections/home/recent-builds-section.tsx (enhanced descriptions)
+- src/components/sections/home/proven-results-section.tsx (new component)
+- src/components/sections/pricing/comparison-section.tsx (new component)
+- src/components/sections/home/pricing-section.tsx (added comparison note)
+- src/components/sections/pricing/pricing-summary-section.tsx (updated CTA)
+- src/app/page.tsx (added ProvenResultsSection)
+- src/app/pricing/page.tsx (added ComparisonSection)
+
+**Result**: The website now comprehensively addresses all communication recommendations:
+- Clear benefit-driven messaging
+- Direct pain→solution positioning
+- Prominent proof points with specific metrics
+- Transparent value comparisons showing cost savings
+- Consistent CTAs throughout
+- Hemingway-style concise copy
+- Personal "I" voice maintained
+
+### Personal Voice Consistency ✅
+Audited and refined remaining content to maintain first-person voice ("I") per Step 3 guidance:
+- QuickWinsSection: Replaced "We" with "I" in all detailed descriptions.
+- MoneyForNothingSection: "We work in month-long sprints" → "I work in month-long sprints… Then I build that first."
+- ValueBasedSection: "We pick the outcomes" → "I focus on the outcomes".
+- FAQ Section: "We work in month-long sprints" answer updated to personal voice.
+- Pricing Value Examples: Changed headings and example descriptions from "we" to "I" to keep voice consistent.
+
+No header changes were made, as requested.
+
+**Files Modified**:
+- src/components/sections/home/quick-wins-section.tsx
+- src/components/sections/pricing/money-for-nothing-section.tsx
+- src/components/sections/pricing/value-based-section.tsx
+- src/components/sections/home/faq-section.tsx
+- src/components/sections/pricing/value-examples-section.tsx
+
+These tweaks complete Steps 1-4 consistency checks.
+
+### About Page Updates ✅
+Applied communication guide principles to About page:
+
+1. **Added benefit-focused tagline**:
+   - Under "About Me", added: "Why a founder-turned-designer-developer is the fastest way to ship your product"
+   - Immediately tells visitors what they gain from reading
+
+2. **Made intro outcome-oriented**:
+   - Rewritten opening to lead with achievements: "$120M raised" and "billions in web3 applications"
+   - Positioned as experience the reader benefits from: "Experience I now pour into shipping your product in weeks"
+
+3. **Added proof points early**:
+   - Inserted logo bar (Ramp, Ethereum, Nexus Mutual) right after intro text
+   - Same style as homepage proven results - instant credibility boost
+
+4. **Tightened Journey section copy**:
+   - Split long sentences into Hemingway-style short ones
+   - Removed filler phrases, kept only impactful facts
+   - Example: 200+ word paragraph → 50 words
+
+5. **Moved "What this means for you" card up**:
+   - Placed benefit card immediately after first paragraph
+   - Condensed message: "You get 10 years of design expertise plus modern AI-powered development"
+   - Removed duplicate card below
+
+6. **Enhanced CTA section**:
+   - Updated button to consistent "Book Free Intro Call"
+   - Added secondary link "See how I work →" for those needing more info
+   - Shortened closing copy to be more direct
+
+7. **Fixed personal voice consistency**:
+   - Changed "We drove product-market fit" to "I drove product-market fit"
+   - All copy now uses consistent "I" voice
+
+**Files Modified**:
+- src/components/sections/about/about-hero-section.tsx
+- src/components/sections/about/journey-section.tsx  
+- src/components/sections/about/solo-focus-section.tsx
+
+**Result**: About page now follows all communication best practices - benefit-driven, outcome-oriented, with early proof points and consistent personal voice.
+
+### About Page Logo Enhancement ✅
+Improved the company logos section on the About page for better clarity and readability:
+
+1. **Increased logo sizes**:
+   - Changed from 60-80px width to 100-120px width
+   - Logos are now much clearer and easier to recognize
+   - Maintained proper aspect ratios with object-contain
+
+2. **Improved layout**:
+   - Changed from flex wrap to responsive grid (2 cols mobile, 3 cols tablet, 5 cols desktop)
+   - Each logo now has its own space with achievement text below
+   - Better visual hierarchy and breathing room
+
+3. **Enhanced copy integration**:
+   - Updated intro text to emphasize "$120M+" and "billions in value" with bold text
+   - Added small achievement labels under each logo (e.g., "$120M raised", "Staking UI", "$200M+ coverage")
+   - Copy now directly connects to the visual logos
+
+4. **Added interactivity**:
+   - Logos start at 70% opacity and transition to 100% on hover
+   - Smooth opacity transition for better user engagement
+   - Removed tooltip titles in favor of visible achievement text
+
+**Files Modified**:
+- src/components/sections/about/about-hero-section.tsx
+
+**Result**: Company logos are now much clearer and more prominent, with better integration between the visual elements and supporting copy. The achievements are immediately visible rather than hidden in tooltips.
+
+### About Page Logo Enhancement ✅
+
+### Recent Builds Section - Outro Permanently Expanded ✅
+Made the outro text in Recent Builds section permanently expanded:
+
+1. **Task**: User requested to make the "I'm your hands-on partner with skin in the game" section permanently expanded
+2. **Implementation**: 
+   - Changed initial state of `expandedOutro` from false to true
+   - Removed hover/click event handlers that toggle the state (onMouseEnter, onMouseLeave, onClick)
+   - Removed cursor-pointer class since it's no longer interactive
+   - Kept the animation structure for smooth rendering on initial load
+
+**Files Modified**:
+- src/components/sections/home/recent-builds-section.tsx
+
+**Result**: The outro section now displays both paragraphs permanently, showing the full message about being a hands-on partner and the mission of Zebra Design.
+
+### Pricing Section - Removed Card Outline ✅
+Removed the border outline from the pricing card:
+
+1. **Task**: User requested to remove the outline from the pricing card
+2. **Implementation**: 
+   - Removed `border border-black/5` class from the pricing card div
+   - Card now has clean edges with just the background color (#FCF8F4)
+
+**Files Modified**:
+- src/components/sections/home/pricing-section.tsx
+
+**Result**: The pricing card now displays without any border outline, creating a cleaner appearance.
+
 ## Lessons
 - CONTRIBUTING.md defines core principles, roles, workflow, coding etiquette, secret handling, and project folder separation.
 - The assistant treats the CONTRIBUTING.md rules as persistent top-of-mind guidance and ensures responses comply, even if the file is not reread verbatim each time.
@@ -330,6 +565,31 @@ Added smooth easing and transitions to the expandable text sections in Recent Bu
 - Meta description: "I help you launch a digital product—designed and coded—faster than you thought possible. Idea → tested product in weeks, not months. Design-as-a-Service for startup founders, SMEs, and product teams."
 - Tailwind CSS v4 uses CSS variables for colors (no tailwind.config file needed)
 - Phase 2 changes focused on minimal modifications to preserve template component reusability
+
+### Crypto → Web3 Terminology Update ✅
+Updated all references from "crypto" to "web3" throughout the site for better branding:
+
+1. **Terminology changes**:
+   - "crypto-to-fiat" → "web3-to-fiat" 
+   - "billions in crypto" → "billions in web3 applications"
+   - Emphasizes web3/DeFi instead of generic crypto
+
+2. **Enhanced About Page Logo Section**:
+   - Added context: "My experience designing products for startups that raised $120M+ now powers my AI-driven approach to ship your product faster"
+   - Reframed logos as past experience that informs current AI-powered practice (not current focus)
+   - Expanded logos from 3 to 5 (added MakerDAO and ConsenSys)
+   - Added descriptive alt text and title attributes for each logo:
+     - Ramp: "Designed the product that helped raise $120M"
+     - Ethereum: "Crafted Ethereum's Eth2.0 staking interface"
+     - Nexus Mutual: "Designed platform for web3's leading insurance protocol"
+     - MakerDAO: "Contributed to DeFi's foundational money lego protocol"
+     - ConsenSys: "Worked with leading web3 development studio"
+   - Better establishes credibility while positioning web3 as past experience, not current specialization
+
+**Files Modified**:
+- src/components/sections/home/recent-builds-section.tsx
+- src/components/sections/about/about-hero-section.tsx
+- documentation/scratchpad.md
 
 ## Executor's Feedback or Assistance Requests
 
@@ -567,6 +827,11 @@ Successfully added a tooltip to the "One launch client at a time" text in the cr
 **Files Modified**:
 - src/components/sections/home/credo-section.tsx (added tooltip, updated text, and improved wrapping)
 
+### Credo Section - Charlie Avatar Enhancement ✅
+- Increased Charlie's avatar size from 32×32 to 40×40 for better prominence (h-10 w-10)
+- Adjusted `cite` container gap from 2 to 3 and removed `whitespace-nowrap` to improve text wrapping and alignment with avatar
+- File modified: `src/components/sections/home/credo-section.tsx`
+
 ### Recently Completed (Step 5)
 ✅ Removed all Vanta.js animations (performance issues)
 ✅ Implemented all Step 5 sections:
@@ -664,6 +929,55 @@ Made the following style refinements to clean up the About page:
 
 **Result**: Cleaner, more minimal design with better visual hierarchy and spacing
 
+## Current Status
+
+### Latest Changes
+- Moved BenefitsBridgeSection to appear after CredoSection (quote) instead of between Hero and Credo
+  - Creates better flow: Hero → Quote → Benefits → rest of content
+  - The benefits section now reinforces the credibility established by the quote
+- Updated BenefitsBridgeSection:
+  - Changed second card label to "Design & fullstack-dev in one"
+  - Added Euro icon inline with "flat fee" text (with coral color #FDA7A0)
+  - Main text now reads: "...for a monthly [€] flat fee."
+  - Enhanced "flat fee" to be an inline card with coral background (#FDA7A030)
+  - Euro icon has nested background effect (#FDA7A040) matching benefit card style
+  - Added hover effect and made text bold with darker coral color (#E85D75)
+  - Improved alignment with align-middle and consistent padding (p-1.5) around Euro icon
+  - Euro icon centered with flexbox for perfect spacing
+  - Changed flat fee color to green pastel (#B8E8D4) matching the Full-Stack theme
+  - Added "cancel anytime" as second inline card with apricot color (#FFDAB9)
+  - Both cards now have hover tooltips with detailed explanations
+  - Tooltips use same styling as the small cards (matching background colors)
+  - Text now reads: "...for a monthly [flat fee], [cancel anytime]"
+  - Replaced "Cancel anytime" big card with "Quality Design" (star icon, peach color #FFE4B5)
+  - Added hover tooltips to all three benefit cards with full descriptions
+  - Desktop view shows only titles, hover reveals full descriptions
+  - Mobile view shows full descriptions directly (no tooltips needed)
+  - Tooltips match the color scheme of each card for consistency
+  - Added "Validated Results" as fourth benefit card in second position
+  - Updated grid layout: 1 column mobile, 2 columns tablet, 4 columns desktop
+  - Shortened descriptions to fit 4-card layout better
+  - Card order: Launch → Validated Results → Design & dev → Quality Design
+  - Moved "Launch in 2-4 weeks" from big cards to inline card at start of sentence
+  - Sentence now reads: "[Launch in 2-4 weeks] then Zebra Design replaces..."
+  - Added "monthly" back to "monthly flat fee from €5,000"
+  - Grid updated back to 3 columns for the 3 remaining big cards
+  - Launch card has purple color (#CDCBFF) with Zap icon and hover tooltip
+- Simplified QuickWinsSection:
+  - Removed Speed, Flat Price, Full-Stack, and Cancel Anytime cards
+  - Now only shows Validation and Quality Design cards
+  - Updated grid to center the 2 remaining cards (max-w-md mx-auto)
+  - The removed content is now integrated into the larger benefit cards above
+  - **QuickWinsSection completely removed** - all content now integrated into BenefitsBridgeSection
+- Updated BenefitsBridgeSection styling:
+  - Added border lines at top and bottom of section
+  - Removed tooltips from big cards - descriptions always visible
+  - Removed shadows and borders from cards
+  - Styled card titles with colors matching inline cards
+  - Changed "Validated Results" to "Validated results at speed"
+
+### Active Components
+
 ## Recent Updates
 
 ### Gitignore and Cleanup Task (Current Date)
@@ -706,7 +1020,433 @@ Made the following style refinements to clean up the About page:
 
 **Result:** All cal.com booking links now open in a new tab with proper security attributes
 
----
+### Final CTA Section - Personal Touch Enhancement ✅
+- Added Charlie's avatar (80×80) with subtle ring border to the final CTA section
+- Included personal greeting: "Hi, I'm Charlie – let's build something great together"
+- Creates a more welcoming, personal connection before the booking buttons
+- File modified: `src/components/sections/home/final-cta-section.tsx`
+
+### Final CTA Section - Heading Layout Fix ✅
+- Added `lg:whitespace-nowrap` to prevent heading from wrapping on desktop
+- Increased container max-width from `max-w-xl` to `max-w-2xl` to accommodate longer heading
+- Ensures "Ready to launch faster? Let's talk." stays on one line on desktop screens
+- File modified: `src/components/sections/home/final-cta-section.tsx`
+
+### Pricing Hero Wording Update ✅
+Changed wording in `src/components/sections/pricing/pricing-hero-section.tsx`:
+- Old: "€5,000/month covers all design and development."
+- New: "From €5,000/month for all design and development."
+
+Reason: More honest phrasing as requested by user.
+
+### Process Advantage Section ✅
+Added a new section to highlight why Zebra's integrated design + dev process outperforms dev-only teams or agencies:
+
+1. **Created component**: `src/components/sections/pricing/advantage-section.tsx`
+   - Four cards: Unified design & code, client expertise collaboration, rapid user testing, value upfront.
+   - Uses brand colors and icons for visual consistency.
+   - Responsive grid.
+2. **Inserted into pricing page** after Compare Your Options.
+
+Flow now: Hero → Why Model Works → Cost Comparison → Process Advantage → Value-Based details.
+
+### Hero Meta Text Size Tweak ✅
+- Wrapped the final sentence in PricingHeroSection with `text-sm` span to reduce emphasis.
+- File updated: `src/components/sections/pricing/pricing-hero-section.tsx`
+
+### About Page Copy – Yoga Retreat Revenue Added (2025-06-23) ✅
+
+**Task:** Add credibility detail about founding a yoga retreat holiday company to About page intro paragraph.
+
+**Status:** ✅ Complete
+
+**Changes Made:**
+1. Updated the middle paragraph in `src/components/sections/about/about-hero-section.tsx` to mention that I founded a yoga retreat holiday company that grew to €1.2 million revenue within two years.
+
+**Result:** About page now highlights entrepreneurial success outside tech, boosting credibility with a concrete revenue figure.
+
+### About Page – AI-Augmented Summary Section (Current Date) ✅
+
+**Task:** Add a concise summary of the AI-augmented workflow above the journey timeline with CTA buttons.
+
+**Status:** ✅ Complete
+
+**Changes Made:**
+1. Added summary box to `src/components/sections/about/about-hero-section.tsx`:
+   - Gray background card with rounded corners
+   - Concise Hemingway-style copy: "Today I'm a solo designer with a twist..."
+   - Two CTA buttons: "Book Free Intro Call" and "See how I work →"
+   - Positioned after link cards, before journey timeline
+2. Added `id="solo-focus"` to SoloFocusSection for anchor link functionality
+
+**Result:** Visitors get the key message about AI-augmented design+dev capabilities early on the page, with clear CTAs to take action or learn more.
+
+### About Page – Personalised Timeline with Images (2025-06-23) ✅
+
+**Task:** Inject richer personal milestones (kitesurfing roots, yoga retreat success, electric yacht hack, sabbatical adventures, meeting Bene, growing family) into About page timeline and display supporting photos located in `public/images/about`.
+
+**Status:** ✅ Complete
+
+**Changes Made:**
+1. `src/components/sections/about/journey-section.tsx`
+   • Imported `next/image` and extra Lucide icons.
+   • Added `image` support in card rendering.
+   • Replaced static six-item timeline with 11 Hemingway-style milestones, each with concise copy, color, icon, and optional photo.
+2. Photos referenced directly from `/images/about/...` paths; images lazy-load with Next.js.
+
+**Result:** Timeline now tells a vivid, human story—from childhood surf stoke to upcoming fatherhood—backed by engaging photos. Visitors get a deeper sense of who Charlie is beyond professional credentials.
+
+**Update:** Added images to "Freelance design beginnings" (Nexus Mutual screenshot) and "Deep Work studio" (portfolio image) timeline items from `/images/builds/` directory.
+
+**Result:** Timeline now tells a vivid, human story—from childhood surf stoke to upcoming fatherhood—backed by engaging photos. Visitors get a deeper sense of who Charlie is beyond professional credentials.
+
+**Update:** Added images to "Freelance design beginnings" (Nexus Mutual screenshot) and "Deep Work studio" (portfolio image) timeline items from `/images/builds/` directory.
+
+### Homepage Metrics Banner Logo Enhancement ✅
+Fixed the small logos in the metrics banner section on the homepage Recent Builds section:
+
+1. **Increased logo sizes**:
+   - Changed from 40px width to 80px width (doubled the size)
+   - Logos are now much clearer and more prominent
+   - Added hover effect (80% to 100% opacity transition)
+
+2. **Improved layout**:
+   - Changed from cramped flex layout to more spacious design
+   - Increased padding and gaps between elements
+   - Icons and content now have better breathing room
+   - Flex column on mobile, flex row on desktop for better responsive behavior
+
+3. **Enhanced copy**:
+   - Changed from fragment sentences to complete sentences with company names
+   - Before: "raised on product I designed"
+   - After: "Ramp Network raised $120M on the product I designed"
+   - Copy now clearly connects the metric to the company logo
+
+4. **Visual improvements**:
+   - Increased icon sizes from 5x5 to 6x6
+   - Increased icon padding from p-2 to p-3
+   - Increased metric text from text-xl to text-2xl
+   - Increased description text from text-sm to text-base
+
+5. **Inline logo integration** (Latest update):
+   - Logos now appear inline within the descriptive text
+   - Company names replaced with their logos for visual impact
+   - Text flows naturally: "[Logo] raised $120M on the product I designed"
+   - Each word after the logo is its own span element to ensure proper wrapping
+   - Increased spacing between metric number and description (space-y-2 to space-y-3)
+   - Logo wrapped in its own span to maintain inline-block behavior
+   - Text wraps naturally after the logo on smaller screens
+   - Maintains readability while adding visual brand recognition
+
+6. **Metric cards instead of icons**:
+   - Replaced icon indicators with metric value cards ($120M, $200M+, Billions)
+   - Metrics displayed in colored rounded rectangles matching brand colors
+   - Dynamic width cards with padding (px-3 py-2) to fit content
+   - New two-line layout:
+     - Top line: Metric card + Company logo side by side
+     - Bottom line: Full description with company name ("Ramp raised $120M...")
+   - Increased logo size to 100x40px for better visibility
+   - Added spacing between metric/logo row and description (space-y-3)
+   - Company names back in the text for clarity
+   - Added leading-relaxed for better readability
+
+**Files Modified**:
+- src/components/sections/home/recent-builds-section.tsx
+
+**Result**: The metrics banner now has much clearer logos that are integrated directly into the text flow, creating a more visually engaging and scannable design where the company logos replace their text names.
+
+### Metrics Banner Background Color Update
+Changed the background color of the metrics banner in the Recent Builds section:
+- Changed from #EEF2F6 to #FBFBFB as requested
+- Located in src/components/sections/home/recent-builds-section.tsx (line 192)
+- This banner displays the three key metrics: $120M (Ramp), $200M+ (Nexus Mutual), and Billions (Ethereum)
+
+**File Modified**:
+- src/components/sections/home/recent-builds-section.tsx (background color change)
+
+### Pricing Comparison Styling Update (Current Date)
+- Enhanced visual distinction between Zebra Design card and other options.
+  - Zebra card now uses a bold black outline (border-2 border-black) for emphasis, replacing the previous purple ring.
+  - Non-Zebra cards have reduced opacity (opacity-70), lighter background (bg-white/60), muted text color, and fade-in on hover (hover:opacity-90) to subtly de-emphasize them.
+- Updated `src/components/sections/pricing/comparison-section.tsx`.
+
+### Responsive Fixes – Logo Cloud & Final CTA (Current Date) ✅
+
+1. **Logo Cloud – Centered Heading**
+   - Removed `md:flex-row` layout so the section always stacks vertically.
+   - Deleted width restriction and right-aligned text utilities.
+   - Result: "Powered by the best tools" is now perfectly centered on all devices.
+   - File modified: `src/components/sections/home/logo-cloud.tsx`
+
+2. **Final CTA – Decorative Swirl Cleanup**
+   - Hid pink swirl background on small screens (`hidden md:block`).
+   - Added `pointer-events-none select-none` to ensure it never intercepts touches.
+   - Result: No overlap with Charlie's avatar on mobile, cleaner appearance.
+   - File modified: `src/components/sections/home/final-cta-section.tsx`
+
+### Header Button Spacing Reduction ✅
+Reduced spacing in the "Book Intro Call with Charlie" button area in the header:
+
+1. **Spacing Adjustments**:
+   - Reduced gap between profile image and button from `gap-3` to `gap-1.5`
+   - Made profile image smaller: from `h-10 w-10` to `h-8 w-8`
+   - Updated image size attribute from `40px` to `32px` for proper loading
+
+2. **Button Padding**:
+   - Added custom padding classes: `px-3 py-1.5 h-auto`
+   - This overrides default button padding for a more compact appearance
+   - Maintains readability while reducing overall button size
+
+**Files Modified**:
+- src/components/header.tsx (adjusted spacing and sizes)
+
+**Result**: The Book Intro Call button area now has tighter spacing, making the header more compact and visually balanced.
+
+## Project Status Board
+
+- [x] Phase 1: Environment Setup
+
+### Design Consistency Analysis & Recommendations
+
+After a comprehensive review of the entire website, I've identified several design inconsistencies that should be addressed for a more cohesive user experience:
+
+#### 1. **Button Styling Inconsistencies**
+**Issue**: Multiple button styles are used across the site
+- Hero section: Custom black button with `bg-black text-white hover:bg-black/90`
+- Final CTA section: Custom buttons with `bg-foreground` and border styles
+- Other sections: Using default Button component variants
+
+**Recommendation**: Standardize all CTAs to use the Button component with consistent variants:
+- Primary CTAs: Use `variant="default"` (which uses the primary color #CDCBFF)
+- Secondary CTAs: Use `variant="outline"` or `variant="secondary"`
+- Remove custom inline styles and use the design system
+
+#### 2. **Spacing Inconsistencies**
+**Issue**: Different padding patterns across sections
+- Some sections use `py-16 md:py-32`
+- Others use `py-12 md:py-24 lg:py-32`
+- Some use `py-16 md:py-24`
+- Logo cloud uses `py-8 md:py-12 lg:py-16`
+
+**Recommendation**: Establish a consistent spacing system:
+- Major sections: `py-16 md:py-24 lg:py-32`
+- Minor sections updated to: `py-12 md:py-16 lg:py-20`
+- Compact sections (logo cloud): `py-8 md:py-12`
+- Created consistent spacing rhythm throughout the site
+
+#### 3. **Card Background Colors**
+**Issue**: Inconsistent card backgrounds
+- Some cards use `bg-white`
+- Some use `bg-[#FCF8F4]` (the card color from CSS variables)
+- Some use `bg-card` (which maps to #FCF8F4)
+- Recent builds section uses `bg-[#FBFBFB]`
+
+**Recommendation**: Standardize to use CSS variables:
+- Use `bg-card` for all card backgrounds (maps to #FCF8F4)
+- Use `bg-white` only for contrast when needed
+- Remove hardcoded color values
+
+#### 4. **Border Radius Inconsistencies**
+**Issue**: Mixed border radius values
+- Some use `rounded-lg` (0.5rem)
+- Some use `rounded-xl` (0.75rem)
+- Cards component uses `rounded-xl` by default
+
+**Recommendation**: Standardize border radius:
+- Cards and major containers: `rounded-xl`
+- Buttons and small elements: `rounded-lg`
+- Pills and badges: `rounded-full`
+
+#### 5. **Typography Scale**
+**Issue**: Inconsistent heading sizes
+- Hero: `text-5xl md:text-7xl lg:text-[5.25rem]`
+- Section headings vary between `text-2xl md:text-3xl` and `text-xl md:text-2xl lg:text-3xl`
+- Some sections use `font-medium`, others use `font-semibold`
+
+**Recommendation**: Create a consistent type scale:
+- H1 (Hero only): `text-5xl md:text-6xl lg:text-7xl font-semibold`
+- H2 (Section titles): `text-2xl md:text-3xl lg:text-4xl font-semibold`
+- H3 (Subsections): `text-xl md:text-2xl font-semibold`
+- Body: `text-base md:text-lg`
+
+#### 6. **Icon Styling**
+**Issue**: Inconsistent icon container styling
+- Different background colors and opacities
+- Some use inline styles, others use classes
+- Inconsistent padding and sizing
+
+**Recommendation**: Create reusable icon container styles:
+- Standard icon container: `p-3 rounded-lg` with color-specific background
+- Use consistent opacity: `bg-{color}/20` for backgrounds
+- Icon size: `w-6 h-6` for standard, `w-5 h-5` for small
+
+#### 7. **Color Usage**
+**Issue**: Hardcoded colors instead of CSS variables
+- Many inline styles with hardcoded hex values
+- Not leveraging the established color system
+
+**Recommendation**: Use CSS variables consistently:
+- Primary: `text-primary` or `bg-primary`
+- Secondary: `text-secondary` or `bg-secondary`
+- Muted: `text-muted-foreground`
+- Create utility classes for brand colors if needed
+
+#### 8. **Shadow Usage**
+**Issue**: Inconsistent shadow application
+- Some cards have `hover:shadow-sm`
+- Button component has `shadow-xs`
+- Most elements have no shadows
+
+**Recommendation**: Establish shadow hierarchy:
+- Remove shadows from cards (as already done in some places)
+- Keep subtle shadows only on interactive elements
+- Use `shadow-sm` for hover states consistently
+
+#### 9. **Link Styling**
+**Issue**: Inconsistent link treatments
+- Some links have underlines, others don't
+- Hover states vary
+- External link indicators are inconsistent
+
+**Recommendation**: Standardize link behavior:
+- Internal links: No underline, `hover:text-primary` transition
+- External links: Show external icon on hover
+- CTAs: Use Button component consistently
+
+#### 10. **Section Dividers**
+**Issue**: Inconsistent section separation
+- Some use `border-t border-black/5`
+- Others use background colors
+- Some have no visual separation
+
+**Recommendation**: Consistent section separation:
+- Use `border-t border-foreground/5` between major sections
+- Use background colors (`bg-muted/30`) for emphasis sections
+- Ensure consistent application
+
+### Implementation Priority
+1. **High Priority**: Button consistency, Typography scale, Spacing system
+2. **Medium Priority**: Card backgrounds, Color usage, Border radius
+3. **Low Priority**: Icon styling, Shadows, Link treatments, Section dividers
+
+These changes will create a more cohesive and professional appearance while maintaining the existing design language.
+
+### Accordion Consistency Update ✅
+Updated the "Who Is This For?" section to match the style of "Your Common Problems, Solved:" section:
+
+1. **Style Changes**:
+   - Converted statements to questions (e.g., "Startup founders racing against the runway" → "Startup founders racing against the runway?")
+   - Removed icons (Rocket, Code2, Building2, Package, RefreshCw)
+   - Removed icon colors and urgency text
+   - Simplified accordion item styling (removed border and rounded corners)
+   - Adjusted spacing to match pain points section
+
+2. **Consistency Improvements**:
+   - Both sections now use the same question-based format
+   - Both use identical accordion styling (no borders, same spacing)
+   - Both use the same font sizes and text colors
+   - Creates a more cohesive user experience
+
+**Files Modified**:
+- src/components/sections/home/who-i-help-section.tsx (simplified to match pain points style)
+
+**Result**: The two accordion sections now have consistent styling and formatting, making the site feel more polished and unified.
+
+### Icons Restored to "Who Is This For?" Section ✅
+Based on user feedback, restored the icons to the "Who Is This For?" section while maintaining other improvements:
+
+1. **What was kept**:
+   - Question format for all titles (ending with "?")
+   - Clean accordion styling without borders
+   - Consistent spacing and typography
+
+2. **What was restored**:
+   - Icons (Rocket, Code2, Building2, Package, RefreshCw)
+   - Icon colors using brand palette
+   - Icon display in accordion triggers
+
+3. **Final styling**:
+   - Icons displayed with 5x5 size and brand colors
+   - 3px gap between icon and text
+   - Content indented with pl-8 to align with text (not icon)
+   - No borders or rounded corners on accordion items
+
+**Files Modified**:
+- src/components/sections/home/who-i-help-section.tsx (restored icons while keeping clean styling)
+
+**Result**: The section now has visual interest from the icons while maintaining the cleaner, more consistent styling approach.
+
+### Design Consistency Improvements Implemented ✅
+
+Successfully executed the requested design consistency improvements:
+
+1. **Button Styling Consistency** ✅:
+   - Replaced all custom button implementations with the Button component
+   - Standardized CTAs across all sections (final-cta, pricing, about)
+   - Kept the special black styling in hero section as requested
+   - All buttons now use consistent variants: primary (default) and secondary (outline)
+
+2. **Typography Scale** ✅:
+   - Standardized all H2 section headings to: `text-2xl md:text-3xl lg:text-4xl font-semibold`
+   - Updated all headings from `font-medium` to `font-semibold` for consistency
+   - Fixed inconsistent heading sizes across homepage and pricing pages
+   - Maintained hero heading at larger size as appropriate
+
+3. **Spacing System** ✅:
+   - Standardized major sections to: `py-16 md:py-24 lg:py-32`
+   - Minor sections updated to: `py-12 md:py-16 lg:py-20`
+   - Compact sections (logo cloud): `py-8 md:py-12`
+   - Created consistent spacing rhythm throughout the site
+
+4. **Border Radius** ✅:
+   - Standardized cards and containers to use `rounded-xl`
+   - Removed custom rounded-lg from components that already had rounded-xl
+   - Kept buttons at their default radius (rounded-md)
+   - Pills and badges remain at `rounded-full`
+
+5. **Shadow Removal** ✅:
+   - Removed hover:shadow-sm from pricing cards
+   - Removed shadow-sm from comparison highlighted card
+   - Removed shadow-md from services section
+   - Site now has cleaner, flatter appearance without shadows
+
+6. **Link Styling** ✅:
+   - External links in footer updated to `text-foreground font-semibold`
+   - Hover state changed to `hover:text-primary` for consistency
+   - External link indicators remain on hover for build cards
+   - Created clear visual distinction for external links
+
+**Files Modified**:
+- Button updates: final-cta-section.tsx, pricing-section.tsx, about-hero-section.tsx
+- Typography: All section headings across home, pricing, and about pages
+- Spacing: logo-cloud.tsx, proven-results-section.tsx, philosophy-section.tsx, etc.
+- Border radius: who-i-help-section.tsx, recent-builds-section.tsx, comparison-section.tsx, etc.
+- Shadows: why-this-works-section.tsx, advantage-section.tsx, comparison-section.tsx
+- Links: footer.tsx
+
+**Note**: Card backgrounds were not changed as requested - will address in a later update.
+
+
+
+
+1. **Visual Enhancement**:
+   - Added red X icons (from Lucide) to the beginning of each accordion trigger
+   - X icons are 4x4 size with red-500 color to emphasize these are problems/negatives
+   - 3px gap between icon and text for proper spacing
+
+2. **Layout Adjustments**:
+   - Wrapped each trigger text in a flex container with icon
+   - Added pl-7 padding to accordion content to align with text (not icon)
+   - Maintains clean, readable layout
+
+3. **Consistency**:
+   - Both accordion sections now have icons (Who Is This For has colored icons, Pain Points has red X marks)
+   - Creates visual hierarchy and makes pain points immediately recognizable as problems
+
+**Files Modified**:
+- src/components/sections/home/pain-points-section.tsx (added X icons to all triggers)
+
+**Result**: The pain points are now visually marked as negatives/problems, making it clearer that these are issues the service solves.
 
 
 

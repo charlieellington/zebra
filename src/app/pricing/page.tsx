@@ -1,6 +1,9 @@
 import type { Metadata } from "next";
 import FooterSection from "@/components/footer";
 import PricingHeroSection from "@/components/sections/pricing/pricing-hero-section";
+import WhyThisWorksSection from "@/components/sections/pricing/why-this-works-section";
+import ComparisonSection from "@/components/sections/pricing/comparison-section";
+import AdvantageSection from "@/components/sections/pricing/advantage-section";
 import ValueBasedSection from "@/components/sections/pricing/value-based-section";
 import ValueExamplesSection from "@/components/sections/pricing/value-examples-section";
 import AddOnsSection from "@/components/sections/pricing/add-ons-section";
@@ -20,6 +23,15 @@ export default function PricingPage() {
       <div className="pt-24 pb-16 md:pt-36 md:pb-24">
         <PricingHeroSection />
       </div>
+
+      {/* Why This Model Works */}
+      <WhyThisWorksSection />
+
+      {/* Compare Your Options */}
+      <ComparisonSection />
+
+      {/* Why Our Process Is Faster */}
+      <AdvantageSection />
 
       {/* Value-Based Pricing Explanation */}
       <ValueBasedSection />

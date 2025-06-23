@@ -1,6 +1,7 @@
 # Must haves: 
 
 - User testing this site. 
+- SEO updates 
 
 # Should haves: 
 

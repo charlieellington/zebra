@@ -138,7 +138,16 @@ export default function HeroSection() {
                   as="h1"
                   className="mt-8 text-balance text-5xl md:text-7xl lg:mt-16 xl:text-[5.25rem] font-semibold"
                 >
-                  Designers That Code with AI
+                  Design & Code, On-Demand
+                </TextEffect>
+                <TextEffect
+                  preset="fade-in-blur"
+                  speedSegment={0.3}
+                  delay={0.3}
+                  as="p"
+                  className="mt-4 text-xl md:text-2xl lg:text-3xl text-muted-foreground"
+                >
+                  From designers that code with AI
                 </TextEffect>
                 <TextEffect
                   per="line"
@@ -148,43 +157,9 @@ export default function HeroSection() {
                   as="p"
                   className="mx-auto mt-8 max-w-2xl text-balance text-lg"
                 >
-                  I help you launch your digital product faster — design and coded — 
-                  through a user-focused partnership.
+                  Get from idea to a tested product in weeks, not months. 
+                  I design and build your digital product through an AI-powered, user-focused partnership.
                 </TextEffect>
-
-                <AnimatedGroup
-                  variants={{
-                    container: {
-                      visible: {
-                        transition: {
-                          staggerChildren: 0.05,
-                          delayChildren: 0.65,
-                        },
-                      },
-                    },
-                    ...transitionVariants,
-                  }}
-                  className="mt-8 flex justify-center"
-                >
-                  <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 max-w-3xl w-full">
-                    <div className="flex items-start gap-3 p-4 rounded-lg bg-white">
-                      <Zap className="text-muted-foreground mt-0.5 flex-shrink-0" size={18} />
-                      <span className="text-sm text-left">Idea → tested product in weeks, not months</span>
-                    </div>
-                    <div className="flex items-start gap-3 p-4 rounded-lg bg-white">
-                      <Code2 className="text-muted-foreground mt-0.5 flex-shrink-0" size={18} />
-                      <span className="text-sm text-left">I handle both design and development</span>
-                    </div>
-                    <div className="flex items-start gap-3 p-4 rounded-lg bg-white">
-                      <Users className="text-muted-foreground mt-0.5 flex-shrink-0" size={18} />
-                      <span className="text-sm text-left">Made for startup founders, SMEs, and product teams</span>
-                    </div>
-                    <div className="flex items-start gap-3 p-4 rounded-lg bg-white">
-                      <Rocket className="text-muted-foreground mt-0.5 flex-shrink-0" size={18} />
-                      <span className="text-sm text-left">A design-as-a-service model to design and develop your app lightning-fast</span>
-                    </div>
-                  </div>
-                </AnimatedGroup>
 
                 <AnimatedGroup
                   variants={{
@@ -211,7 +186,7 @@ export default function HeroSection() {
                       className="rounded-xl px-5 text-base bg-black text-white hover:bg-black/90"
                     >
                       <Link href="https://cal.com/charlieellington/zebra-call" target="_blank" rel="noopener noreferrer">
-                        <span className="text-nowrap">Book a call with Charlie</span>
+                        <span className="text-nowrap">Book Free Intro Call</span>
                       </Link>
                     </Button>
                   </div>
@@ -223,10 +198,16 @@ export default function HeroSection() {
                     className="h-10.5 rounded-xl px-5"
                   >
                     <Link href="#recent-builds">
-                      <span className="text-nowrap">View examples</span>
+                      <span className="text-nowrap">See Recent Work</span>
                     </Link>
                   </Button>
                 </AnimatedGroup>
+                <p className="mt-2 text-xs text-muted-foreground">Intro call · 30&nbsp;min · zero sales pressure</p>
+
+                {/* Audience identifier */}
+                <p className="mt-8 text-sm md:text-base text-muted-foreground max-w-lg mx-auto">
+                  Built for startup founders, SMEs, and teams racing the runway—or simply ready to grow.
+                </p>
               </div>
             </div>
           </div>

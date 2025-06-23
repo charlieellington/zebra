@@ -15,7 +15,7 @@ export default function PricingSummarySection() {
         <ScrollView>
           <div className="space-y-8">
             <div className="space-y-4">
-              <h2 className="text-2xl md:text-3xl font-medium text-foreground">
+              <h2 className="text-2xl md:text-3xl font-semibold text-foreground">
                 Bottom Line
               </h2>
               <p className="text-base md:text-lg text-muted-foreground leading-relaxed">
@@ -33,7 +33,7 @@ export default function PricingSummarySection() {
               </p>
               <Button asChild size="lg" className="group">
                 <Link href="https://cal.com/charlieellington/zebra-call" target="_blank" rel="noopener noreferrer">
-                  Book a call with Charlie
+                  Book Free Intro Call
                   <ArrowRight className="ml-2 h-4 w-4 transition-transform group-hover:translate-x-1" />
                 </Link>
               </Button>

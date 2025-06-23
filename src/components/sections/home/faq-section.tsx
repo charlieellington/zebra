@@ -16,7 +16,7 @@ const faqs = [
   {
     id: "cancellation",
     question: "What if I want to cancel?",
-    answer: "You can cancel anytime during our one-year engagement. You pay only 20% of the unused balance as a wrap-up fee. Example: on €5k/month for a year, if you cancel after 3 months (paid €15k), with €45k remaining, your wrap-up fee is €9k. Total: €24k instead of €60k. You keep every asset, I'm fairly compensated."
+    answer: "You can cancel anytime using the Agile 'Money for Nothing' principle — a fair model that protects both of us. Here's how it works: If you cancel early, you pay only 20% of the remaining contract value as a wrap-up fee. This dramatically reduces your risk compared to traditional contracts while ensuring I'm compensated for the value already delivered. Example: On a €5k/month engagement, if you cancel after 3 months (paid €15k) with €45k remaining, your wrap-up fee is just €9k. Total: €24k instead of €60k — a 60% savings. You keep all work and assets created. This model aligns our incentives: I'm motivated to deliver maximum value fast so you'll want to continue, and you're protected from being locked into something that isn't working. It's a win-win that traditional agencies rarely offer."
   },
   {
     id: "pause",
@@ -26,7 +26,7 @@ const faqs = [
   {
     id: "speed",
     question: "How can you deliver so fast?",
-    answer: "We work in month-long sprints focused on highest-value outcomes. I leverage AI coding assistants, pre-built components, and build in code immediately (no throwaway mockups). By focusing only on what matters for the user and your business metrics, we compress timelines dramatically."
+    answer: "I work in month-long sprints focused on the highest-value outcomes. I leverage AI coding assistants, pre-built components, and build in code immediately (no throwaway mockups). By focusing only on what matters for the user and your business metrics, timelines compress dramatically."
   },
   {
     id: "parallel",
@@ -69,13 +69,10 @@ export default function FaqSection() {
   return (
     <section id="faqs" className="py-12 md:py-24 lg:py-32 border-t border-black/5">
       <div className="mx-auto max-w-3xl px-4 md:px-6">
+        <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-6 md:mb-8 text-center">
+          Frequently Asked Questions
+        </h2>
         <ScrollView>
-          <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-6 md:mb-8 text-center">
-            FAQs
-          </h2>
-        </ScrollView>
-
-        <ScrollView delay={0.1}>
           <Accordion
             type="single"
             collapsible

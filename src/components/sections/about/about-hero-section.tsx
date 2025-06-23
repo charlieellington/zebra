@@ -4,6 +4,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { Card } from "@/components/ui/card";
 import { ExternalLink, Youtube, BookOpen } from "lucide-react";
+import { ScrollView } from "@/components/scroll-view";
+import { Button } from "@/components/ui/button";
 
 export default function AboutHeroSection() {
   return (
@@ -17,6 +19,15 @@ export default function AboutHeroSection() {
             className="text-balance text-3xl font-semibold md:text-4xl lg:text-5xl mb-12"
           >
             About Me
+          </TextEffect>
+          
+          <TextEffect
+            preset="fade-in-blur"
+            delay={0.3}
+            as="p"
+            className="text-xl md:text-2xl text-muted-foreground text-center mb-12"
+          >
+            Why a founder-turned-designer-developer is the fastest way to ship your product
           </TextEffect>
           
           {/* Photo and intro text container */}
@@ -63,14 +74,77 @@ export default function AboutHeroSection() {
               {/* Intro text */}
               <div className="space-y-6 text-lg text-muted-foreground">
                 <p>
-                  Hello! I'm <strong className="text-foreground">Charlie Ellington</strong> — a product designer, creative entrepreneur, and lifelong learner. 
-                  Over the past decade I've worn many hats, from digital marketer and sailing instructor to startup founder and design lead. 
-                  Through it all, one thing has remained constant: I love crafting bold, user-centered designs that solve real problems.
+                  I'm <strong className="text-foreground">Charlie Ellington</strong> — a designer-developer who's launched products that raised <strong className="text-foreground">$120M</strong> and secured <strong className="text-foreground">billions in web3 applications</strong>. 
+                  Experience I now pour into shipping <em>your</em> product in weeks, not months.
                 </p>
                 <p>
-                  My journey has taken me from teaching sailing in my early career to leading a 40-person design team in the Web3 tech world, 
-                  and now to running my own solo design practice.
+                  Over the past decade I've worn many hats. From digital marketer and sailing instructor to startup founder and design lead — including founding a yoga retreat holiday company that grew to €1.2&nbsp;million in revenue in just two years. 
+                  Through it all, one thing remained constant: I love crafting bold, user-centered designs that solve real problems.
                 </p>
+                <p>
+                  My journey took me from teaching sailing to leading a 40-person design team in Web3, 
+                  and now to running my own solo design practice powered by AI.
+                </p>
+              </div>
+            </div>
+            
+            {/* Proof points logos */}
+            <div className="mt-12 space-y-6">
+              <p className="text-center text-base text-muted-foreground max-w-2xl mx-auto">
+                I've designed products for leading Web3 companies that collectively raised <strong className="text-foreground">$120M+</strong> and manage <strong className="text-foreground">billions in value</strong>. 
+                This experience now powers my AI-driven approach to ship your product faster.
+              </p>
+              <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 items-center">
+                <div className="flex flex-col items-center gap-2">
+                  <Image
+                    src="/images/logos/ramp.png"
+                    alt="Ramp Network"
+                    width={100}
+                    height={40}
+                    className="object-contain opacity-70 hover:opacity-100 transition-opacity"
+                  />
+                  <p className="text-xs text-muted-foreground text-center">$120M raised</p>
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                  <Image
+                    src="/images/logos/ethereum.png"
+                    alt="Ethereum Foundation"
+                    width={100}
+                    height={40}
+                    className="object-contain opacity-70 hover:opacity-100 transition-opacity"
+                  />
+                  <p className="text-xs text-muted-foreground text-center">Staking UI</p>
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                  <Image
+                    src="/images/logos/nexus%20mutual.png"
+                    alt="Nexus Mutual"
+                    width={100}
+                    height={40}
+                    className="object-contain opacity-70 hover:opacity-100 transition-opacity"
+                  />
+                  <p className="text-xs text-muted-foreground text-center">$200M+ coverage</p>
+                </div>
+                <div className="flex flex-col items-center gap-2">
+                  <Image
+                    src="/images/logos/MAKER-DAO-LOGO.png"
+                    alt="MakerDAO"
+                    width={100}
+                    height={40}
+                    className="object-contain opacity-70 hover:opacity-100 transition-opacity"
+                  />
+                  <p className="text-xs text-muted-foreground text-center">DeFi pioneer</p>
+                </div>
+                <div className="flex flex-col items-center gap-2 col-span-2 md:col-span-1">
+                  <Image
+                    src="/images/logos/Consensys_logo_2023.svg.png"
+                    alt="ConsenSys"
+                    width={120}
+                    height={40}
+                    className="object-contain opacity-70 hover:opacity-100 transition-opacity"
+                  />
+                  <p className="text-xs text-muted-foreground text-center">Web3 leader</p>
+                </div>
               </div>
             </div>
             
@@ -111,6 +185,34 @@ export default function AboutHeroSection() {
                   </div>
                 </Card>
               </Link>
+            </div>
+
+            {/* AI-Augmented Summary */}
+            <div className="mt-16 bg-gray-50 rounded-xl p-8">
+              <h3 className="text-2xl font-semibold mb-4">Solo Focus, Augmented by AI</h3>
+              <p className="text-lg text-muted-foreground mb-6">
+                Today I'm a solo designer with a twist: I've learned to code with AI. 
+                Ten years of design expertise, now turbocharged with AI-powered development. 
+                I design it, I build it, I ship it. Fast.
+              </p>
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button asChild size="lg">
+                  <Link
+                    href="https://cal.com/charlieellington/zebra-call"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Book Free Intro Call
+                  </Link>
+                </Button>
+                <Button asChild size="lg" variant="outline">
+                  <Link
+                    href="#solo-focus"
+                  >
+                    See how I work →
+                  </Link>
+                </Button>
+              </div>
             </div>
           </AnimatedGroup>
         </div>

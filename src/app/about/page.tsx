@@ -8,7 +8,7 @@ import SoloFocusSection from "@/components/sections/about/solo-focus-section";
 
 export const metadata: Metadata = {
   title: "About — Zebra Design",
-  description: "Learn about Charlie Ellington's journey from digital marketer and sailing instructor to leading a 40-person design team, and now running a solo design-as-a-service practice augmented by AI.",
+  description: "Why a founder-turned-designer-developer is the fastest way to ship your product. Charlie Ellington's $120M track record now powers your next launch.",
 };
 
 export default function AboutPage() {

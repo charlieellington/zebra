@@ -23,7 +23,7 @@ const coreValues = [
 
 export default function PhilosophySection() {
   return (
-    <section className="py-16 md:py-32 bg-muted/30">
+    <section className="py-16 md:py-24 lg:py-32 bg-muted/30">
       <div className="mx-auto max-w-7xl px-6 lg:px-8">
         <div className="mx-auto max-w-3xl text-center">
           <ScrollView>

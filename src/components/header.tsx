@@ -6,6 +6,7 @@ import { Button } from "@/components/ui/button";
 import React from "react";
 import { cn } from "@/lib/utils";
 import { NAV_LINKS } from "@/content/nav";
+import Image from "next/image";
 
 export const HeroHeader = () => {
   const [menuState, setMenuState] = React.useState(false);
@@ -87,10 +88,30 @@ export const HeroHeader = () => {
                 </div>
                 <div className="flex w-full flex-col space-y-3 sm:flex-row sm:gap-3 sm:space-y-0 md:w-fit">
                   {/* Desktop button - hidden on mobile, shown on desktop */}
-                  <div className="hidden lg:block">
-                    <Button asChild size="sm">
+                  <div className="hidden lg:flex lg:items-center lg:gap-1.5">
+                    {/* Profile image - only shown when NOT scrolled */}
+                    {!isScrolled && (
+                      <div className="relative h-8 w-8 overflow-hidden rounded-full border-2 border-background shadow-sm">
+                        <Image
+                          src="/images/other/charlie-ellington.jpg"
+                          alt="Charlie Ellington"
+                          fill
+                          className="object-cover"
+                          sizes="32px"
+                        />
+                      </div>
+                    )}
+                    <Button 
+                      asChild 
+                      size="sm"
+                      variant={isScrolled ? "default" : "ghost"}
+                      className={cn(
+                        !isScrolled ? "hover:bg-accent/10" : "",
+                        "px-3 py-1.5 h-auto"
+                      )}
+                    >
                       <Link href="https://cal.com/charlieellington/zebra-call" target="_blank" rel="noopener noreferrer">
-                        Book a call with Charlie
+                        Book Intro Call with Charlie
                       </Link>
                     </Button>
                   </div>
@@ -98,7 +119,7 @@ export const HeroHeader = () => {
                   <div className="block lg:hidden">
                     <Button asChild size="default" className="w-full">
                       <Link href="https://cal.com/charlieellington/zebra-call" target="_blank" rel="noopener noreferrer">
-                        Book a call with Charlie
+                        Book Intro Call with Charlie
                       </Link>
                     </Button>
                   </div>

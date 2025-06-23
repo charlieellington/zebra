@@ -8,6 +8,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from "@/components/ui/accordion"
+import { ScrollView } from "@/components/scroll-view"
 
 // Map each accordion step to an abstract image
 const stepImages: Record<string, string> = {
@@ -54,9 +55,11 @@ export default function LaunchProcessSection() {
       className="py-12 md:py-24 lg:py-32 border-t border-black/5"
     >
       <div className="mx-auto max-w-3xl lg:max-w-5xl xl:max-w-6xl px-4 md:px-6">
-        <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-6 md:mb-8 text-center md:text-left">
-          Launch in weeks, not months.
-        </h2>
+        <ScrollView>
+          <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-6 md:mb-8 text-center md:text-left">
+            The Zebra Process: How I Launch Your Product
+          </h2>
+        </ScrollView>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
           {/* Image - hidden on mobile */}

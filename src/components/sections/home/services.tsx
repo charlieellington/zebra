@@ -77,7 +77,7 @@ export default function ServicesSection() {
                     />
                     <div className="z-10 flex flex-col justify-between h-full w-full py-5 px-4">
                       <div className="self-end">
-                        <div className="hover:bg-background dark:hover:border-t-border bg-muted group mx-auto flex w-fit items-center gap-4 rounded-full border p-1  shadow-md shadow-zinc-950/5 transition-colors duration-300 dark:border-t-white/5 dark:shadow-zinc-950">
+                        <div className="group/card bg-background/80 dark:bg-muted/50 relative flex size-full flex-1 flex-col items-center justify-center gap-4 rounded-full border p-1 transition-colors duration-300 dark:border-t-white/5">
                           <div className="bg-background group-hover:bg-muted size-8 overflow-hidden rounded-full duration-500 -rotate-45 ">
                             <div className="flex w-16 -translate-x-1/2 duration-500 ease-in-out group-hover:translate-x-0">
                               <span className="flex size-8">

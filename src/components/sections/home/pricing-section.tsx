@@ -1,6 +1,7 @@
 import Link from "next/link"
 import { OptimizedImage } from "@/components/ui/optimized-image"
 import { ScrollView } from "@/components/scroll-view"
+import { Button } from "@/components/ui/button"
 
 export default function PricingSection() {
   return (
@@ -18,23 +19,36 @@ export default function PricingSection() {
         <div className="relative">
           {/* Card container */}
           <ScrollView>
-            <div className="bg-[#FCF8F4] rounded-lg md:rounded-xl p-5 md:p-6 lg:p-8 max-w-2xl mx-auto relative z-10 border border-black/5">
-              <h2 className="text-xl md:text-2xl lg:text-3xl font-semibold mb-3 md:mb-4">
-                <em>Value‑based, month‑to‑month. Starts €5k.</em>
+            <div className="bg-[#FCF8F4] rounded-lg md:rounded-xl p-5 md:p-6 lg:p-8 max-w-2xl mx-auto relative z-10">
+              <h2 className="text-2xl md:text-3xl lg:text-4xl font-semibold mb-3 md:mb-4">
+                Monthly subscription, starting ~€5k
               </h2>
               
-              <p className="text-base md:text-lg text-muted-foreground mb-6">
-                &ldquo;I price at ~20% of the value I create over two years. 
-                Cancel or change priorities anytime.&rdquo;
+              <p className="text-base md:text-lg text-muted-foreground mb-4">
+                <strong className="text-foreground">Cancel anytime.</strong> No long-term contracts.
               </p>
+              
+              <p className="text-sm text-muted-foreground mb-6">
+                Fair pricing at ~20% of the value I deliver to your business over 2 years. 
+                If our work adds €500k to your bottom line, you pay about €8k/month.
+              </p>
+              
+              <p className="text-xs text-muted-foreground italic mb-4">
+                (That's 1/4 the cost of a typical team – and you'll ship 4× faster.)
+              </p>
+              <ul className="text-sm text-muted-foreground space-y-1 mb-6 list-disc pl-5">
+                <li>Hire in-house team: €20k/mo + 3 months recruiting</li>
+                <li>Traditional agency: €20k–€40k/mo retainer — headline fee balloons with change-orders and slower turn-around</li>
+              </ul>
 
               <div className="text-center">
-                <Link
-                  href="/pricing"
-                  className="inline-flex items-center justify-center px-5 md:px-6 py-2.5 md:py-3 text-sm font-semibold text-white bg-foreground rounded-lg hover:bg-foreground/90 transition-colors"
-                >
-                  See Full Pricing
-                </Link>
+                <Button asChild size="default">
+                  <Link
+                    href="/pricing"
+                  >
+                    View full pricing details
+                  </Link>
+                </Button>
               </div>
             </div>
           </ScrollView>
