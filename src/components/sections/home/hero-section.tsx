@@ -210,7 +210,7 @@ export default function HeroSection() {
                       variant="default"
                       className="rounded-xl px-5 text-base bg-black text-white hover:bg-black/90"
                     >
-                      <Link href="https://cal.com/charlieellington/zebra-call" target="_blank">
+                      <Link href="https://cal.com/charlieellington/zebra-call" target="_blank" rel="noopener noreferrer">
                         <span className="text-nowrap">Book a call with Charlie</span>
                       </Link>
                     </Button>

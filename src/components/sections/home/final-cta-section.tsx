@@ -42,6 +42,8 @@ export default function FinalCtaSection() {
             {/* Primary CTA */}
             <Link
               href="https://cal.com/charlieellington/zebra-call"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center px-5 md:px-6 py-3 text-sm md:text-base font-semibold text-white bg-foreground rounded-lg hover:bg-foreground/90 transition-colors shadow-sm"
             >
               Book a call with Charlie

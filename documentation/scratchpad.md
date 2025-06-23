@@ -688,6 +688,24 @@ Made the following style refinements to clean up the About page:
 - ✅ All cleanup tasks complete
 - Codebase is now clean with no unnecessary files
 
+### Cal.com Links Update (Current Date)
+
+**Task:** Update all "book a call" buttons to open cal.com in a new tab
+
+**Status:** ✅ Complete
+
+**Changes Made:**
+1. Added `target="_blank"` and `rel="noopener noreferrer"` to cal.com links that were missing them:
+   - `src/components/sections/about/solo-focus-section.tsx` - Added `rel="noopener noreferrer"`
+   - `src/components/sections/home/hero-section.tsx` - Added `rel="noopener noreferrer"`
+   - `src/components/sections/home/final-cta-section.tsx` - Added both `target="_blank"` and `rel="noopener noreferrer"`
+
+**Already Correct:**
+- `src/components/header.tsx` (desktop and mobile)
+- `src/components/sections/pricing/pricing-summary-section.tsx`
+
+**Result:** All cal.com booking links now open in a new tab with proper security attributes
+
 ---
 
 

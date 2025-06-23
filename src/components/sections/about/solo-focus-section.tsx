@@ -89,7 +89,7 @@ export default function SoloFocusSection() {
               </p>
               
               <Button asChild size="lg" className="rounded-xl">
-                <Link href="https://cal.com/charlieellington/zebra-call" target="_blank">
+                <Link href="https://cal.com/charlieellington/zebra-call" target="_blank" rel="noopener noreferrer">
                   Let's talk about your project
                   <ArrowRight className="ml-2 h-4 w-4" />
                 </Link>
