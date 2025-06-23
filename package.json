@@ -1,14 +1,14 @@
 {
-  "name": "lume-studio",
+  "name": "zebra-design",
   "version": "0.1.0",
-  "description": "A Design agency template built with Next.js.",
+  "description": "Zebra Design portfolio - Designers That Code with AI",
   "keywords": [
-    "kohi studio",
+    "zebra design",
     "nextjs",
-    "template",
-    "free nextjs template"
+    "portfolio",
+    "design agency"
   ],
-  "author": "Kohi Studio",
+  "author": "Zebra Design",
   "license": "MIT",
   "repository": {
     "type": "git",

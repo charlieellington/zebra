@@ -6,7 +6,7 @@ const ourPrinciples = [
   {
     title: "Creativity with Purpose",
     description:
-      "Our designs aren’t just pretty; they’re built to solve problems and make an impact.",
+      "Our designs aren't just pretty; they're built to solve problems and make an impact.",
   },
   {
     title: "Collaboration is Key",
@@ -22,7 +22,7 @@ const ourPrinciples = [
   {
     title: "Details Matter",
     description:
-      "The little things make a big difference. We sweat the small stuff, so you don’t have to.",
+      "The little things make a big difference. We sweat the small stuff, so you don't have to.",
   },
 ];
 
@@ -38,7 +38,7 @@ export default function ContentSection() {
           </ScrollView>
           <ScrollView>
             <p>
-              Lume Studio was born from a simple idea—great design should do
+              Zebra Design was born from a simple idea—great design should do
               more than just look good; it should make an impact. What started
               as a passion for creativity turned into a full-fledged design
               agency dedicated to helping brands tell their stories, connect

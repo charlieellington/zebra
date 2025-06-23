@@ -173,10 +173,10 @@ export default function FooterSection() {
           </div>
         </ScrollView>
         <ScrollView delay={0.2} viewMargin="0px 0px -20px 0px">
-          <span className="text-muted-foreground block text-center text-sm">
-            {" "}
-            © {new Date().getFullYear()} Lume Studio, All rights reserved
-          </span>
+          <div className="my-6 border-t" />
+          <div className="text-center text-xs">
+            © {new Date().getFullYear()} Zebra Design, All rights reserved
+          </div>
         </ScrollView>
       </div>
     </footer>
