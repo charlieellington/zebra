@@ -12,8 +12,17 @@ import PricingSummarySection from "@/components/sections/pricing/pricing-summary
 import FaqSection from "@/components/sections/home/faq-section";
 
 export const metadata: Metadata = {
-  title: "Pricing — Zebra Design",
-  description: "Month-to-month subscription from €5,000. I price at 20% of value added. Cancel any time with just a fair wrap-up fee. No lock-in, just results.",
+  title: "Transparent Pricing | Zebra Design - €5k/month Design & Development",
+  description: "Simple monthly subscription from €5,000. Cancel anytime. No contracts, no hidden fees. Compare: 1/4 the cost of hiring a team. See pricing details and value examples.",
+  openGraph: {
+    title: "Pricing | Zebra Design - €5k/month, Cancel Anytime",
+    description: "Transparent monthly pricing. €5k gets you unlimited design & development. That's 75% less than hiring a team. No contracts.",
+    url: 'https://zebradesign.studio/pricing',
+  },
+  twitter: {
+    title: "Zebra Design Pricing - €5k/month",
+    description: "Cancel anytime. No contracts. 75% cheaper than hiring. See why founders choose Zebra Design.",
+  },
 };
 
 export default function PricingPage() {

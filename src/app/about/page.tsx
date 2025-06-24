@@ -7,8 +7,18 @@ import PhilosophySection from "@/components/sections/about/philosophy-section";
 import SoloFocusSection from "@/components/sections/about/solo-focus-section";
 
 export const metadata: Metadata = {
-  title: "About — Zebra Design",
-  description: "Why a founder-turned-designer-developer is the fastest way to ship your product. Charlie Ellington's $120M track record now powers your next launch.",
+  title: "About Charlie Ellington | Zebra Design - Founder & Designer-Developer",
+  description: "From founding Deep Work Studio to designing products that raised $120M+. Learn why a founder-turned-designer-developer is your fastest path to launch. 10 years of startup experience, now building your product.",
+  openGraph: {
+    title: "About Charlie Ellington | Zebra Design",
+    description: "Founder-turned-designer-developer with $120M+ track record. Get your product launched in weeks with someone who's been in your shoes.",
+    url: 'https://zebradesign.studio/about',
+    type: 'profile',
+  },
+  twitter: {
+    title: "About Charlie Ellington | Zebra Design",
+    description: "Founder-turned-designer-developer with $120M+ track record. Launch in weeks, not months.",
+  },
 };
 
 export default function AboutPage() {

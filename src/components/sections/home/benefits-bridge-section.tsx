@@ -193,6 +193,12 @@ export default function BenefitsBridgeSection() {
             })}
           </div>
         </ScrollView>
+        
+        <ScrollView delay={0.15}>
+          <p className="text-center text-sm font-semibold text-muted-foreground mt-6">
+            For startup founders, SMEs, and product teams
+          </p>
+        </ScrollView>
       </div>
     </section>
   );

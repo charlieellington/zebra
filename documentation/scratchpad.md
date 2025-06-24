@@ -1481,5 +1481,186 @@ Updated the proven results section and recent builds metrics to have consistent 
 
 **Result**: The $120M now uses consistent green color across both sections, and all metrics are more prominent and eye-catching with larger font sizes and better visual hierarchy.
 
+### Cal.com Integration in Final CTA Section ✅
+Successfully integrated cal.com booking widget directly into the landing page contact CTA:
+
+1. **Package Installation**:
+   - Initially tried @calcom/atoms but had React 19 compatibility issues
+   - Switched to @calcom/embed-react for better compatibility
+   - Using Cal component for inline calendar display
+
+2. **Implementation Details**:
+   - Converted final-cta-section.tsx to client component ("use client")
+   - Using simpler Cal component with calLink prop
+   - Implemented expandable calendar interface:
+     - Compact view shows "Check my availability" with calendar icon
+     - Clicking expands to full cal.com embed (600px height)
+     - Users can minimize back to compact view
+   - Added "Open in Cal.com" button as alternative option
+
+3. **User Experience Improvements**:
+   - Compact initial view reduces page clutter
+   - Click-to-expand creates intentional interaction
+   - Shows live availability when expanded (creates scarcity)
+   - Multiple booking options: embedded calendar or external cal.com link
+   - Maintains personal touch with Charlie's photo and intro text
+   - Added email contact option: "Capacity is high right now. You can always reach me by email – I love replying to mail."
+   - Email displayed with Mail icon: charliee+zebra@gmail.com
+   - Alternative CTA for those who want to explore pricing first
+
+4. **Technical Notes**:
+   - Switched from BookerEmbed to Cal component due to React 19 compatibility
+   - Used React useState for expand/collapse functionality
+   - Added hover effects and animations (bouncing chevron)
+   - Fixed width issues with max-w-3xl container
+   - Email link is clickable with hover effect
+
+**Files Modified**:
+- src/components/sections/home/final-cta-section.tsx (expandable calendar, email contact)
+- package.json (added @calcom/embed-react dependency)
+
+**Result**: Visitors see a clean, compact calendar invitation that expands to show full availability when clicked. This creates a more intentional booking experience while reducing initial page complexity. Multiple contact options ensure visitors can reach out regardless of their preference.
+
+## Project Status Board
+
+### ✅ Completed Tasks
+
+### Process Section Image Overlays Plan (2025-06-24) ✅
+
+**Goal:** Overlay an icon, title, and brand colors on the abstract background images shown in the "The Zebra Process" accordion section so that visuals match the card styling used elsewhere on the homepage.
+
+**Status:** ✅ Complete
+
+**Implementation Details:**
+1. **Enhanced Data Structure**:
+   - Replaced simple `stepImages` object with rich `stepMetadata` array
+   - Each step now contains: id, title, image, icon component, bgColor, textColor, and altText
+   - Icons used: Users (Workshops), Code2 (Prototype), CheckCircle (User Testing), RefreshCw (Continuous Build)
+
+2. **Overlay Components**:
+   - Added AnimatePresence and motion.div for smooth cross-fade transitions
+   - Color overlay uses 40% opacity of brand color (`${bgColor}40`)
+   - Icon displayed at 16x16 size with brand text color
+   - Title shown below icon in 2xl font size
+
+3. **Color Scheme Applied**:
+   - Workshops: Purple (#CDCBFF bg, #6B68FF text)
+   - Prototype: Coral (#FDA7A0 bg, #E85D75 text)
+   - User Testing: Pink (#E7BDD7 bg, #C054A0 text)
+   - Continuous Build: Green (#B8E8D4 bg, #4A9B7F text)
+
+4. **Interaction Behavior**:
+   - Overlay updates on hover (desktop only)
+   - Falls back to first active accordion item when not hovering
+   - Smooth 0.3s fade transition between states
+   - Mobile unaffected (image already hidden on <md breakpoint)
+
+5. **Accessibility**:
+   - Added descriptive alt text for each image
+   - Icons marked with aria-hidden="true"
+   - Semantic heading (h3) for overlay titles
+
+**Files Modified**:
+- src/components/sections/home/launch-process-section.tsx (complete rewrite of image display logic)
+
+**Result**: The process section now has visually engaging overlays that match the card styling used throughout the site. Each step has its own distinct color and icon, creating better visual hierarchy and making the process more scannable.
+
+### SEO Improvements Implementation ✅
+Implemented comprehensive SEO updates based on technical SEO best practices:
+
+1. **Technical SEO Foundation**:
+   - Created robots.txt with proper crawling directives
+   - Implemented dynamic sitemap.ts for automatic sitemap generation
+   - Added web app manifest.json for PWA support
+   - All files properly configured with correct URLs and metadata
+
+2. **Enhanced Metadata**:
+   - Updated main layout with comprehensive metadata including:
+     - SEO-optimized title tags with key value props
+     - Compelling meta descriptions under 160 characters
+     - Keywords array for search relevance
+     - Open Graph tags for social sharing
+     - Twitter Card configuration
+     - Proper robots directives for search engines
+   - Enhanced About and Pricing pages with page-specific metadata
+
+3. **Structured Data (JSON-LD)**:
+   - Created structured-data.tsx component with ProfessionalService schema
+   - Includes business information, pricing, services offered
+   - Added founder information and operating hours
+   - Helps search engines understand business context
+
+4. **Key SEO Improvements Made**:
+   - Title tags now include value proposition and pricing
+   - Meta descriptions focus on benefits and CTAs
+   - Social sharing will show rich previews with proper images
+   - Search engines can better understand site structure via sitemap
+   - Business information is machine-readable via structured data
+
+**Files Created/Modified**:
+- public/robots.txt (new)
+- src/app/sitemap.ts (new)
+- public/manifest.json (new)
+- src/components/structured-data.tsx (new)
+- src/app/layout.tsx (enhanced metadata)
+- src/app/about/page.tsx (enhanced metadata)
+- src/app/pricing/page.tsx (enhanced metadata)
+
+**Next Steps for SEO**:
+- Create OG image (1200x630px) at /images/og-image.png
+- Create PWA icons (192x192 and 512x512) for manifest
+- Update domain references from placeholder to actual domain
+- Consider adding blog/resources section for content marketing
+- Implement image alt text improvements
+- Monitor Core Web Vitals performance
+
+### About Page Logo Enhancement ✅
+
+### Benefits Bridge Section - Added Target Audience Text ✅
+Added clarifying text under the three benefit cards in the BenefitsBridgeSection:
+
+1. **Implementation**:
+   - Added "For startup founders, SMEs, and product teams" text
+   - Positioned below the three cards (Validated results at speed, Design & dev in one, Quality Design)
+   - Styled with:
+     - Semi-bold font weight (font-semibold)
+     - Small text size (text-sm)
+     - Muted foreground color for subtlety
+     - Center alignment
+     - 6-unit top margin for proper spacing
+   - Wrapped in ScrollView with 0.15s delay for smooth animation
+
+**Files Modified**:
+- src/components/sections/home/benefits-bridge-section.tsx (added target audience text)
+
+**Result**: The benefit cards now clearly indicate who they're designed for, helping visitors quickly identify if the service is right for them.
+
+## Development Environment
+- **Server**: Running on http://localhost:3001 (port 3000 was in use)
+- **Framework**: Next.js 15.3.4 with Turbopack
+- **Package Manager**: npm
+
+## Component Architecture
+// ... existing code ...
+
+### About Page Logo Enhancement ✅
+
+### Credo Section Quote Update ✅
+Updated the principle quote in the credo section to be more concise and benefit-focused:
+
+**Old Quote**: "This is the principle I've based Zebra Design on: ship working code, talk to users, design, code more and results"
+
+**New Quote**: "Ship fast. Test with users. Iterate quickly. That's how I help you launch products that succeed."
+
+**Improvements**:
+- Shorter, punchier sentences in Hemingway style
+- Focuses on client benefit ("help you launch products that succeed")
+- Clear action-oriented language
+- Maintains connection to Paul Graham's philosophy above it
+- Follows communication guide recommendations for clear, concise copy
+
+**Files Modified**:
+- src/components/sections/home/credo-section.tsx (updated quote text)
+
 
 

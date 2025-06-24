@@ -1,0 +1,11 @@
+# Zebra Design Robots.txt
+# Allow all crawlers
+
+User-agent: *
+Allow: /
+Disallow: /api/
+Disallow: /_next/
+Disallow: /scripts/
+
+# Sitemap location
+Sitemap: https://zebradesign.studio/sitemap.xml 

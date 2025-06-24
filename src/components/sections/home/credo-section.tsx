@@ -54,7 +54,7 @@ export default function CredoSection() {
           <ScrollView delay={0.1}>
             <div className="mt-16 space-y-4 text-center">
               <p className="text-lg md:text-xl italic leading-relaxed text-balance">
-                &ldquo;This is the principle I&apos;ve based Zebra Design on: ship working code, talk to users, design, code more and results&rdquo;
+                &ldquo;Ship fast. Test with users. Iterate quickly. That&apos;s how I help you launch products that succeed.&rdquo;
               </p>
               <cite className="flex items-center justify-center gap-3 text-sm md:text-base not-italic text-muted-foreground">
                 <Image

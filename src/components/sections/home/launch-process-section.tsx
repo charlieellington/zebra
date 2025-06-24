@@ -9,14 +9,48 @@ import {
   AccordionTrigger,
 } from "@/components/ui/accordion"
 import { ScrollView } from "@/components/scroll-view"
+import { Users, Code2, CheckCircle, RefreshCw } from "lucide-react"
+import { motion, AnimatePresence } from "motion/react"
 
-// Map each accordion step to an abstract image
-const stepImages: Record<string, string> = {
-  step1: "/images/abstract-1.png",
-  step2: "/images/abstract-2.png",
-  step3: "/images/abstract-3.png",
-  step4: "/images/abstract-4.png",
-}
+// Enhanced step metadata with icons, colors, and titles
+const stepMetadata = [
+  {
+    id: "step1",
+    title: "Workshops",
+    image: "/images/abstract-1.png",
+    icon: Users,
+    bgColor: "#CDCBFF",
+    textColor: "#6B68FF",
+    altText: "Abstract background for Workshops step"
+  },
+  {
+    id: "step2", 
+    title: "Prototype",
+    image: "/images/abstract-2.png",
+    icon: Code2,
+    bgColor: "#FDA7A0",
+    textColor: "#E85D75",
+    altText: "Abstract background for Prototype step"
+  },
+  {
+    id: "step3",
+    title: "User Testing",
+    image: "/images/abstract-3.png",
+    icon: CheckCircle,
+    bgColor: "#E7BDD7",
+    textColor: "#C054A0",
+    altText: "Abstract background for User Testing step"
+  },
+  {
+    id: "step4",
+    title: "Continuous Build",
+    image: "/images/abstract-4.png",
+    icon: RefreshCw,
+    bgColor: "#B8E8D4",
+    textColor: "#4A9B7F",
+    altText: "Abstract background for Continuous Build step"
+  }
+]
 
 export default function LaunchProcessSection() {
   const [defaultOpen, setDefaultOpen] = useState<string[] | undefined>(undefined)
@@ -37,17 +71,20 @@ export default function LaunchProcessSection() {
     }
   }, [])
 
-  // Determine which image to show
-  const getCurrentImage = () => {
+  // Get current step metadata based on hover/active state
+  const getCurrentStepMeta = () => {
     // Priority: hover > first active step > default
+    let currentId = "step1"
     if (hoveredStep) {
-      return stepImages[hoveredStep]
+      currentId = hoveredStep
+    } else if (activeSteps.length > 0) {
+      currentId = activeSteps[0]
     }
-    if (activeSteps.length > 0) {
-      return stepImages[activeSteps[0]]
-    }
-    return stepImages.step1
+    
+    return stepMetadata.find(step => step.id === currentId) || stepMetadata[0]
   }
+
+  const currentStep = getCurrentStepMeta()
 
   return (
     <section
@@ -62,13 +99,47 @@ export default function LaunchProcessSection() {
         </ScrollView>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8 md:gap-12 items-start">
-          {/* Image - hidden on mobile */}
+          {/* Image with overlay - hidden on mobile */}
           <div className="hidden md:block relative h-[400px] rounded-lg overflow-hidden">
-            <OptimizedImage
-              src={getCurrentImage()}
-              alt=""
-              className="absolute inset-0 w-full h-full object-cover transition-opacity duration-300"
-            />
+            <AnimatePresence mode="wait">
+              <motion.div
+                key={currentStep.id}
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                exit={{ opacity: 0 }}
+                transition={{ duration: 0.3 }}
+                className="absolute inset-0"
+              >
+                <OptimizedImage
+                  src={currentStep.image}
+                  alt={currentStep.altText}
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
+                
+                {/* Color overlay */}
+                <div 
+                  className="absolute inset-0 transition-opacity duration-300"
+                  style={{ backgroundColor: `${currentStep.bgColor}40` }}
+                />
+                
+                {/* Icon and title overlay */}
+                <div className="absolute inset-0 flex flex-col items-center justify-center">
+                  <div className="bg-white/90 backdrop-blur-sm rounded-2xl p-8 shadow-lg">
+                    <currentStep.icon 
+                      className="w-16 h-16 mb-4 mx-auto" 
+                      style={{ color: currentStep.textColor }}
+                      aria-hidden="true"
+                    />
+                    <h3 
+                      className="text-2xl font-semibold text-center"
+                      style={{ color: currentStep.textColor }}
+                    >
+                      {currentStep.title}
+                    </h3>
+                  </div>
+                </div>
+              </motion.div>
+            </AnimatePresence>
           </div>
 
           {/* Accordion */}
