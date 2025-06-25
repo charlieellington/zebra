@@ -20,10 +20,10 @@ import {
 
 const timelineItems = [
   {
-    period: "1995–2007",
+    period: "1989–2007",
     title: "Ocean roots",
     description:
-      "Kitesurfing since eleven and surfing even earlier. Salt water, wind and waves shaped my mindset long before pixels and code did.",
+      "I've been sailing since a kid and kitesurfing since I was eleven years old. Driving a passion for challenges and the ocean.",
     icon: Wind,
     color: "#B8D4E3",
     image: "/images/about/Kitesurfing%202.jpg",
@@ -32,7 +32,7 @@ const timelineItems = [
     period: "2008–2012",
     title: "Sailing-instructor summers",
     description:
-      "Taught sailing by day, chased wind with a kite by evening. Forged self-reliance early, learning to hustle without a safety net.",
+      "I learnt to work in teams as a sailing instructor. Obsessed with water time, I decided to work for myself rather than start a traditional career.",
     icon: Anchor,
     color: "#CDCBFF",
     image: "/images/about/Kitesurfing%201.jpg",
@@ -41,7 +41,7 @@ const timelineItems = [
     period: "2013–2017",
     title: "Yoga retreats in Ibiza & the Alps",
     description:
-      "Bootstrapped a yoga-holiday company from zero to €1.2 M revenue in two years. Proof that storytelling, design and sweat can build real businesses.",
+      "Bootstrapped a yoga-holiday company from zero to €1.2M revenue in two years.",
     icon: Plane,
     color: "#E7BDD7",
     image: "/images/about/Founder%20yoga%20retreat%20company.jpg",

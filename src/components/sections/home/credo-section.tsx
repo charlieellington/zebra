@@ -2,11 +2,6 @@
 
 import { ScrollView } from "@/components/scroll-view";
 import Image from "next/image";
-import { 
-  Tooltip, 
-  TooltipContent, 
-  TooltipTrigger 
-} from "@/components/ui/tooltip";
 
 export default function CredoSection() {
   return (
@@ -49,42 +44,6 @@ export default function CredoSection() {
                 </a>
               </cite>
             </blockquote>
-          </ScrollView>
-          
-          <ScrollView delay={0.1}>
-            <div className="mt-16 space-y-4 text-center">
-              <p className="text-lg md:text-xl italic leading-relaxed text-balance">
-                &ldquo;Ship fast. Test with users. Iterate quickly. That&apos;s how I help you launch products that succeed.&rdquo;
-              </p>
-              <cite className="flex items-center justify-center gap-3 text-sm md:text-base not-italic text-muted-foreground">
-                <Image
-                  src="/images/other/charlie-ellington.jpg"
-                  alt="Charlie Ellington"
-                  width={40}
-                  height={40}
-                  className="h-10 w-10 rounded-full object-cover"
-                />
-                <span className="flex items-center gap-1 flex-wrap justify-center">
-                  <span>—</span>
-                  <span>Charlie Ellington</span>
-                  <span>·</span>
-                  <span>Solo designer-developer</span>
-                  <span>·</span>
-                  <Tooltip>
-                    <TooltipTrigger asChild>
-                      <span className="underline decoration-dotted underline-offset-2 cursor-help">One launch client at a time</span>
-                    </TooltipTrigger>
-                    <TooltipContent className="max-w-xs text-sm">
-                      <p>Right now I take on one launch client at a time so every build gets my full focus. I'll scale with hand-picked collaborators only when it improves outcomes.</p>
-                    </TooltipContent>
-                  </Tooltip>
-                  <span>·</span>
-                  <span>No middle managers</span>
-                  <span>—</span>
-                  <span>you work directly with me.</span>
-                </span>
-              </cite>
-            </div>
           </ScrollView>
         </div>
       </div>

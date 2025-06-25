@@ -3,7 +3,7 @@ import Image from "next/image";
 
 export default function LogoCloud() {
   return (
-    <section className="overflow-hidden py-8 md:py-12">
+    <section className="overflow-hidden">
       <div className="group relative m-auto max-w-7xl px-6">
         <div className="flex flex-col items-center gap-4">
           <div className="mb-2">
@@ -11,7 +11,7 @@ export default function LogoCloud() {
               Powered by the best tools
             </p>
           </div>
-          <div className="relative w-full overflow-hidden py-4 md:py-6">
+          <div className="relative w-full overflow-hidden py-2">
             <InfiniteSlider speedOnHover={20} speed={40} gap={100}>
               <div className="flex items-center">
                 <Image

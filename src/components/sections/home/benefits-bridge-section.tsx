@@ -59,7 +59,7 @@ export default function BenefitsBridgeSection() {
       <div className="mx-auto max-w-5xl px-6 space-y-8">
         <ScrollView delay={0.05}>
           <p className="text-center max-w-4xl mx-auto text-muted-foreground text-base md:text-lg leading-relaxed md:leading-loose">
-            With Zebra Design, you can{" "}
+            I made Zebra Design, so you can{" "}
             <Tooltip delayDuration={200}>
               <TooltipTrigger asChild>
                 <span className="inline-flex items-center gap-1.5 px-3 py-1.5 rounded-lg transition-all hover:scale-105 align-middle cursor-pointer" 

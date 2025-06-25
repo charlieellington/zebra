@@ -498,6 +498,46 @@ Applied communication guide principles to About page:
 **Result**: About page now follows all communication best practices - benefit-driven, outcome-oriented, with early proof points and consistent personal voice.
 
 ### About Page Logo Enhancement ✅
+
+### How I Work Page Enhancement ✅
+Enhanced the How I Work page with comprehensive sections following user requirements:
+
+1. **Hero Section Adaptation**:
+   - Created new header based on homepage but focused on process
+   - Used "Design & Code, On-Demand" as main heading
+   - Added animated sub-headings explaining the AI-powered, user-focused partnership
+   - Kept intro call CTA consistent with rest of site
+   - Added "Built for startup founders, SMEs, and teams" context
+
+2. **Benefits Cards Section**:
+   - Brought back BenefitsBridgeSection showing 3 key value props
+   - Cards explain: Validated results at speed, Design & dev in one, Quality Design
+   - Visual cards with colored backgrounds and icons
+
+3. **Process Flow**:
+   - LaunchProcessSection (already present) shows the 4-week sprint process
+   - Visual timeline with clear steps
+
+4. **Audience & Problems Sections**:
+   - Added WhoIHelpSection: "Who Is This For?" with expandable audience descriptions
+   - Added PainPointsSection: "Your Common Problems, Solved" addressing key pain points
+   - Both sections use accordion format for easy scanning
+
+5. **Proof with Project Links**:
+   - Added ProvenResultsSection showing key stats ($120M raised, $200M+ coverage, Billions transitioned)
+   - Instead of showing projects directly, added text about experience and link to homepage projects
+   - Copy emphasizes using AI to deliver same quality even faster
+
+6. **Existing Sections Retained**:
+   - PricingSection - transparent pricing info
+   - FaqSection - common questions
+   - FinalCtaSection - closing call to action
+   - FooterSection
+
+**Files Modified**:
+- src/app/how-i-work/page.tsx (complete restructure with new sections)
+
+**Result**: The How I Work page now provides a comprehensive view of the process, who it's for, proof of results, and clear next steps - all while avoiding repetition of the homepage content.
 Improved the company logos section on the About page for better clarity and readability:
 
 1. **Increased logo sizes**:
@@ -1661,6 +1701,223 @@ Updated the principle quote in the credo section to be more concise and benefit-
 
 **Files Modified**:
 - src/components/sections/home/credo-section.tsx (updated quote text)
+
+## 2024-06-25 Website refactor planning
+- Added `documentation/plan.md` outlining steps to duplicate legacy landing to /landing, replace home with streamlined personal page, and add /how-i-work deep-dive.
+
+## 2024-06-25 Website refactor execution
+- ✅ Created `/landing` route with backup of original homepage
+- ✅ Created new personal hero section with photo, name, and one-liner
+- ✅ Created About Me section with brief personal intro
+- ✅ Created personal CTA section with friendly tone
+- ✅ Updated homepage to use new streamlined layout
+- ✅ Created `/how-i-work` page with process, pricing, and FAQ sections
+- ✅ Updated navigation to include "How I Work" link
+- ✅ Made Recent Builds section more personal with first-person language
+- ✅ Added Vanta background effect back to hero section
+- ✅ Updated hero layout to left-photo, right-copy on desktop
+- 🔄 Development server running on localhost:3000
+
+**Current Status**: Core refactor complete with requested updates. The site now has:
+- Streamlined personal homepage with Vanta background, left-aligned photo, right-aligned copy
+- Detailed "How I Work" page with all the process/pricing information
+- Original landing preserved at `/landing` (not linked in nav)
+- More personal tone throughout with first-person language
+
+**Latest Changes**:
+- Restored the Vanta fog background effect from original hero
+- Changed hero layout to grid with photo on left, content on right (desktop)
+- Made photo larger (320x320px) with shadow for more impact
+- Maintained responsive design (stacks vertically on mobile)
+
+**Next Steps**: 
+- Review updated design in browser
+- Fine-tune spacing/sizing if needed
+- Test responsive design
+- Deploy changes
+
+### About Page Logo Enhancement ✅
+
+### Homepage CTA and Components Update ✅
+Brought back only the CTA component from the landing page to the homepage:
+
+1. **Replaced PersonalCtaSection with FinalCtaSection**:
+   - Restored the comprehensive CTA with Cal.com integration
+   - Includes expandable calendar view
+   - Personal introduction with Charlie's photo
+   - "Ready to launch faster? Let's talk." heading maintained
+   - Dynamic next project slot calculation
+   - Alternative booking options and email contact
+
+2. **Updated Homepage Structure**:
+   - HeroPersonalSection
+   - CredoSection  
+   - AboutMeSection
+   - RecentBuildsSection
+   - FinalCtaSection (replaced PersonalCtaSection)
+   - FooterSection
+
+3. **Fixed how-i-work page**:
+   - Updated import from PersonalCtaSection to FinalCtaSection
+   - Fixed module not found error
+
+**Files Modified**:
+- src/app/page.tsx (updated to only include FinalCtaSection)
+- src/app/how-i-work/page.tsx (fixed import error)
+- Deleted: src/components/sections/home/personal-cta-section.tsx
+- Deleted: src/app/landing/page.tsx
+
+**Result**: Homepage now has just the comprehensive CTA section with Cal.com integration, maintaining a clean and focused user journey.
+
+### About Page Logo Enhancement ✅
+
+### Header Navigation Update ✅
+Updated the main navigation to simplify the header:
+
+1. **Navigation Links Removed**:
+   - Removed "Home" link from the navigation
+   - Removed "Pricing" link from the navigation
+   - Keeping only essential pages: "How I Work", "About", and "Case Studies"
+
+2. **Implementation**:
+   - Updated NAV_LINKS array in src/content/nav.ts
+   - Removed the two navigation items while preserving the structure
+   - No changes needed to header component as it dynamically reads from NAV_LINKS
+
+**Files Modified**:
+- src/content/nav.ts (removed Home and Pricing navigation items)
+
+**Result**: Header now shows a cleaner, more focused navigation with only three items: "How I Work", "About", and "Case Studies".
+
+## 2024-06-25 Homepage updates from home.md
+- ✅ Added colored cards to hero greeting: "designer" (pink), "building" (coral), "AI" (blue)
+- ✅ Added colored card to "idea to user-focused product" (purple)
+- ✅ Updated About Me section with new copy and colored cards
+- ✅ Removed metrics banner section
+- ✅ Added metrics ($120M, $200M+, Billions) directly into design background cards
+- ✅ Added company logos to design background cards
+- ✅ Updated design background description text
+- ✅ Removed outro section ("I'm your hands-on partner...")
+- ✅ Replaced CTA section with merged version - old structure with Cal.com embed + new copy
+- ✅ Installed @calcom/embed-react package
+
+**Current Status**: All items from documentation/home.md have been implemented. The homepage now features:
+- Colored highlight cards throughout the hero and about sections
+- Streamlined projects section with metrics integrated into cards
+- Interactive Cal.com booking widget in the CTA section
+- Cleaner, more focused messaging throughout
+
+## 2024-06-25 Homepage fixes
+- ✅ Fixed Vanta background by using h-screen instead of h-full
+- ✅ Removed intro section from Recent Builds (Trusted By Startups...)
+- ✅ Removed "They prove the process works..." text
+- ✅ Removed icons from Ethereum, Ramp, and Nexus cards
+- ✅ Updated metrics text: "$Billions Transacted", "$120M Raised", "$200M+ Insurance Coverage"
+- ✅ Replaced company names with logos in design background cards
+- ✅ Added background color to CTA section (#FCF8F4/20)
+- ✅ Removed photo and "Hi I'm..." greeting from CTA section
+
+**Current Status**: All requested fixes have been implemented. The homepage now has:
+- Working Vanta background effect
+- Cleaner project cards with metrics as headlines and logos instead of company names
+- Simplified CTA section with background color and no redundant personal intro
+
+### About Page Logo Enhancement ✅
+// ... existing code ...
+
+### Header Photo Styling Update ✅
+Updated the profile photo in the header to match the styling from the homepage hero section:
+
+1. **Removed border styling**:
+   - Removed `border-2 border-background` class
+   - Removed generic `shadow-sm` class
+
+2. **Added white glow effect**:
+   - Applied inline style with box-shadow: `0px 0px 2px 2px #FFF, 0px 0px 4px 4px #FFF`
+   - Scaled down from hero's 4px/8px to 2px/4px to suit smaller 32px size
+
+3. **Added radial gradient overlay**:
+   - Added absolute positioned div with radial gradient
+   - Same gradient as hero: `radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.00) 92.31%, #FFF 100%)`
+   - Maintains subtle edge softening effect
+
+**Files Modified**:
+- src/components/header.tsx (updated profile image styling)
+
+**Result**: Header photo now has consistent styling with the hero section photo, maintaining visual coherence across the site.
+
+### Homepage Hero Animation Enhancement ✅
+Applied the same lazy animated load effect from the landing page to the homepage hero section:
+
+1. **Added TextEffect to main tagline**:
+   - Applied "fade-in-blur" preset with 0.3s speed segment
+   - Creates smooth text reveal animation for "Design & Code, On-Demand"
+
+2. **Wrapped profile section in AnimatedGroup**:
+   - Added staggered children animation with 0.3s delay
+   - Profile photo and greeting text animate in sequence
+   - 0.1s stagger between child elements
+
+3. **Wrapped CTA section in AnimatedGroup**:
+   - Delayed by 0.6s to appear after profile section
+   - Button and subtext animate together
+   - Creates layered reveal effect
+
+4. **Animation sequence**:
+   - Background Vanta effect loads first (1s delay)
+   - Main tagline fades in with blur effect
+   - Profile photo and greeting text stagger in (0.3s delay)
+   - CTA button and text appear last (0.6s delay)
+
+**Files Modified**:
+- src/components/sections/home/hero-personal-section.tsx (added staggered animations)
+
+**Result**: Homepage hero now has the same polished, progressive load animation as the landing page, creating a more engaging first impression.
+
+### About Page Logo Enhancement ✅
+
+### About Page Journey Section Updates ✅
+Updated the timeline content in the journey section per user request:
+
+1. **Date Range Change**:
+   - Changed first timeline item period from "1995–2007" to "1989–2007"
+
+2. **Copy Updates with Grammar/Spelling Corrections**:
+   - **Ocean roots**: "I've been sailing since a kid and kitesurfing since I was eleven years old. Driving a passion for challenges and the ocean."
+   - **Sailing-instructor summers**: "I learnt to work in teams as a sailing instructor. Obsessed with water time, I decided to work for myself rather than start a traditional career."
+   - **Yoga retreats**: "Bootstrapped a yoga-holiday company from zero to €1.2M revenue in two years."
+
+3. **Corrections Made**:
+   - Fixed "Obssesed" → "Obsessed" 
+   - Added "rather" for better grammar flow
+   - Removed space in "€1.2 M" → "€1.2M"
+   - Maintained the user's personal writing style
+
+**Files Modified**:
+- src/components/sections/about/journey-section.tsx (timeline content updates)
+
+### Hero CTA Update ✅
+Updated the homepage hero call-to-action for better user flow:
+
+1. **Changed button text**:
+   - From: "Book a Free Intro Call"
+   - To: "Book an Intro Call"
+   - Cleaner, more direct language
+
+2. **Updated button behavior**:
+   - Changed from external Cal.com link to internal scroll
+   - Now scrolls to #contact section ("Let's chat about what you're building")
+   - Keeps users on-site for better engagement
+
+3. **Enhanced subtext**:
+   - From: "30 minutes · No sales pressure"
+   - To: "30 minutes · No sales pressure · Free Advice"
+   - Added "Free Advice" to emphasize value
+
+**Files Modified**:
+- src/components/sections/home/hero-personal-section.tsx (updated CTA)
+
+**Result**: The hero CTA now provides a smoother user experience by scrolling to the contact section where users can see the Cal.com embed and alternative contact options.
 
 
 

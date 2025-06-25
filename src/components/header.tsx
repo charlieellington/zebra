@@ -91,13 +91,22 @@ export const HeroHeader = () => {
                   <div className="hidden lg:flex lg:items-center lg:gap-1.5">
                     {/* Profile image - only shown when NOT scrolled */}
                     {!isScrolled && (
-                      <div className="relative h-8 w-8 overflow-hidden rounded-full border-2 border-background shadow-sm">
+                      <div className="relative h-8 w-8 overflow-hidden rounded-full" style={{
+                        boxShadow: '0px 0px 2px 2px #FFF, 0px 0px 4px 4px #FFF'
+                      }}>
                         <Image
                           src="/images/other/charlie-ellington.jpg"
                           alt="Charlie Ellington"
                           fill
                           className="object-cover"
                           sizes="32px"
+                        />
+                        {/* Radial gradient overlay */}
+                        <div 
+                          className="absolute inset-0 pointer-events-none"
+                          style={{
+                            background: 'radial-gradient(50% 50% at 50% 50%, rgba(255, 255, 255, 0.00) 92.31%, #FFF 100%)'
+                          }}
                         />
                       </div>
                     )}
