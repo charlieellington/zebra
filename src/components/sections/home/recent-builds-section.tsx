@@ -200,6 +200,16 @@ export default function RecentBuildsSection() {
                           </div>
                         </CardHeader>
                         <CardContent className="pb-1.5">
+                          {/* Mobile image */}
+                          <div className="sm:hidden mb-3 -mx-2">
+                            <Image
+                              src={project.image}
+                              alt={project.title}
+                              width={400}
+                              height={240}
+                              className="w-full h-auto object-cover rounded-md"
+                            />
+                          </div>
                           <CardDescription className="text-sm">{project.description}</CardDescription>
                         </CardContent>
                         <CardFooter className="pb-3">
@@ -284,6 +294,16 @@ export default function RecentBuildsSection() {
                           </div>
                         </CardHeader>
                         <CardContent className="pb-3">
+                          {/* Mobile image */}
+                          <div className="sm:hidden mb-3 -mx-2">
+                            <Image
+                              src={role.image}
+                              alt={role.company}
+                              width={400}
+                              height={240}
+                              className="w-full h-auto object-cover rounded-md"
+                            />
+                          </div>
                           <CardDescription className="text-sm">{role.description}</CardDescription>
                         </CardContent>
                       </Card>

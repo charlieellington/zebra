@@ -1919,5 +1919,37 @@ Updated the homepage hero call-to-action for better user flow:
 
 **Result**: The hero CTA now provides a smoother user experience by scrolling to the contact section where users can see the Cal.com embed and alternative contact options.
 
+# Zebra Design - Project Scratchpad
+
+## Current Status
+- **Last Updated**: Mobile images added to project cards
+- **Current Focus**: Homepage improvements
+
+## Recent Changes
+1. ✅ Mobile images added to project cards
+   - Images now show inside cards on mobile widths only
+   - Uses `sm:hidden` class to hide on small screens and above
+   - Added to both AI projects and design background sections
+   - Images are responsive and properly sized
+
+## Pending Tasks from home.md
+1. ✅ Homepage header updates with color cards
+2. ✅ Updated copy with color cards for specific terms
+3. ✅ Removed proof section with Ramp, Nexus, Ethereum
+4. ✅ Added proof back into design background cards with metrics
+5. ✅ Updated text about design background
+6. ✅ Removed specified sections
+7. ✅ CTA updated with new copy
+
+## Technical Notes
+- Mobile detection uses `sm:hidden` (hidden on 640px and above)
+- Images maintain aspect ratio with `object-cover`
+- Negative margins (-mx-2) used to extend images to card edges on mobile
+
+## Next Steps
+- Monitor performance on actual mobile devices
+- Consider lazy loading optimization if needed
+- Ensure all project images are optimized for mobile
+
 
 
