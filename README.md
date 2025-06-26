@@ -64,4 +64,4 @@ This project is licensed under the MIT License - see the [LICENSE](LICENSE) file
 - Original template by [Hara Mishra](https://github.com/haramishra)
 - Built with love by [Zebra Design](https://zebradesign.io)
 
-© 2024 Zebra Design. All rights reserved.
+© 2025 Zebra Design. All rights reserved.
