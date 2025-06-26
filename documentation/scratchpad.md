@@ -1922,7 +1922,7 @@ Updated the homepage hero call-to-action for better user flow:
 # Zebra Design - Project Scratchpad
 
 ## Current Status
-- **Last Updated**: Mobile images added to project cards
+- **Last Updated**: README and LICENSE updated with attribution
 - **Current Focus**: Homepage improvements
 
 ## Recent Changes
@@ -1931,6 +1931,13 @@ Updated the homepage hero call-to-action for better user flow:
    - Uses `sm:hidden` class to hide on small screens and above
    - Added to both AI projects and design background sections
    - Images are responsive and properly sized
+
+2. ✅ README and LICENSE updated
+   - Added credits section acknowledging Lume Studio template
+   - Linked to original repository by Hara Mishra
+   - Created proper MIT LICENSE file with dual copyright
+   - Added features section to README
+   - Improved documentation structure
 
 ## Pending Tasks from home.md
 1. ✅ Homepage header updates with color cards
@@ -1945,11 +1952,13 @@ Updated the homepage hero call-to-action for better user flow:
 - Mobile detection uses `sm:hidden` (hidden on 640px and above)
 - Images maintain aspect ratio with `object-cover`
 - Negative margins (-mx-2) used to extend images to card edges on mobile
+- Project based on Lume Studio Next.js template (MIT licensed)
 
 ## Next Steps
 - Monitor performance on actual mobile devices
 - Consider lazy loading optimization if needed
 - Ensure all project images are optimized for mobile
+- Continue customizing from original template as needed
 
 
 
