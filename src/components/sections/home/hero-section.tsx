@@ -139,7 +139,7 @@ export default function HeroSection() {
                   as="h1"
                   className="mt-8 text-balance text-5xl md:text-7xl lg:mt-16 xl:text-[5.25rem] font-semibold"
                 >
-                  Design & Code, On-Demand
+                  Design and AI Code
                 </TextEffect>
                 <AnimatedGroup
                   variants={{

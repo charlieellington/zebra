@@ -41,7 +41,7 @@ export const metadata: Metadata = {
         url: '/images/og-image.png', // You'll need to create this
         width: 1200,
         height: 630,
-        alt: 'Zebra Design - Design & Code, On-Demand',
+        alt: 'Zebra Design - Design and AI Code',
       },
     ],
     locale: 'en_US',

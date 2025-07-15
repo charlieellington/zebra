@@ -153,7 +153,7 @@ export default function HeroPersonalSection() {
                       className="text-[40px] md:text-[56px] lg:text-[64px] font-bold leading-[1.2] md:leading-[1.1] lg:leading-[0.5] mb-12 md:mb-16"
                       style={{ color: '#121212' }}
                     >
-                      Design & Code, On-Demand
+                      Design and AI Code
                     </TextEffect>
 
                     {/* Profile and greeting section */}
