@@ -4,6 +4,7 @@ import React from "react";
 import { ScrollView } from "@/components/scroll-view";
 import { motion } from "motion/react";
 import Image from "next/image";
+import Link from "next/link";
 import {
   Anchor,
   Briefcase,
@@ -68,7 +69,17 @@ const timelineItems = [
     period: "2019–2023",
     title: "Deep Work Studio",
     description:
-      "I founded and grew a Web3 design studio to 40 people, working on projects for Ethereum, MakerDAO, and more. It was exciting building a team and working at scale. I learned about leadership, managing growth, and also about knowing when to step back. Eventually, I decided to step away from the big studio to return to a more hands-on, personal way of working (and to reclaim some work–life balance!).",
+      (
+        <>
+          Founded &amp; scaled Deep Work from zero to <strong className="text-foreground">30+ multidisciplinary designers</strong>, transitioning from a founder-owned agency to a collective-ownership model. As Creative Director I led multiple 5-person squads and facilitated workshops that aligned founders and engineers on product vision.
+          <br />
+          We delivered research-driven design for <strong className="text-foreground">50+ leading web3 teams</strong> – including the Ethereum Foundation, MakerDAO, ConsenSys, Maple and many others. You can browse the open-source case studies&nbsp;
+          <Link href="https://www.deepwork.network/case-studies" target="_blank" rel="noopener noreferrer" className="underline">
+            here
+          </Link>
+          .
+        </>
+      ),
     icon: Building2,
     color: "#CDCBFF",
     image: "/images/builds/Deep%20Work%20Studio%20(2).png",
