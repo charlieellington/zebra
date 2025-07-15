@@ -22,15 +22,6 @@ export default function AboutHeroSection() {
             About Me
           </TextEffect>
           
-          <TextEffect
-            preset="fade-in-blur"
-            delay={0.3}
-            as="p"
-            className="text-xl md:text-2xl text-muted-foreground text-center mb-12"
-          >
-            Why a founder-turned-designer-developer is the fastest way to ship your product
-          </TextEffect>
-          
           {/* Photo and intro text container */}
           <AnimatedGroup
             variants={{
@@ -75,16 +66,16 @@ export default function AboutHeroSection() {
               {/* Intro text */}
               <div className="space-y-6 text-lg text-muted-foreground">
                 <p>
-                  I'm <strong className="text-foreground">Charlie Ellington</strong> — a designer-developer who's launched products that raised <ColoredHighlight color="green">$120M</ColoredHighlight> and secured <strong className="text-foreground">billions in web3 applications</strong>. 
-                  Experience I now pour into shipping <em>your</em> product in <ColoredHighlight color="purple">weeks, not months</ColoredHighlight>.
+                  <em>Hi, I'm Charlie Ellington.</em> I'm a former startup founder turned designer–developer who loves nothing more than <strong className="text-foreground">building products</strong> that solve real problems. For years, I was a product designer working in Figma, always handing off my designs to developers or collaborating with engineering teams. But in 2024, after returning from a sabbatical, something clicked – I started coding with AI and rapidly discovered an incredible workflow. I became addicted to iterating and reviewing my processes every week, and I realized something profound: <strong className="text-foreground">what I truly love about design is creating</strong>. Now that I can both design AND code, I'm finally able to see my ideas come to life completely. I really am creating.
                 </p>
                 <p>
-                  Over the past decade I've worn many hats. From digital marketer and sailing instructor to startup founder and design lead — including founding a yoga retreat holiday company that grew to €1.2&nbsp;million in revenue in just two years. 
-                  Through it all, one thing remained constant: I love crafting bold, user-centered designs that solve real problems.
+                  After a decade in the startup world wearing every hat from marketing to CEO, this newfound ability to create end-to-end has transformed how I work. I've had some wild adventures along the way: I taught sailing in my early 20s, co-founded a yoga retreat business (that unexpectedly grew to over €1M in revenue), and even led a 40-person design team in the Web3 space. Not everything was smooth sailing (I definitely hit my share of storms and failures along the way!), but through it all one thing stayed constant: <strong className="text-foreground">I love crafting bold, user-centered designs that make a difference</strong>. The difference now? I don't just design them – I build them too.
                 </p>
                 <p>
-                  My journey took me from teaching sailing to leading a 40-person design team in Web3, 
-                  and now to running my own solo design practice powered by AI.
+                  In 2023, after burning the candle at both ends, I took a step back – a complete break. I built a campervan and spent months living off-grid, surfing at sunrise, with my computer gathering dust. No Discord, no deadlines, just waves and freedom. That sabbatical was a game-changer – it helped me rediscover my core values: <strong className="text-foreground">freedom, craft, and doing work that truly serves people</strong>. When I returned to work in early 2024, I knew I wanted something different. I launched <em>Zebra Design</em> as a solo venture and discovered coding with AI. Now I get to choose projects I believe in, partner directly with fellow founders, and pour all my experience into <strong className="text-foreground">creating complete products</strong> – from the first sketch to the final line of code. No handoffs, no translation issues, just pure creation.
+                </p>
+                <p className="italic">
+                  (In short: I've been in your shoes as a founder, and I bring that perspective to everything I create. No hype – just honest collaboration and the joy of bringing ideas to life, completely.)
                 </p>
               </div>
             </div>
@@ -92,8 +83,8 @@ export default function AboutHeroSection() {
             {/* Proof points logos */}
             <div className="mt-12 space-y-6">
               <p className="text-center text-base text-muted-foreground max-w-2xl mx-auto">
-                I've designed products for leading Web3 companies that collectively raised <strong className="text-foreground">$120M+</strong> and manage <strong className="text-foreground">billions in value</strong>. 
-                This experience now powers my AI-driven approach to ship your product faster.
+                I've been lucky to design products for startups that went on to raise over <strong className="text-foreground">$120M</strong> – a journey that taught me a ton about what makes products (and teams) succeed. 
+                Here are some of the companies I've had the privilege to work with:
               </p>
               <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6 items-center">
                 <div className="flex flex-col items-center gap-2">
@@ -186,34 +177,6 @@ export default function AboutHeroSection() {
                   </div>
                 </Card>
               </Link>
-            </div>
-
-            {/* AI-Augmented Summary */}
-            <div className="mt-16 bg-gray-50 rounded-xl p-8">
-              <h3 className="text-2xl font-semibold mb-4">Solo Focus, Augmented by AI</h3>
-              <p className="text-lg text-muted-foreground mb-6">
-                Today I'm a solo designer with a twist: I've learned to code with AI. 
-                Ten years of design expertise, now turbocharged with AI-powered development. 
-                I design it, I build it, I ship it. Fast.
-              </p>
-              <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                <Button asChild size="lg">
-                  <Link
-                    href="https://cal.com/charlieellington/zebra-call"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    Book Free Intro Call
-                  </Link>
-                </Button>
-                <Button asChild size="lg" variant="outline">
-                  <Link
-                    href="#solo-focus"
-                  >
-                    See how I work →
-                  </Link>
-                </Button>
-              </div>
             </div>
           </AnimatedGroup>
         </div>

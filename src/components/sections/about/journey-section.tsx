@@ -23,7 +23,7 @@ const timelineItems = [
     period: "1989–2007",
     title: "Ocean roots",
     description:
-      "I've been sailing since a kid and kitesurfing since I was eleven years old. Driving a passion for challenges and the ocean.",
+      "I've been sailing since I was a kid (and started kitesurfing at 11). Growing up on the water taught me to love adventure and challenge – a mindset that's shaped everything I do.",
     icon: Wind,
     color: "#B8D4E3",
     image: "/images/about/Kitesurfing%202.jpg",
@@ -32,7 +32,7 @@ const timelineItems = [
     period: "2008–2012",
     title: "Sailing-instructor summers",
     description:
-      "I learnt to work in teams as a sailing instructor. Obsessed with water time, I decided to work for myself rather than start a traditional career.",
+      "Spent my summers teaching sailing. Working with crews of all ages taught me teamwork and leadership. I was *obsessed* with time on the water – so much that I realized I'd rather chart my own course in life than take a typical office job.",
     icon: Anchor,
     color: "#CDCBFF",
     image: "/images/about/Kitesurfing%201.jpg",
@@ -41,7 +41,7 @@ const timelineItems = [
     period: "2013–2017",
     title: "Yoga retreats in Ibiza & the Alps",
     description:
-      "Bootstrapped a yoga-holiday company from zero to €1.2M revenue in two years.",
+      "Co-founded a yoga holiday startup with friends, from scratch. We bootstrapped it to €1.2M in revenue within two years – an insane ride! (Picture me answering customer calls on a mountain, arranging yoga instructors and villa rentals.) It was my first taste of building a business, and it taught me a ton about growth and customer experience.",
     icon: Plane,
     color: "#E7BDD7",
     image: "/images/about/Founder%20yoga%20retreat%20company.jpg",
@@ -50,7 +50,7 @@ const timelineItems = [
     period: "2018",
     title: "Electric yacht conversion",
     description:
-      "Diesel engine died, so I taught myself DC electronics on YouTube. Ripped out the fumes and wired in solar, batteries, and a silent motor. First taste of hardware hacking.",
+      "When the diesel engine on my old sailboat died, I literally taught myself electronics via YouTube and converted the boat to electric. Ripped out the fumes, wired up solar panels and batteries, and installed a silent motor. It was my first hardware hack – and it worked! This project gave me a huge confidence boost in my self-taught engineering skills (and a much quieter ride at sea).",
     icon: Ship,
     color: "#FDA7A0",
     image: "/images/about/Electric%20sailing%20yacht%20conversion.jpg",
@@ -59,16 +59,16 @@ const timelineItems = [
     period: "2017–2019",
     title: "Freelance design beginnings",
     description:
-      "Volunteered a redesign for Nexus Mutual. One open-source pull request snowballed into paid work, then a full-time leap into product design.",
+      "Discovered product design by accident. I volunteered to redesign a dashboard for Nexus Mutual (a crypto project) just for fun. That one open-source pull request snowballed into paid freelance gigs, and before I knew it I had leapt full-time into product design. I realized I'd found my passion.",
     icon: Briefcase,
     color: "#B8D4E3",
     image: "/images/builds/Nexus%20Mutual.png",
   },
   {
     period: "2019–2023",
-    title: "Deep Work studio",
+    title: "Deep Work Studio",
     description:
-      "Founded and led a 40-person Web3 design studio. Projects for Ethereum, MakerDAO and others taught me scale, leadership, and when to step back.",
+      "I founded and grew a Web3 design studio to 40 people, working on projects for Ethereum, MakerDAO, and more. It was exciting building a team and working at scale. I learned about leadership, managing growth, and also about knowing when to step back. Eventually, I decided to step away from the big studio to return to a more hands-on, personal way of working (and to reclaim some work–life balance!).",
     icon: Building2,
     color: "#CDCBFF",
     image: "/images/builds/Deep%20Work%20Studio%20(2).png",
@@ -77,7 +77,7 @@ const timelineItems = [
     period: "2023",
     title: "Remote-work campervan",
     description:
-      "Took a sabbatical, gutted a van, and built a solar-powered rolling office. Coded by cliffs, wing-foiled at lunch, shipped side projects at sunset.",
+      "After leaving the studio, I took a real sabbatical – a complete break from tech. Built a new campervan from scratch and lived off-grid for months. No computer, no Discord, no deadlines. Just sunrise surf sessions and the freedom to do absolutely nothing productive. It was exactly what I needed to reset and remember why I create in the first place.",
     icon: Car,
     color: "#E7BDD7",
     image: "/images/about/Remote%20work%20campervan.jpg",
@@ -86,7 +86,7 @@ const timelineItems = [
     period: "2023",
     title: "Surfing & values reset",
     description:
-      "Months of dawn patrol and salt-water reflection distilled my core values: freedom, craft, and work that serves real people.",
+      "Months of dawn patrol with my computer gathering dust. No work, just waves. This complete disconnection from tech gave me space to reflect on what really matters: freedom (living on my own terms), craft (creating things I'm proud of), and service (building things that genuinely help people). By stepping away completely, I found clarity on how I wanted to return.",
     icon: Camera,
     color: "#FDA7A0",
     image: "/images/about/Surfing.jpg",
@@ -95,7 +95,7 @@ const timelineItems = [
     period: "2023",
     title: "Meeting Bene",
     description:
-      "Met my partner Bene, who taught me to flow rather than fixate. Life's richer when you leave space for serendipity.",
+      "In the midst of that reset, I met my partner, Bene. She taught me a lot about balance – how to flow rather than fixate. Life's a lot richer when you leave space for serendipity (both in relationships and in work).",
     icon: Heart,
     color: "#B8D4E3",
     image: "/images/about/Bene-1.jpg",
@@ -104,16 +104,24 @@ const timelineItems = [
     period: "2025 (planned)",
     title: "Growing family",
     description:
-      "Photo of Bene days before we learned we're expecting our first daughter. Baby arrives December 2025; we're still chasing waves and building a life we love.",
+      "We're expecting our first daughter in Dec 2025. 😊 As my family grows, so does my commitment to designing a life (and career) that we love. (Yes, we're still chasing waves – just with a baby on board soon!)",
     icon: Heart,
     color: "#CDCBFF",
     image: "/images/about/Bene.jpg",
   },
   {
-    period: "2024–Present",
-    title: "Zebra Design — solo venture",
+    period: "Early 2024",
+    title: "Return to work & finding flow",
     description:
-      "Launched a one-person design-as-a-service studio. Founders get my full focus; I get to craft products end-to-end. Win-win.",
+      "After months away, I slowly returned to work with a new perspective. I realized that design puts me in a flow state like nothing else – that feeling of complete absorption where hours disappear. This insight, combined with discovering AI coding tools, transformed how I approach creation. I wasn't just returning to work; I was evolving into something new.",
+    icon: Briefcase,
+    color: "#FDA7A0",
+  },
+  {
+    period: "2024–Present",
+    title: "Zebra Design (solo venture)",
+    description:
+      "Returned from sabbatical with clarity and launched Zebra Design. The game-changer? I discovered coding with AI and found my true calling – creating. No more handoffs to developers, no more lost-in-translation moments. Now I design in Figma AND build in code, seeing my ideas come to life completely. It's addictive. I'm having more fun than ever because I'm finally doing what I love most: creating products from start to finish.",
     icon: Calendar,
     color: "#E7BDD7",
   },
@@ -134,7 +142,7 @@ export default function JourneySection() {
           <div className="hidden md:block absolute left-1/2 top-0 bottom-0 w-0.5 bg-border -translate-x-1/2" />
 
           <div className="space-y-8 md:space-y-12">
-            {timelineItems.map((item, index) => (
+            {timelineItems.slice().reverse().map((item, index) => (
               <ScrollView key={index}>
                 <motion.div
                   initial={{ opacity: 0, y: 20 }}
