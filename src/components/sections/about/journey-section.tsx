@@ -41,7 +41,7 @@ const timelineItems = [
     period: "2013–2017",
     title: "Yoga retreats in Ibiza & the Alps",
     description:
-      "Co-founded a yoga holiday startup with friends, from scratch. We bootstrapped it to €1.2M in revenue within two years – an insane ride! (Picture me answering customer calls on a mountain, arranging yoga instructors and villa rentals.) It was my first taste of building a business, and it taught me a ton about growth and customer experience.",
+      "Co-founded a yoga-holiday startup with friends and, through scrappy marketing and a demand-based pricing model I designed, bootstrapped it to €1.2 M revenue in just two years. I focused on growth strategy and business operations while a lean team handled the day-to-day retreats. That experience showed me the power of smart positioning and pricing – lessons I still apply today.",
     icon: Plane,
     color: "#E7BDD7",
     image: "/images/about/Founder%20yoga%20retreat%20company.jpg",
